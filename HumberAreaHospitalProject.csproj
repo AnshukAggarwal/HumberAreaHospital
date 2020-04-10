@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,17 +49,15 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -102,6 +101,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -168,12 +168,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\QuestionController.cs" />
-    <Compile Include="Controllers\ResponseController.cs" />
-    <Compile Include="Controllers\SpecialityController.cs" />
+    <Compile Include="Controllers\VolunteerController.cs" />
     <Compile Include="Data\HospitalContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,20 +181,36 @@
     <Compile Include="Migrations\202004090252423_initial.Designer.cs">
       <DependentUpon>202004090252423_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004101651399_second.cs" />
-    <Compile Include="Migrations\202004101651399_second.Designer.cs">
-      <DependentUpon>202004101651399_second.cs</DependentUpon>
+    <Compile Include="Migrations\202004100308025_Added_Job.cs" />
+    <Compile Include="Migrations\202004100308025_Added_Job.Designer.cs">
+      <DependentUpon>202004100308025_Added_Job.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004100356207_Added_Application.cs" />
+    <Compile Include="Migrations\202004100356207_Added_Application.Designer.cs">
+      <DependentUpon>202004100356207_Added_Application.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004100406407_Updated_Jobs.cs" />
+    <Compile Include="Migrations\202004100406407_Updated_Jobs.Designer.cs">
+      <DependentUpon>202004100406407_Updated_Jobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004100857493_added_author_article_volunteer.cs" />
+    <Compile Include="Migrations\202004100857493_added_author_article_volunteer.Designer.cs">
+      <DependentUpon>202004100857493_added_author_article_volunteer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Application.cs" />
+    <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Job.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Question.cs" />
-    <Compile Include="Models\Response.cs" />
     <Compile Include="Models\Speciality.cs" />
-    <Compile Include="Models\ViewModels\UpdateDoctor.cs" />
-    <Compile Include="Models\ViewModels\ViewDoctor.cs" />
+    <Compile Include="Models\ViewModel\UpdateArticle.cs" />
+    <Compile Include="Models\ViewModel\UpdateDoctor.cs" />
+    <Compile Include="Models\ViewModel\ViewDoctor.cs" />
+    <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -255,25 +270,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Doctor\Delete.cshtml" />
-    <Content Include="Views\Doctor\List.cshtml" />
-    <Content Include="Views\Doctor\New.cshtml" />
-    <Content Include="Views\Doctor\Update.cshtml" />
-    <Content Include="Views\Doctor\View.cshtml" />
-    <Content Include="Views\Speciality\Delete.cshtml" />
-    <Content Include="Views\Speciality\List.cshtml" />
-    <Content Include="Views\Speciality\New.cshtml" />
-    <Content Include="Views\Speciality\Update.cshtml" />
-    <Content Include="Views\Speciality\View.cshtml" />
-    <Content Include="Views\Question\New.cshtml" />
-    <Content Include="Views\Question\List.cshtml" />
-    <Content Include="Views\Question\Update.cshtml" />
-    <Content Include="Views\Question\View.cshtml" />
-    <Content Include="Views\Question\Delete.cshtml" />
-    <Content Include="Views\Response\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Article\" />
+    <Folder Include="Views\Author\" />
+    <Folder Include="Views\Volunteer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -292,8 +294,17 @@
     <EmbeddedResource Include="Migrations\202004090252423_initial.resx">
       <DependentUpon>202004090252423_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004101651399_second.resx">
-      <DependentUpon>202004101651399_second.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004100308025_Added_Job.resx">
+      <DependentUpon>202004100308025_Added_Job.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004100356207_Added_Application.resx">
+      <DependentUpon>202004100356207_Added_Application.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004100406407_Updated_Jobs.resx">
+      <DependentUpon>202004100406407_Updated_Jobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004100857493_added_author_article_volunteer.resx">
+      <DependentUpon>202004100857493_added_author_article_volunteer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

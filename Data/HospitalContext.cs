@@ -33,7 +33,13 @@ namespace HumberAreaHospitalProject.Data
         }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Speciality> Specialities { get; set; }
-        public DbSet<Question> Questions { get; set; }
-        public DbSet<Response> Responses { get; set; }
+        public DbSet<Job> Jobs { get; set; }
+        public DbSet<Application> Applications { get; set; }
+
+        //MarL
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Volunteer> Volunteers { get; set; }
+
     }
 }
