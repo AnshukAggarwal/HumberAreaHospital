@@ -1,0 +1,29 @@
+﻿@model HumberAreaHospitalProject.Models.Question
+@{
+    ViewBag.Title = "View";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Details for @Model.QuestionText</h2>
+        <a href="/Question/List">Back to List</a>
+        <div class="info">
+            <div>Text: @Model.QuestionText</div>
+        </div>
+        <div class="controls">
+            <a href="/Question/Update/@Model.QuestionID" class="control-button">Update</a>
+            <a href="/Question/Delete/@Model.QuestionID" class="control-button">Delete</a>
+        </div>
+
+    </div>
+</body>
+</html>
+
+

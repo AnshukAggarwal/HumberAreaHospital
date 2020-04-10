@@ -1,0 +1,28 @@
+﻿@model HumberAreaHospitalProject.Models.Question
+@{
+    ViewBag.Title = "Delete";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Are you sure you want to delelte the record of @Model.QuestionText?.</h2>
+        <h2>If not please go back to the list</h2>
+        <a href="/Question/List">Back to List</a>
+        <div class="info">Text: @Model.QuestionText</div>
+        <div class="controls">
+            <form method="post" action="/Question/Delete/@Model.QuestionID">
+                <input type="submit" value="Delete" />
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
+

@@ -9,7 +9,7 @@ namespace HumberAreaHospitalProject.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(HumberAreaHospitalProject.Data.HospitalContext context)

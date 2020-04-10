@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "New";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New</title>
+</head>
+<body>
+    <h2>Add a Speciality</h2>
+    <a href="/Speciality/List">Back to List</a>
+    <div>
+        <form method="POST" action="/Speciality/New">
+            <div>
+                <label for="SpecialityName">Name:</label>
+                <input type="text" name="SpecialityName" id="SpecialityName" />
+            </div>
+            <div>
+                <input type="submit" value="Add" />
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
+

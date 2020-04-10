@@ -104,3 +104,4 @@ C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospit
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.pdb
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.initial.resources
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.csproj.GenerateResource.cache
+C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.second.resources

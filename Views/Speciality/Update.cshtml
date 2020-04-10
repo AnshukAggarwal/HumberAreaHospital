@@ -1,0 +1,30 @@
+﻿@model HumberAreaHospitalProject.Models.Speciality
+@{
+    ViewBag.Title = "Update";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <h2>Edit Details for @Model.Name</h2>
+    <a href="/Speciality/List">Back to List</a>
+    <div>
+        <form method="post" action="/Speciality/Update/@Model.SpecialityID">
+            <div class="info">
+                <label for="SpecialityName">Name: </label>
+                <input type="text" name="SpecialityName" id="SpecialityName" value="@Model.Name" />
+            </div>
+            <div class="controls">
+                <input type="submit" value="Update" />
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
+

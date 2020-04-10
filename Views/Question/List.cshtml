@@ -1,0 +1,31 @@
+﻿@model List<HumberAreaHospitalProject.Models.Question>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <h2>List of Questions</h2>
+    <a href="/Question/New">Add New Question</a>
+    <div class="item-container">
+        @{
+            foreach (var question in Model)
+            { <div class="item">
+                    <div><a href="/Question/View/@question.QuestionID">@question.QuestionText</a></div>
+                    <div><a href="/Question/Update/@question.QuestionID">Update</a></div>
+                </div>
+            }
+
+        }
+
+    </div>
+</body>
+</html>
+
