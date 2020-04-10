@@ -212,3 +212,5 @@ F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalPr
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.dll
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.pdb
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.Added_Job.resources
+F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.Added_Application.resources
+F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.Updated_Jobs.resources
