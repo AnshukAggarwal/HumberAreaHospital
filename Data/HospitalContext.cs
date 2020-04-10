@@ -33,5 +33,6 @@ namespace HumberAreaHospitalProject.Data
         }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Speciality> Specialities { get; set; }
+        public DbSet<Job> Jobs { get; set; }
     }
 }
