@@ -98,7 +98,6 @@ C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\Microsoft.Owin.Securit
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.csprojAssemblyReference.cache
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.csproj.CopyComplete
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.dll
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.pdb
@@ -329,3 +328,4 @@ C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospit
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.Added_Application.resources
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.Updated_Jobs.resources
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.added_author_article_volunteer.resources
+C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.csprojAssemblyReference.cache

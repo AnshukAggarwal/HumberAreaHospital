@@ -40,6 +40,8 @@ namespace HumberAreaHospitalProject.Data
         public DbSet<Article> Articles { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Volunteer> Volunteers { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Survey> Responses { get; set; }
 
     }
 }
