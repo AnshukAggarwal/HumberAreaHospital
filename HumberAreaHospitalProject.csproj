@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HumberAreaHospitalProject</RootNamespace>
     <AssemblyName>HumberAreaHospitalProject</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -171,6 +171,7 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\VolunteerController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
@@ -295,6 +296,11 @@
     <Content Include="Views\Survey\Form.cshtml" />
     <Content Include="Views\Survey\Thanks.cshtml" />
     <Content Include="Views\Survey\List.cshtml" />
+    <Content Include="Views\Job\List.cshtml" />
+    <Content Include="Views\Job\New.cshtml" />
+    <Content Include="Views\Job\Show.cshtml" />
+    <Content Include="Views\Job\Update.cshtml" />
+    <Content Include="Views\Application\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
