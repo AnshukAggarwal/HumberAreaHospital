@@ -1,0 +1,31 @@
+﻿@model List<HumberAreaHospitalProject.Models.Speciality>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <h2>List of Specialities</h2>
+    <a href="/Speciality/New">Add New Speciality</a>
+    <div class="item-container">
+        @{
+            foreach (var speciality in Model)
+            { <div class="item">
+                    <div><a href="/Speciality/View/@speciality.SpecialityID">@speciality.Name</a></div>
+                    <div><a href="/Speciality/Update/@speciality.SpecialityID">Update</a></div>
+                </div>
+            }
+
+        }
+
+    </div>
+</body>
+</html>
+

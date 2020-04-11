@@ -1,0 +1,28 @@
+﻿@model HumberAreaHospitalProject.Models.Speciality
+@{
+    ViewBag.Title = "View";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Details for @Model.Name</h2>
+        <a href="/Speciality/List">Back to List</a>
+        <div class="info">
+            <div>Name: @Model.Name</div>
+        </div>
+        <div class="controls">
+            <a href="/Speciality/Update/@Model.SpecialityID" class="control-button">Update</a>
+            <a href="/Speciality/Delete/@Model.SpecialityID" class="control-button">Delete</a>
+        </div>
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+﻿@model HumberAreaHospitalProject.Models.Doctor
+@{
+    ViewBag.Title = "Delete";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Are you sure you want to delelte the record of @Model.Title @Model.DoctorFname @Model.DoctorLname ?</h2>
+        <h2>If not please go back to the list</h2>
+        <a href="/Doctor/List">Back to List</a>
+        <div class="info">Title:@Model.Title</div>
+        <div class="info">First Name:@Model.DoctorFname</div>
+        <div class="info">Last Name:@Model.DoctorLname</div>
+        <div class="info">Speciality:@Model.Specialities.Name</div>
+        <div class="controls">
+            <form method="post" action="/Doctor/Delete/@Model.DoctorID">
+                <input type="submit" value="Delete" />
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
+

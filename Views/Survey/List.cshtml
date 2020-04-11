@@ -1,0 +1,37 @@
+﻿@model HumberAreaHospitalProject.Models.ViewModels.ListSurvey
+
+@{
+    ViewBag.Title = "List";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Survey Form</title>
+</head>
+<body>
+
+    <div>
+        <form method="post" action="/Survey/List">
+            <select name="id">
+                @{
+                    foreach (var question in Model.questions)
+                    {
+                        <option value="@question.QuestionID">@question.QuestionText</option>
+                    }
+
+                }
+
+            </select>
+            <input type="submit" value="Submit" />
+        </form>
+
+    </div>
+    <div>
+        Here the responses will go
+    </div>
+</body>
+</html>
+

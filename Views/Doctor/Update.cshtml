@@ -1,0 +1,52 @@
+﻿@model HumberAreaHospitalProject.Models.ViewModels.UpdateDoctor
+@{
+    ViewBag.Title = "Update";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Update @Model.doctor.Title @Model.doctor.DoctorFname @Model.doctor.DoctorLname</h2>
+        <a href="/Doctor/List">Back to List</a>
+    </div>
+    <section>
+        <form method="post" action="/Doctor/Update/@Model.doctor.DoctorID">
+            <div>
+                <label for="Title">Title</label>
+                <input type="text" id="Title" name="Title" value="@Model.doctor.Title" />
+            </div>
+            <div>
+                <label for="DoctorFname">First Name</label>
+                <input type="text" id="DoctorFname" name="DoctorFname" value="@Model.doctor.DoctorFname" />
+            </div>
+            <div>
+                <label for="DoctorLname">Last Name</label>
+                <input type="text" id="DoctorLname" name="DoctorLname" value="@Model.doctor.DoctorLname" />
+            </div>
+            <div>
+                <label for="SpecialityID">Speciality</label>
+                <select id="SpecialityID" name="SpecialityID">
+                    <option value="@Model.doctor.SpecialityID">@Model.doctor.Specialities.Name</option>
+                    @{
+                        foreach (var speciality in Model.specialities)
+                        {
+                            <option value="@speciality.SpecialityID">@speciality.Name</option>
+                        }
+                    }
+
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="Update" />
+            </div>
+        </form>
+    </section>
+</body>
+</html>
+

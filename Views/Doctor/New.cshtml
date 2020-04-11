@@ -1,0 +1,52 @@
+﻿@model List<HumberAreaHospitalProject.Models.Speciality>
+@{
+    ViewBag.Title = "Add";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <section>
+            <h2>Add a Doctor</h2>
+            <a href="/Doctor/List">Back to List</a>
+        </section>
+        <main>
+            <form method="post" action="/Doctor/New">
+                <div>
+                    <label for="doctortitle">Title</label>
+                    <input type="text" id="doctortitle" name="doctortitle" />
+                </div>
+                <div>
+                    <label for="doctorfname">First Name</label>
+                    <input type="text" id="doctorfname" name="doctorfname" />
+                </div>
+                <div>
+                    <label for="doctorlname">Last Name</label>
+                    <input type="text" id="doctorlname" name="doctorlname" />
+                </div>
+                <div>
+                    <label for="speciality">Speciality</label>
+                    <select id="speciality" name="speciality">
+                        @{
+
+                            foreach (var speciality in Model)
+                            {
+                                <option value="@speciality.SpecialityID">@speciality.Name</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <input type="submit" value="Add" />
+            </form>
+        </main>
+
+
+    </div>
+</body>
+</html>

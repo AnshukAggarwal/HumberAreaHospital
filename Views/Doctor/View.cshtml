@@ -1,0 +1,40 @@
+﻿@model HumberAreaHospitalProject.Models.ViewModels.ViewDoctor
+@{
+    ViewBag.Title = "View";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Details for @Model.doctor.Title @Model.doctor.DoctorFname @Model.doctor.DoctorLname</h2>
+        <a href="/Doctor/List">Back to List</a>
+    </div>
+    <section>
+        <div>Title: @Model.doctor.Title</div>
+        <div>First Name: @Model.doctor.DoctorFname</div>
+        <div>Last Name: @Model.doctor.DoctorLname</div>
+        <div>Speciality: @Model.doctor.Specialities.Name</div>
+    </section>
+    <section>
+        <a href="/Doctor/Update/@Model.doctor.DoctorID">Update</a>
+        <a href="/Doctor/Delete/@Model.doctor.DoctorID">Delete</a>
+    </section>
+    <section>
+        <h2>@Model.similardoctors.Count other Doctors to consider</h2>
+        @{
+            foreach (var otherdoctors in Model.similardoctors)
+            {
+                <div>
+                    <a href="/Doctor/View/@otherdoctors.DoctorID">@otherdoctors.Title @otherdoctors.DoctorFname @otherdoctors.DoctorLname</a>
+                </div>
+            }
+        }
+    </section>
+</body>
+</html>

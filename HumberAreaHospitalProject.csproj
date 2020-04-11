@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HumberAreaHospitalProject</RootNamespace>
     <AssemblyName>HumberAreaHospitalProject</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -168,10 +168,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\VolunteerController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Controllers\SurveyController.cs" />
+    <Compile Include="Controllers\SpecialityController.cs" />
     <Compile Include="Data\HospitalContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -192,16 +197,27 @@
     <Compile Include="Migrations\202004100406407_Updated_Jobs.Designer.cs">
       <DependentUpon>202004100406407_Updated_Jobs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004100857493_added_author_article_volunteer.cs" />
+    <Compile Include="Migrations\202004100857493_added_author_article_volunteer.Designer.cs">
+      <DependentUpon>202004100857493_added_author_article_volunteer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Application.cs" />
+    <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Speciality.cs" />
-    <Compile Include="Models\ViewModel\UpdateDoctor.cs" />
-    <Compile Include="Models\ViewModel\ViewDoctor.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Survey.cs" />
+    <Compile Include="Models\ViewModels\ListSurvey.cs" />
+    <Compile Include="Models\ViewModels\UpdateArticle.cs" />
+    <Compile Include="Models\ViewModels\UpdateDoctor.cs" />
+    <Compile Include="Models\ViewModels\ViewDoctor.cs" />
+    <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -261,14 +277,30 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Job\List.cshtml" />
-    <Content Include="Views\Job\New.cshtml" />
-    <Content Include="Views\Job\Show.cshtml" />
-    <Content Include="Views\Job\Update.cshtml" />
-    <Content Include="Views\Application\List.cshtml" />
+    <Content Include="Views\Doctor\List.cshtml" />
+    <Content Include="Views\Doctor\New.cshtml" />
+    <Content Include="Views\Doctor\View.cshtml" />
+    <Content Include="Views\Doctor\Update.cshtml" />
+    <Content Include="Views\Doctor\Delete.cshtml" />
+    <Content Include="Views\Speciality\List.cshtml" />
+    <Content Include="Views\Speciality\New.cshtml" />
+    <Content Include="Views\Speciality\View.cshtml" />
+    <Content Include="Views\Speciality\Update.cshtml" />
+    <Content Include="Views\Speciality\Delete.cshtml" />
+    <Content Include="Views\Question\List.cshtml" />
+    <Content Include="Views\Question\New.cshtml" />
+    <Content Include="Views\Question\View.cshtml" />
+    <Content Include="Views\Question\Update.cshtml" />
+    <Content Include="Views\Question\Delete.cshtml" />
+    <Content Include="Views\Survey\Form.cshtml" />
+    <Content Include="Views\Survey\Thanks.cshtml" />
+    <Content Include="Views\Survey\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Article\" />
+    <Folder Include="Views\Author\" />
+    <Folder Include="Views\Volunteer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -295,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004100406407_Updated_Jobs.resx">
       <DependentUpon>202004100406407_Updated_Jobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004100857493_added_author_article_volunteer.resx">
+      <DependentUpon>202004100857493_added_author_article_volunteer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
