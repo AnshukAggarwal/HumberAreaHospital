@@ -18,11 +18,11 @@ namespace HumberAreaHospitalProject.Controllers
         public ActionResult List(String jobsearchkey, int pagenum=0)
         {
 
-            string query = "select * from Jobs";
+            string query = "select * from Jobs";//SQL  query to select everything from Jobs table
             List<SqlParameter> sqlparams = new List<SqlParameter>();
             if (jobsearchkey!= "") //Checkign if the search key is empty or null
             {
-                query = query + " where JobTitle like @searchkey";
+                query = query + " where JobTitle like @searchkey";//Appending sql query to existing query 
                 sqlparams.Add(new SqlParameter("@searchkey", "%" + jobsearchkey + "%"));                
             }
              List<Job> jobs = db.Jobs.SqlQuery(query, sqlparams.ToArray()).ToList();
@@ -61,7 +61,7 @@ namespace HumberAreaHospitalProject.Controllers
         [HttpPost]
         public ActionResult New(string JobTitle, string JobCategory, string JobType, string Description, string Requirements)
         {
-            string PostDate = DateTime.Now.ToString("dd/MM/yyyy");
+            string PostDate = DateTime.Now.ToString("dd/MM/yyyy");//converting date time to just date as a string and storing it into PostDate
             string query = "insert into Jobs (JobTitle, JobCategory, JobType, Description, Requirements, PostDate) values (@JobTitle, @JobCategory, @JobType, @Description, @Requirements, @PostDate)";
             SqlParameter[] sqlparams = new SqlParameter[6]; 
             sqlparams[0] = new SqlParameter("@JobTitle", JobTitle);

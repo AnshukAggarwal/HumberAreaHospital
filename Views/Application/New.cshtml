@@ -1,0 +1,52 @@
+﻿@model List<HumberAreaHospitalProject.Models.Application>
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Fill the Application</h2>
+<div class="navbar">
+    <a class="navlink" href="/Application/List">Back to List</a>
+</div>
+<form method="POST" action="/Application/New">
+    <div class="form-group">
+        <label class="col-sm-2 col-form-lable">First Name</label>
+        <input type="text" class="form-control" id="name" name="ApplicantFirstName" />
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-lable">Last Name</label>
+        <input type="text" class="form-control" id="name" name="JobCategory" />
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-lable">Email</label>
+        <input type="email" class="form-control" id="name" name="ApplicantEmail" />
+    </div> 
+    <div class="form-group">
+        <label class="col-sm-2 col-form-lable">Phone</label>
+        <input type="email" class="form-control" id="name" name="ApplicantPhone" />
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-lable">Address</label>
+        <input type="email" class="form-control" id="name" name="ApplicantAddress" />
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-lable">City</label>
+        <input type="email" class="form-control" id="name" name="ApplicantCity" />
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-lable">Province</label>
+        <input type="email" class="form-control" id="name" name="ApplicantProvince" />
+    </div> 
+    <div class="form-group">
+        <label class="col-sm-2 col-form-lable">Zipcode</label>
+        <input type="email" class="form-control" id="name" name="ApplicantZipcode" />
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-form-lable">Upload Resume</label>
+        <input type="file" class="form-control" id="name" name="ApplicantResume" />
+    </div>
+
+    <div class="inpfield">
+        <input type="submit" class="btn btn-primary" value="Add Job">
+    </div>
+
+</form>
