@@ -13,12 +13,12 @@
 </form>
 <table id="mytable" class="table table-bordred table-striped">
     <thead>
-    <th>JOB TITLE</th>
-    <th>JOB CATEGORY</th>
-    <th>JOB TYPE</th>
-    <th>POSTED ON</th>
-    <th>EDIT </th>
-    <th>DELETE </th>
+        <th>JOB TITLE</th>
+        <th>JOB CATEGORY</th>
+        <th>JOB TYPE</th>
+        <th>POSTED ON</th>
+        <th>EDIT </th>
+        <th>DELETE </th>
     </thead>
     <tbody>
         @{
@@ -29,7 +29,6 @@
                     <td><span>@job.JobCategory</span></td>
                     <td><span>@job.JobType</span></td>
                     <td><span>@job.PostDate.ToString("dd/MM/yyyy")</span></td>
-                    
                     <td> <span><a href="/Job/Update/@job.JobID"><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>   </a></span></td>
                     <td><span><a href="/Job/Delete/@job.JobID"><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>   </a></span></td>
                 </tr>

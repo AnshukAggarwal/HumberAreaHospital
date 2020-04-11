@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -201,6 +202,10 @@
     <Compile Include="Migrations\202004100857493_added_author_article_volunteer.cs" />
     <Compile Include="Migrations\202004100857493_added_author_article_volunteer.Designer.cs">
       <DependentUpon>202004100857493_added_author_article_volunteer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004111157220_Updated_Application.cs" />
+    <Compile Include="Migrations\202004111157220_Updated_Application.Designer.cs">
+      <DependentUpon>202004111157220_Updated_Application.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -336,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004100857493_added_author_article_volunteer.resx">
       <DependentUpon>202004100857493_added_author_article_volunteer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004111157220_Updated_Application.resx">
+      <DependentUpon>202004111157220_Updated_Application.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
