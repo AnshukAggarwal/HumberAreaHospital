@@ -334,3 +334,6 @@ C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHo
 =======
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.added_author_article_volunteer.resources
 >>>>>>> f560e400bee5a513b48eb3e359f48c6058e36b79
+F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.Updated_Application.resources
+>>>>>>> 910aa9ddac2751a865a0f6d8cc5243f7a63ce711
+C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.Updated_Application.resources

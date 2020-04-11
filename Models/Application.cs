@@ -23,5 +23,6 @@ namespace HumberAreaHospitalProject.Models
         public string ApplicantProvince { get; set; }
         public string ApplicantZipCode { get; set; }
         public string ApplicantResume { get; set; }
+        public string ApplicationDate { get; set; }
     }
 }
