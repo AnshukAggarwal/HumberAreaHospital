@@ -1,0 +1,38 @@
+﻿@model IEnumerable<HumberAreaHospitalProject.Models.Article>
+
+@{
+    ViewBag.Title = "List";
+}
+
+
+<div>
+    <h2>List of Articles</h2>
+    <a href="/Article/Create">Add Article</a>
+    <div class="table">
+        <div class="row head">
+            <div class="col-md-2">Title</div>
+            <div class="col-md-2">Date</div>
+            <div class="col-md-2">Author</div>
+            <div class="col-md-2">Action</div>
+        </div>
+        @{
+
+            foreach (var article in Model)
+            {
+                <div class="row">
+                    <div class="col-md-2"><a href="/Article/View/@article.ArticleID">@article.ArticleTitle </a></div>
+                    <div class="col-md-2">@article.Date.ToString("yyyy-MMM-dd") </div>
+                    <div class="col-md-2">@article.Authors.AuthorFname @article.Authors.AuthorLname</div>
+                    <div class="col-md-2">
+                        <span><a href="/Article/View/@article.ArticleID">View</a></span> |
+                        <span><a href="/Article/Update/@article.ArticleID">Update</a></span> |
+                        <span><a href="/Article/Delete/@article.ArticleID">Delete</a></span>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+</div>
+
+

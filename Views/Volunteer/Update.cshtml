@@ -1,0 +1,199 @@
+﻿@model HumberAreaHospitalProject.Models.Volunteer
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+
+
+<form method="POST" action="/Volunteer/Update/@Model.VolunteerID">
+
+
+    @Html.AntiForgeryToken()
+
+    @*//string query = "INSERT into Volunteers (VolunteerFname, VolunteerLname, Address, Email, HomePhone, WorkPhone, Skills, Day, Time, Department, Notes)" +
+        //                         " values (@fname, @lname, @address, @email, @homephone, @workphone, @skills, @day, @time, @department, @notes)";
+        //SqlParameter[] parameters = new SqlParameter[11];
+        //parameters[0] = new SqlParameter("@fname", volunteerFname);
+        //parameters[1] = new SqlParameter("@lname", volunteerLname);
+        //parameters[2] = new SqlParameter("@address", address);
+        //parameters[3] = new SqlParameter("@email", email);
+        //parameters[4] = new SqlParameter("@homephone", homePhone);
+        //parameters[5] = new SqlParameter("@workphone", workPhone);
+        //parameters[6] = new SqlParameter("@skills", skills);
+        //parameters[7] = new SqlParameter("@day", day);
+        //parameters[8] = new SqlParameter("@time", time);
+        //parameters[9] = new SqlParameter("@department", department);
+        //parameters[10] = new SqlParameter("@notes", notes);*@
+    <div class="form-horizontal">
+        <h4>Volunteer</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2" for="volunteerFname">First Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="volunteerFname" id="volunteerFname" value="@Model.VolunteerFname" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="volunteerLname">Last Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="volunteerLname" id="volunteerLname" value="@Model.VolunteerLname" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="address">Address</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="address" id="address" value="@Model.Address" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="email">Email</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="email" id="email" value="@Model.Email" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="homePhone">Home Phone</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="homePhone" id="homePhone" value="@Model.HomePhone" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="workPhone">Work Phone</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="workPhone" id="workPhone" value="@Model.WorkPhone" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="skills">Skills</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="skills" id="skills" value="@Model.Skills" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="day">Which Day are you Free?</label>
+            <div class="col-md-10">
+                @{
+                    string Day;
+                    string[] Days = { "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday" };
+                    Day = Model.Day;
+                    string[] VolunteerListDay = Day.Split(new char[] { ',' });
+
+
+                    foreach (var everyDay in Days)
+                    {
+
+                        if (VolunteerListDay.Any(everyDay.Contains))
+                        {
+                            <div>
+                                <input type="checkbox" id="@everyDay" name="day" value="@everyDay" checked />
+                                <label for="@everyDay">@everyDay.ToUpperInvariant()</label>
+                            </div>
+                        }
+                        else
+                        {
+                            <div>
+                                <input type="checkbox" id="@everyDay" name="day" value="@everyDay" />
+                                <label for="@everyDay">@everyDay.ToUpper()</label>
+                            </div>
+                        }
+
+                        //if (Array.IndexOf(array, Value) >= 0)
+                        //{
+                        //    //Your stuff goes here
+                        //}
+
+
+
+                    }
+
+
+                }
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="time">Time</label>
+            <div class="col-md-10">
+                <select name="time" class="form-control" id="time">
+                    @{
+                        //string[] timeList = {"morning_8-12" => "Morning 8:00am - 12:00pm", "afternoon_13-17", "evening_18-22" };
+                        var timeList = new Dictionary<string, string>();
+                        timeList.Add("morning_8-12", "Morning 8:00am - 12:00pm");
+                        timeList.Add("afternoon_13-17", "Afternoon 1:00pm - 5:00pm");
+                        timeList.Add("evening_18-22", "Evening 6:00pm - 10:00pm");
+
+                        foreach (var timeOption in timeList)
+                        {
+                            if (Model.Time == timeOption.Key)
+                            {
+                                <option value="@timeOption.Key" selected>@timeOption.Value</option>
+                            }
+                            else
+                            {
+                                <option value="@timeOption.Key">@timeOption.Value</option>
+                            }
+
+                        }
+                    }
+
+                </select>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="preference">Preference</label>
+            <div class="col-md-10">
+                <select name="preference" class="form-control" id="preference">
+                    @{
+                        //string[] timeList = {"morning_8-12" => "Morning 8:00am - 12:00pm", "afternoon_13-17", "evening_18-22" };
+                        var preferenceList = new Dictionary<string, string>();
+                        preferenceList.Add("childCare", "Child Care");
+                        preferenceList.Add("inpatient", "Inpatient Volunteer");
+                        preferenceList.Add("outpatient", "Outpatient Volunteer");
+                        preferenceList.Add("fundraising", "Fundraising Volunteer");
+                        preferenceList.Add("patient_family", "Patient and Family Advisor");
+                        preferenceList.Add("resources", "Volunteer Resources");
+
+                        foreach (var prep in preferenceList)
+                        {
+                            if (Model.Preference == prep.Key)
+                            {
+                                <option value="@prep.Key" selected>@prep.Value</option>
+                            }
+                            else
+                            {
+                                <option value="@prep.Key">@prep.Value</option>
+                            }
+
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="notes">Notes</label>
+            <div class="col-md-10">
+                <textarea class="form-control" name="notes" id="notes" rows="5">@Model.Notes</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+<div>
+    <a href="/Volunteer/List"> Back to List</a>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

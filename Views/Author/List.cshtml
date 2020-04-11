@@ -1,0 +1,41 @@
+﻿@model IEnumerable<HumberAreaHospitalProject.Models.Author>
+
+@{
+    ViewBag.Title = "List";
+}
+
+
+<div>
+    <h2>List of Authors</h2>
+    <a href="/Author/Create">Add Author</a>
+    <div class="table">
+        <div class="row head">
+            <div class="col-md-2">First Name</div>
+            <div class="col-md-2">Last Name</div>
+            <div class="col-md-2">Email</div>
+            <div class="col-md-2">Phone</div>
+            <div class="col-md-2">Action</div>
+        </div>
+        @{
+
+
+            foreach (var author in Model)
+            {
+
+                <div class="row">
+                    <div class="col-md-2"><a href="/Author/View/@author.AuthorID">@author.AuthorFname </a></div>
+                    <div class="col-md-2">@author.AuthorLname </div>
+                    <div class="col-md-2">@author.Email</div>
+                    <div class="col-md-2">@String.Format("{0:(###) ###-####}", Convert.ToInt64(author.Phone))</div>
+                    <div class="col-md-2">
+                        <span><a href="/Author/View/@author.AuthorID">View</a></span> |
+                        <span><a href="/Author/Update/@author.AuthorID">Update</a></span> |
+                        <span><a href="/Author/Delete/@author.AuthorID">Delete</a></span>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+</div>
+

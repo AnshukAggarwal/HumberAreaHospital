@@ -46,10 +46,9 @@ namespace HumberAreaHospitalProject.Controllers
             return View();
         }
 
-        //Use to apply also on the other view
-        [ActionName("Apply_today")]  
+        //Use to apply also on the other view 
         [HttpPost]
-        public ActionResult Create(string volunteerFname, string volunteerLname, string address, string email, string homePhone, string workPhone, string skills, ICollection<string> day, string time, string department, string notes)
+        public ActionResult Create(string volunteerFname, string volunteerLname, string address, string email, string homePhone, string workPhone, string skills, ICollection<string> day, string time, string preference, string notes)
         {
             
             String seperator = ",";
@@ -61,8 +60,8 @@ namespace HumberAreaHospitalProject.Controllers
             try
             {
                 //Try if the SQL query will work
-                string query = "INSERT into Volunteers (VolunteerFname, VolunteerLname, Address, Email, HomePhone, WorkPhone, Skills, Day, Time, Department, Notes)" +
-                                " values (@fname, @lname, @address, @email, @homephone, @workphone, @skills, @day, @time, @department, @notes)";
+                string query = "INSERT into Volunteers (VolunteerFname, VolunteerLname, Address, Email, HomePhone, WorkPhone, Skills, Day, Time, Preference, Notes)" +
+                                " values (@fname, @lname, @address, @email, @homephone, @workphone, @skills, @day, @time, @preference, @notes)";
                 //Debug.WriteLine(query);
                 SqlParameter[] parameters = new SqlParameter[11];
                 parameters[0] = new SqlParameter("@fname", volunteerFname);
@@ -74,7 +73,7 @@ namespace HumberAreaHospitalProject.Controllers
                 parameters[6] = new SqlParameter("@skills", skills);
                 parameters[7] = new SqlParameter("@day", listdays);
                 parameters[8] = new SqlParameter("@time", time);
-                parameters[9] = new SqlParameter("@department", department);
+                parameters[9] = new SqlParameter("@preference", preference);
                 parameters[10] = new SqlParameter("@notes", notes);
 
                 db.Database.ExecuteSqlCommand(query, parameters);
@@ -114,7 +113,7 @@ namespace HumberAreaHospitalProject.Controllers
 
         
         [HttpPost]
-        public ActionResult Update(int id, string volunteerFname, string volunteerLname, string address, string email, string homePhone, string workPhone, string skills, ICollection<string> day, string time, string department, string notes)
+        public ActionResult Update(int id, string volunteerFname, string volunteerLname, string address, string email, string homePhone, string workPhone, string skills, ICollection<string> day, string time, string preference, string notes)
         {
             try
             {
@@ -126,7 +125,7 @@ namespace HumberAreaHospitalProject.Controllers
 
                 //ArticleTitle, ArticleBody, Date,Featured, AuthorID
                 string query = "UPDATE Volunteers set VolunteerFname = @fname, VolunteerLname = @lname, Email = @email, HomePhone = @homephone, " +
-                                    "WorkPhone = @workphone, Skills = @skills, Day = @day, Time = @time, Department = @department, Notes = @notes  where VolunteerID = @id ";
+                                    "WorkPhone = @workphone, Skills = @skills, Day = @day, Time = @time, Preference = @preference, Notes = @notes  where VolunteerID = @id ";
                 //Debug.WriteLine(query);
                 SqlParameter[] parameters = new SqlParameter[12];
                 parameters[0] = new SqlParameter("@fname", volunteerFname);
@@ -138,7 +137,7 @@ namespace HumberAreaHospitalProject.Controllers
                 parameters[6] = new SqlParameter("@skills", skills);
                 parameters[7] = new SqlParameter("@day", listdays);
                 parameters[8] = new SqlParameter("@time", time);
-                parameters[9] = new SqlParameter("@department", department);
+                parameters[9] = new SqlParameter("@preference", preference);
                 parameters[10] = new SqlParameter("@notes", notes);
                 parameters[11] = new SqlParameter("@id", id);
 

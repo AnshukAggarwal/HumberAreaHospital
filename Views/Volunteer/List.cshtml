@@ -1,0 +1,38 @@
+﻿@model IEnumerable<HumberAreaHospitalProject.Models.Volunteer>
+
+@{
+    ViewBag.Title = "List";
+}
+<h2>List of Authors</h2>
+<a href="/Volunteer/Create">Add Volunteer</a>
+<div class="table">
+    <div class="row head">
+        <div class="col-sm-2">First Name</div>
+        <div class="col-sm-2">Last Name</div>
+        <div class="col-sm-2">Days</div>
+        <div class="col-sm-2">Time</div>
+        <div class="col-md-2">Department</div>
+        <div class="col-sm-2">Action</div>
+    </div>
+    @{
+
+
+        foreach (var volunteer in Model)
+        {
+
+            <div class="row">
+                <div class="col-sm-2"><a href="/Volunteer/View/@volunteer.VolunteerID">@volunteer.VolunteerFname </a></div>
+                <div class="col-sm-2">@volunteer.VolunteerLname </div>
+                <div class="col-sm-2 break-text">@volunteer.Day</div>
+                <div class="col-sm-2">@volunteer.Time</div>
+                <div class="col-sm-2">@volunteer.Department</div>
+                <div class="col-sm-2">
+                    <span><a href="/Volunteer/View/@volunteer.VolunteerID">View</a></span> |
+                    <span><a href="/Volunteer/Update/@volunteer.VolunteerID">Update</a></span> |
+                    <span><a href="/Volunteer/Delete/@volunteer.VolunteerID">Delete</a></span>
+                </div>
+            </div>
+        }
+    }
+</div>
+

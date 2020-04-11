@@ -201,6 +201,10 @@
     <Compile Include="Migrations\202004100857493_added_author_article_volunteer.Designer.cs">
       <DependentUpon>202004100857493_added_author_article_volunteer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004111049216_update_voluntee.cs" />
+    <Compile Include="Migrations\202004111049216_update_voluntee.Designer.cs">
+      <DependentUpon>202004111049216_update_voluntee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Application.cs" />
@@ -295,12 +299,26 @@
     <Content Include="Views\Survey\Form.cshtml" />
     <Content Include="Views\Survey\Thanks.cshtml" />
     <Content Include="Views\Survey\List.cshtml" />
+    <Content Include="Views\Article\List.cshtml" />
+    <Content Include="Views\Article\View.cshtml" />
+    <Content Include="Views\Article\Create.cshtml" />
+    <Content Include="Views\Article\Update.cshtml" />
+    <Content Include="Views\Article\Delete.cshtml" />
+    <Content Include="Views\Author\List.cshtml" />
+    <Content Include="Views\Author\View.cshtml" />
+    <Content Include="Views\Author\Create.cshtml" />
+    <Content Include="Views\Author\Update.cshtml" />
+    <Content Include="Views\Author\Delete.cshtml" />
+    <Content Include="Views\Volunteer\List.cshtml" />
+    <Content Include="Views\Volunteer\View.cshtml" />
+    <Content Include="Views\Volunteer\Create.cshtml" />
+    <Content Include="Views\Volunteer\Update.cshtml" />
+    <Content Include="Views\Volunteer\Delete.cshtml" />
+    <Content Include="Views\Volunteer\Apply_today.cshtml" />
+    <Content Include="Views\Article\NewsPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Article\" />
-    <Folder Include="Views\Author\" />
-    <Folder Include="Views\Volunteer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -330,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004100857493_added_author_article_volunteer.resx">
       <DependentUpon>202004100857493_added_author_article_volunteer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004111049216_update_voluntee.resx">
+      <DependentUpon>202004111049216_update_voluntee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
