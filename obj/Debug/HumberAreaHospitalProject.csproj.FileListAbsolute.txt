@@ -329,4 +329,8 @@ C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospit
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.Updated_Jobs.resources
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.added_author_article_volunteer.resources
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.csprojAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.update_voluntee.resources
+=======
+F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.added_author_article_volunteer.resources
+>>>>>>> f560e400bee5a513b48eb3e359f48c6058e36b79
