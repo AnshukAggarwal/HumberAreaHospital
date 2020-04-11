@@ -207,6 +207,10 @@
     <Compile Include="Migrations\202004111157220_Updated_Application.Designer.cs">
       <DependentUpon>202004111157220_Updated_Application.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004112112292_updated_application.cs" />
+    <Compile Include="Migrations\202004112112292_updated_application.Designer.cs">
+      <DependentUpon>202004112112292_updated_application.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Application.cs" />
@@ -236,6 +240,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include=".vs\config\applicationhost.config" />
+    <Content Include=".vs\HumberAreaHospitalProject\config\applicationhost.config" />
+    <Content Include=".vs\HumberAreaHospitalProject\v15\.suo" />
+    <Content Include=".vs\HumberAreaHospitalProject\v15\Server\sqlite3\db.lock" />
+    <Content Include=".vs\HumberAreaHospitalProject\v15\Server\sqlite3\storage.ide" />
+    <Content Include=".vs\HumberAreaHospitalProject\v15\Server\sqlite3\storage.ide-shm" />
+    <Content Include=".vs\HumberAreaHospitalProject\v15\Server\sqlite3\storage.ide-wal" />
+    <Content Include=".vs\HumberAreaHospitalProject\v16\Server\sqlite3\db.lock" />
+    <Content Include=".vs\HumberAreaHospitalProject\v16\Server\sqlite3\storage.ide" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -306,6 +319,7 @@
     <Content Include="Views\Job\Show.cshtml" />
     <Content Include="Views\Job\Update.cshtml" />
     <Content Include="Views\Application\List.cshtml" />
+    <Content Include="Views\Application\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
