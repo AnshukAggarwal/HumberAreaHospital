@@ -219,11 +219,7 @@ C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospit
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.Updated_Jobs.resources
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.added_author_article_volunteer.resources
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.csprojAssemblyReference.cache
-<<<<<<< HEAD
-<<<<<<< HEAD
 C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.update_voluntee.resources
-=======
-=======
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\bin\HumberAreaHospitalProject.dll.config
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\bin\HumberAreaHospitalProject.dll
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\bin\HumberAreaHospitalProject.pdb
@@ -328,18 +324,12 @@ F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalPr
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.Added_Job.resources
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.Added_Application.resources
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.Updated_Jobs.resources
->>>>>>> 511b1a711c553c48110b404c3b9dcc0327ac8a87
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.added_author_article_volunteer.resources
->>>>>>> f560e400bee5a513b48eb3e359f48c6058e36b79
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.Updated_Application.resources
-<<<<<<< HEAD
->>>>>>> 910aa9ddac2751a865a0f6d8cc5243f7a63ce711
 C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.Updated_Application.resources
-=======
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.csproj.GenerateResource.cache
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.csproj.CoreCompileInputs.cache
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.csproj.CopyComplete
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.dll
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.pdb
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.csprojAssemblyReference.cache
->>>>>>> 511b1a711c553c48110b404c3b9dcc0327ac8a87
