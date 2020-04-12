@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HumberAreaHospitalProject</RootNamespace>
     <AssemblyName>HumberAreaHospitalProject</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -203,19 +203,21 @@
     <Compile Include="Migrations\202004100857493_added_author_article_volunteer.Designer.cs">
       <DependentUpon>202004100857493_added_author_article_volunteer.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Migrations\202004111049216_update_voluntee.cs" />
     <Compile Include="Migrations\202004111049216_update_voluntee.Designer.cs">
       <DependentUpon>202004111049216_update_voluntee.cs</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="Migrations\202004111157220_Updated_Application.cs" />
     <Compile Include="Migrations\202004111157220_Updated_Application.Designer.cs">
       <DependentUpon>202004111157220_Updated_Application.cs</DependentUpon>
-
     </Compile>
     <Compile Include="Migrations\202004112112292_updated_application.cs" />
     <Compile Include="Migrations\202004112112292_updated_application.Designer.cs">
       <DependentUpon>202004112112292_updated_application.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004121837253_add-hr.cs" />
+    <Compile Include="Migrations\202004121837253_add-hr.Designer.cs">
+      <DependentUpon>202004121837253_add-hr.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -223,9 +225,11 @@
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\HomeRemedies.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RemedySource.cs" />
     <Compile Include="Models\Speciality.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Survey.cs" />
@@ -378,9 +382,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004111049216_update_voluntee.resx">
       <DependentUpon>202004111049216_update_voluntee.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004111157220_Updated_Application.resx">
       <DependentUpon>202004111157220_Updated_Application.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004121837253_add-hr.resx">
+      <DependentUpon>202004121837253_add-hr.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
