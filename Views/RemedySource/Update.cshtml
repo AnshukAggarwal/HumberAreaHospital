@@ -1,0 +1,35 @@
+﻿@model HumberAreaHospitalProject.Models.RemedySource
+@{
+    ViewBag.Title = "Update";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update Remedy Source</title>
+</head>
+<body>
+    <h2>Edit Details for @Model.RemedySource_name</h2>
+    <button class="btn btn-secondary">
+        <a href="/RemedySource/List">Back to List</a>
+    </button>
+    <div>
+        <form method="post" action="/RemedySource/Update/@Model.RemedySource_id">
+            <div class="form-group">
+                <label for="RemedySource_name">Name:</label>
+                <input type="text" class="form-control" name="RemedySource_name" id="RemedySource_name" value="@Model.RemedySource_name" required />
+            </div>
+            <div class="form-group">
+                <label for="RemedySource_url">URL:</label>
+                <input type="url" name="RemedySource_url" class="form-control" id="RemedySource_url" value="@Model.RemedySource_url" required />
+            </div>
+
+            <div class="controls">
+                <input class="btn btn-secondary" type="submit" value="Update" />
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

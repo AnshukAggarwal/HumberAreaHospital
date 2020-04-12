@@ -175,6 +175,7 @@
     <Compile Include="Controllers\HomeRemediesController.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RemedySourceController.cs" />
     <Compile Include="Controllers\VolunteerController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
@@ -356,6 +357,11 @@
     <Content Include="Views\HomeRemedies\User_list.cshtml" />
     <Content Include="Views\HomeRemedies\User_view.cshtml" />
     <Content Include="Views\HomeRemedies\View.cshtml" />
+    <Content Include="Views\RemedySource\Delete.cshtml" />
+    <Content Include="Views\RemedySource\List.cshtml" />
+    <Content Include="Views\RemedySource\View.cshtml" />
+    <Content Include="Views\RemedySource\New.cshtml" />
+    <Content Include="Views\RemedySource\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

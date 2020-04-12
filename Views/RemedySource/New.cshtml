@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New Remedy Source</title>
+</head>
+<body>
+    <h2>Add Remedy Source</h2>
+    <button class="btn btn-secondary">
+        <a href="/RemedySource/List">Back to List</a>
+    </button>
+    <div>
+        <form method="POST" action="/RemedySource/New">
+            <div class="form-group">
+                <label for="RemedySource_name">Name:</label>
+                <input class="form-control" type="text" name="RemedySource_name" id="RemedySource_name" required />
+            </div>
+            <div class="form-group">
+                <label for="RemedySource_url">URL:</label>
+                <input type="url" class="form-control" name="RemedySource_url" id="RemedySource_url" required />
+            </div>
+
+            <div>
+                <input class="btn btn-secondary" type="submit" value="Add" />
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
+
