@@ -29,7 +29,7 @@ namespace HumberAreaHospitalProject.Models
         //This values are Morning 8:00am- 12:00am, Afternoon 1pm-5pm, Evening 6pm-10pm
         public string Time { get; set; }
         //List of Department Child Care, Emergency, 
-        public string Department { get; set; }
+        public string Preference { get; set; }
         public string Notes { get; set; }
 
     }

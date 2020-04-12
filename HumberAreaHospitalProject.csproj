@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HumberAreaHospitalProject</RootNamespace>
     <AssemblyName>HumberAreaHospitalProject</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -168,9 +168,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\VolunteerController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
@@ -201,6 +203,20 @@
     <Compile Include="Migrations\202004100857493_added_author_article_volunteer.Designer.cs">
       <DependentUpon>202004100857493_added_author_article_volunteer.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="Migrations\202004111049216_update_voluntee.cs" />
+    <Compile Include="Migrations\202004111049216_update_voluntee.Designer.cs">
+      <DependentUpon>202004111049216_update_voluntee.cs</DependentUpon>
+	</Compile>
+    <Compile Include="Migrations\202004111157220_Updated_Application.cs" />
+    <Compile Include="Migrations\202004111157220_Updated_Application.Designer.cs">
+      <DependentUpon>202004111157220_Updated_Application.cs</DependentUpon>
+
+    </Compile>
+    <Compile Include="Migrations\202004112112292_updated_application.cs" />
+    <Compile Include="Migrations\202004112112292_updated_application.Designer.cs">
+      <DependentUpon>202004112112292_updated_application.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Application.cs" />
@@ -230,6 +246,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include=".vs\config\applicationhost.config" />
+    <Content Include=".vs\HumberAreaHospitalProject\config\applicationhost.config" />
+    <Content Include=".vs\HumberAreaHospitalProject\v15\.suo" />
+    <Content Include=".vs\HumberAreaHospitalProject\v15\Server\sqlite3\db.lock" />
+    <Content Include=".vs\HumberAreaHospitalProject\v15\Server\sqlite3\storage.ide" />
+    <Content Include=".vs\HumberAreaHospitalProject\v15\Server\sqlite3\storage.ide-shm" />
+    <Content Include=".vs\HumberAreaHospitalProject\v15\Server\sqlite3\storage.ide-wal" />
+    <Content Include=".vs\HumberAreaHospitalProject\v16\Server\sqlite3\db.lock" />
+    <Content Include=".vs\HumberAreaHospitalProject\v16\Server\sqlite3\storage.ide" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -295,12 +320,32 @@
     <Content Include="Views\Survey\Form.cshtml" />
     <Content Include="Views\Survey\Thanks.cshtml" />
     <Content Include="Views\Survey\List.cshtml" />
+    <Content Include="Views\Article\List.cshtml" />
+    <Content Include="Views\Article\View.cshtml" />
+    <Content Include="Views\Article\Create.cshtml" />
+    <Content Include="Views\Article\Update.cshtml" />
+    <Content Include="Views\Article\Delete.cshtml" />
+    <Content Include="Views\Author\List.cshtml" />
+    <Content Include="Views\Author\View.cshtml" />
+    <Content Include="Views\Author\Create.cshtml" />
+    <Content Include="Views\Author\Update.cshtml" />
+    <Content Include="Views\Author\Delete.cshtml" />
+    <Content Include="Views\Volunteer\List.cshtml" />
+    <Content Include="Views\Volunteer\View.cshtml" />
+    <Content Include="Views\Volunteer\Create.cshtml" />
+    <Content Include="Views\Volunteer\Update.cshtml" />
+    <Content Include="Views\Volunteer\Delete.cshtml" />
+    <Content Include="Views\Volunteer\Apply_today.cshtml" />
+    <Content Include="Views\Article\NewsPage.cshtml" />
+    <Content Include="Views\Job\List.cshtml" />
+    <Content Include="Views\Job\New.cshtml" />
+    <Content Include="Views\Job\Show.cshtml" />
+    <Content Include="Views\Job\Update.cshtml" />
+    <Content Include="Views\Application\List.cshtml" />
+    <Content Include="Views\Application\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Article\" />
-    <Folder Include="Views\Author\" />
-    <Folder Include="Views\Volunteer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -330,6 +375,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004100857493_added_author_article_volunteer.resx">
       <DependentUpon>202004100857493_added_author_article_volunteer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004111049216_update_voluntee.resx">
+      <DependentUpon>202004111049216_update_voluntee.cs</DependentUpon>
+	</EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004111157220_Updated_Application.resx">
+      <DependentUpon>202004111157220_Updated_Application.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

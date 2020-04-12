@@ -7,9 +7,10 @@ using HumberAreaHospitalProject.Data;
 using HumberAreaHospitalProject.Models;
 using System.Diagnostics;
 using System.Data.SqlClient;
-using HumberAreaHospitalProject.Models.ViewModel;
+using HumberAreaHospitalProject.Models.ViewModels;
 using System.Data.Entity;
 using System.Net;
+
 namespace HumberAreaHospitalProject.Controllers
 {
     public class ArticleController : Controller
