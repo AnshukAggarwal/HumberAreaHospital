@@ -449,3 +449,4 @@ C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\obj\Debug\HumberAr
 C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.dll
 C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.pdb
 C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.addhr.resources
+C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.addsocialserviceclubs.resources
