@@ -17,6 +17,17 @@ namespace HumberAreaHospitalProject.Models
 
         public string HomeRemedies_desc { get; set; }
 
+        /*
+        foreigh key of remedy resources 
+        one source has list of remedies
+        One source - many remedies
+        
+            here I have taken primary key of RemedySources table as a
+            foreign key for HomeRemedies table
+             */
 
+        public int RemedySource_id { get; set; }
+        [ForeignKey("RemedySource_id")]
+        public virtual RemedySource RemedySource { get; set; }
     }
 }

@@ -17,5 +17,7 @@ namespace HumberAreaHospitalProject.Models
 
         public string RemedySource_url { get; set; }
 
+        public ICollection<HomeRemedies> Remedies { get; set; }
+
     }
 }

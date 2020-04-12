@@ -46,5 +46,6 @@ namespace HumberAreaHospitalProject.Data
         //Krishna Patel
         public DbSet<HomeRemedies> HomeRemedies { get; set; }
 
+        public DbSet<RemedySource> RemedySource { get; set; }
     }
 }

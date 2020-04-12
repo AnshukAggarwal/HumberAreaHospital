@@ -172,6 +172,7 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeRemediesController.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\VolunteerController.cs" />
@@ -236,6 +237,7 @@
     <Compile Include="Models\ViewModels\ListSurvey.cs" />
     <Compile Include="Models\ViewModels\UpdateArticle.cs" />
     <Compile Include="Models\ViewModels\UpdateDoctor.cs" />
+    <Compile Include="Models\ViewModels\UpdateHomeRemedy.cs" />
     <Compile Include="Models\ViewModels\ViewDoctor.cs" />
     <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -347,6 +349,13 @@
     <Content Include="Views\Job\Update.cshtml" />
     <Content Include="Views\Application\List.cshtml" />
     <Content Include="Views\Application\New.cshtml" />
+    <Content Include="Views\HomeRemedies\Delete.cshtml" />
+    <Content Include="Views\HomeRemedies\List.cshtml" />
+    <Content Include="Views\HomeRemedies\New.cshtml" />
+    <Content Include="Views\HomeRemedies\Update.cshtml" />
+    <Content Include="Views\HomeRemedies\User_list.cshtml" />
+    <Content Include="Views\HomeRemedies\User_view.cshtml" />
+    <Content Include="Views\HomeRemedies\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

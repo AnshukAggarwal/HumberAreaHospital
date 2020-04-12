@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "New Home Remedy";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New Home Remedy</title>
+</head>
+<body>
+    <h2>Add a remedy</h2>
+    <button class="btn btn-secondary">
+        <a href="/HomeRemedies/List">Back to List</a>
+    </button>
+
+    <form method="POST" action="/HomeRemedies/New">
+        <div class="form-group">
+            <label for="HomeRemedies_title">Title:</label>
+            <input type="text" class="form-control" name="HomeRemedies_title" id="HomeRemedies_title" required />
+        </div>
+        <div class="form-group">
+            <label for="HomeRemedies_desc">Description:</label>
+            <input type="text" class="form-control" name="HomeRemedies_desc" id="HomeRemedies_desc" required />
+        </div>
+        <div class="form-group">
+            <label for="remedySource">Remedy Source</label>
+            <select id="remedySource" class="form-control" name="remedySource">
+                @{
+
+                    foreach (var remedySource in Model)
+                    {
+                        <option value="@remedySource.RemedySource_id">@remedySource.RemedySource_name</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div>
+            <input class="btn btn-secondary" type="submit" value="Add" />
+        </div>
+    </form>
+
+
+</body>
+</html>

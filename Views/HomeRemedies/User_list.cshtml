@@ -1,0 +1,62 @@
+﻿@model List<HumberAreaHospitalProject.Models.HomeRemedies>
+
+@{
+    ViewBag.Title = "User_list";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List of Home Remedies</title>
+</head>
+<body>
+    <h2>List of Home Remedies</h2>
+
+
+    <form action="/HomeRemedies/User_list" class="form-inline" method="GET">
+        <input type="text" name="remedysearchkey" class="form-control" id="remedysearchkey" />
+        <input class="btn btn-info" type="submit" value="Search" />
+    </form>
+    <div class="col-lg-12">
+        @{
+            foreach (var remedy in Model)
+            {
+                <div class="col-md-4">
+                    <h3><a href="/HomeRemedies/User_view/@remedy.HomeRemedies_id">@remedy.HomeRemedies_title</a></h3>
+                    <p>@remedy.HomeRemedies_desc</p>
+                    <input type="hidden" value="@remedy.RemedySource_id" />
+                    <p>Source: @remedy.RemedySource.RemedySource_name</p>
+                    <p>URL: <a href="@remedy.RemedySource.RemedySource_url">@remedy.RemedySource.RemedySource_url</a></p>
+
+
+
+                </div>
+
+            }
+
+        }
+
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="paginate pagination">
+            @{
+                <li class="page-item">
+                    <a class="page-link" href="/HomeRemedies/User_list?pagenum=@((int)ViewData["pagenum"]-1)&remedysearchkey=@ViewData["remedysearchkey"]">Prev</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link">
+                        @ViewData["pagesummary"]
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="/HomeRemedies/User_list?pagenum=@((int)ViewData["pagenum"]+1)&remedysearchkey=@ViewData["remedysearchkey"]">Next</a>
+                </li>
+            }
+        </ul>
+    </nav>
+
+
+</body>
+</html>
