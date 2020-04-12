@@ -14,7 +14,7 @@
 <body>
 
     <div>
-        <form method="post" action="/Survey/List">
+        <form method="get" action="/Survey/List">
             <select name="id">
                 @{
                     foreach (var question in Model.questions)

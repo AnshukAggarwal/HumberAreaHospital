@@ -20,11 +20,26 @@ namespace HumberAreaHospitalProject.Controllers
         //create db context
         private HospitalContext db = new HospitalContext();
         // GET: Doctor
-        public ActionResult List()
+        public ActionResult List(string searchkey)
         {
-            string query = "Select * from doctors";
-            List<Doctor> doctors = db.Doctors.SqlQuery(query).ToList();
-            return View(doctors);
+            if (searchkey == "" || searchkey == null)
+            {
+                string query = "Select * from doctors";
+                List<Doctor> doctors = db.Doctors.SqlQuery(query).ToList();
+                return View(doctors);
+            }
+            else
+            {
+                Debug.WriteLine("The searchkey is" + searchkey);
+                List<Doctor> Doctors = db.Doctors
+                    .Where(Doctor =>
+                        Doctor.DoctorFname.Contains(searchkey) ||
+                        Doctor.DoctorLname.Contains(searchkey)
+                    )
+                    .ToList();
+                return View(Doctors);
+            }
+            
         }
         public ActionResult New()
         {
