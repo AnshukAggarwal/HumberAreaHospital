@@ -367,6 +367,13 @@
     <Content Include="Views\RemedySource\View.cshtml" />
     <Content Include="Views\RemedySource\New.cshtml" />
     <Content Include="Views\RemedySource\Update.cshtml" />
+    <Content Include="Views\SocialServiceClubs\View.cshtml" />
+    <Content Include="Views\SocialServiceClubs\Delete.cshtml" />
+    <Content Include="Views\SocialServiceClubs\List.cshtml" />
+    <Content Include="Views\SocialServiceClubs\New.cshtml" />
+    <Content Include="Views\SocialServiceClubs\Update.cshtml" />
+    <Content Include="Views\SocialServiceClubs\User_list.cshtml" />
+    <Content Include="Views\SocialServiceClubs\User_view.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

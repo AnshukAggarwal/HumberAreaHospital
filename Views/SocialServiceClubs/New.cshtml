@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New Social Service Club</title>
+</head>
+<body>
+    <h2>Add a Club info</h2>
+    <button class="btn btn-secondary">
+        <a href="/SocialServiceClubs/List">Back to List</a>
+    </button>
+
+    <form method="POST" action="/SocialServiceClubs/New">
+        <div class="form-group">
+            <label for="SocialServiceClubs_title">Title:</label>
+            <input class="form-control" type="text" name="SocialServiceClubs_title" id="SocialServiceClubs_title" />
+        </div>
+        <div class="form-group">
+            <label for="SocialServiceClubs_details">Details:</label>
+            <textarea class="form-control" name="SocialServiceClubs_details" id="SocialServiceClubs_details"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="SocialServiceClubs_address">Address:</label>
+            <input class="form-control" type="text" name="SocialServiceClubs_address" id="SocialServiceClubs_address" />
+        </div>
+        <div class="form-group">
+            <label for="SocialServiceClubs_map">Map:</label>
+            <input class="form-control" type="url" name="SocialServiceClubs_map" id="SocialServiceClubs_map" />
+        </div>
+        <div class="form-group">
+            <label for="SocialServiceClubs_website">Website:</label>
+            <input class="form-control" type="text" name="SocialServiceClubs_website" id="SocialServiceClubs_website" />
+        </div>
+
+        <div>
+            <input class="btn btn-secondary" type="submit" value="Add" />
+        </div>
+    </form>
+
+
+</body>
+</html>
+
+
