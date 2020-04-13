@@ -1,0 +1,51 @@
+﻿@model List<HumberAreaHospitalProject.Models.Appointment>
+@{
+    ViewBag.Title = "List";
+}
+<div class="row" style="margin:15px;">
+    <div class="col-lg-offset-9">
+        <form action="/Appointment/List" method="GET">
+            <div class="input-group">
+                <input class="form-control" type="text" name="appointmentSearchKey" id="appointmentSearchKey" />
+                <span class="input-group-btn"><input class="btn" type="submit" value="Search" /></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<h1 style="text-align:center;">Appointments</h1>
+<div class="row">
+
+    @foreach (var appointment in Model)
+    {
+
+        <div class="col-lg-3 " style="margin: 50px 0px; ">
+
+            <div class="row"><div class="col-xs"><p><strong>Name: </strong>@appointment.appointmentFname @appointment.appointmentLname</p></div></div>
+            <div class="row">
+                <div class="col-xs"><p><strong>Email: </strong>@appointment.appointmentEmail</p></div>
+            </div>
+            <div class="row">
+                <div class="col-xs"><p><strong>Phone: </strong>@appointment.appointmentPhone</p></div>
+            </div>
+            <div class="row"><div class="col-xs"><p><strong>Date: </strong>@appointment.appointmentDate.Date.ToString("dd MMM yyyy")</p></div></div>
+            <div class="row"><div class="col-xs"><p><strong>Time: </strong>@appointment.appointmentDate.TimeOfDay</p></div></div>
+            <div class="row"><div class="col-xs"><a style="margin-right:100px;" href="/Appointment/Update/@appointment.appointmentId">Edit</a><a href="/Appointment/Delete/@appointment.appointmentId">Delete</a></div></div>
+            <div class="row"><div class="col-xs"></div></div>
+        </div>
+
+    }
+</div>
+
+<div>
+    <a class="btn btn-default" style="margin-bottom:15px;" href="/Appointment/Create">Create Appointment</a>
+</div>
+<div style="text-align:center;">
+    <div class="paginate">
+        @{
+            <a class="btn btn-primary" href="/Appointment/List?pagenum=@((int)ViewData["pagenum"]-1)&appointmentSearchKey=@ViewData["appointmentSearchKey"]">Prev</a>
+            @ViewData["pagesummary"]
+            <a class="btn btn-primary" href="/Appointment/List?pagenum=@((int)ViewData["pagenum"]+1)&appointmentSearchKey=@ViewData["appointmentSearchKey"]">Next</a>
+        }
+    </div>
+</div>

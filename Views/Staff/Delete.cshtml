@@ -1,0 +1,14 @@
+﻿@model HumberAreaHospitalProject.Models.Staff
+@{
+    ViewBag.Title = "Delete";
+}
+
+<p>Are you sure you want to delete this staff member @Model.staffFname @Model.staffLname ?</p>
+<form method="POST" action="/Staff/DeleteStaff/@Model.staffId">
+    <div>
+        <input type="submit" value="Confirm" />
+    </div>
+</form>
+<div>
+    <a class="btn" href="/Staff/List">Cancel</a>
+</div>

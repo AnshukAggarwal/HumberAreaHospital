@@ -47,5 +47,9 @@ namespace HumberAreaHospitalProject.Data
         public DbSet<HomeRemedies> HomeRemedies { get; set; }
         public DbSet<RemedySource> RemedySource { get; set; }
         public DbSet<SocialServiceClubs> SocialServiceClubs { get; set; }
+
+        //Cynthia
+        public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<Staff> Staffs { get; set; }
     }
 }
