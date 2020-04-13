@@ -66,3 +66,11 @@ textarea {
 /*
         z-index: 1;
 */
+#search_form {
+    margin: 0.5em 0;
+}
+#searchkey{
+    display: inline;
+    width: auto;
+}
+

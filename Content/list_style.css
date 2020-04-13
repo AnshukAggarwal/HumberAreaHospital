@@ -1,0 +1,60 @@
+﻿.table .col-md-2 {
+    width: 20% !important;
+    float: left;
+}
+
+.row .col-sm-2 {
+    float: left;
+}
+
+@media only screen and (max-width: 990px) {
+    /* For mobile phones: */
+    /*.table .row > div:nth-child(2){
+        display: none;
+    }*/
+    .container {
+        width: 100%;
+    }
+
+    .table .col-md-2 {
+        width: 25% !important;
+    }
+
+    .table .col-sm-2:nth-of-type(3) {
+        display: none;
+    }
+
+    .table .col-sm-2 {
+        width: 20% !important;
+    }
+}
+
+@media only screen and (max-width: 685px) {
+    /* For mobile phones: */
+    .table .row > div:nth-of-type(2) {
+        display: none;
+    }
+
+    .table .col-md-2 {
+        width: 30% !important;
+    }
+
+    .table .col-sm-2 {
+        width: 25% !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    /* For mobile phones: */
+    .pull-right {
+        float: none !important;
+    }
+
+    .table .col-sm-2:nth-of-type(4) {
+        display: none;
+    }
+
+    .table .col-sm-2 {
+        width: 30% !important;
+    }
+}

@@ -1,29 +1,17 @@
 ﻿@model HumberAreaHospitalProject.Models.ViewModels.UpdateArticle
-
 @{
     ViewBag.Title = "Update";
 }
-
-<h2>Update</h2>
-
+<h2>Update Article</h2>
 <form method="POST" action="">
-
-    @Html.AntiForgeryToken()
-
     <div class="form-horizontal">
-        <hr />
-        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
         <div class="form-group">
             <label class="control-label col-md-2" for="articleTitle">Title</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" name="articleTitle" id="articleTitle" value="@Model.article.ArticleTitle" />
-                @*@Html.EditorFor(model => model.ArticleTitle, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ArticleTitle, "", new { @class = "text-danger" })*@
+                <input type="text" class="form-control" name="articleTitle" id="articleTitle" value="@Model.article.ArticleTitle" />          
             </div>
         </div>
-
         <div class="form-group">
-
             <label class="control-label col-md-2" for="authorId">Author</label>
             <div class="col-md-10">
                 <select class="form-control" name="authorId" id="authorId">
@@ -47,26 +35,20 @@
                     }
                 </select>
                 <span>Not In the List? Add <a href="/Author/Create">here</a></span>
-
             </div>
         </div>
-
         <div class="form-group">
-
-            <label class="control-label col-md-2" for="date">Date</label>
+            <label class="control-label col-md-2" for="published">Published</label>
             <div class="col-md-10">
-                <input type="date" class="form-control" name="date" id="date" value="@Model.article.Date.ToString("yyyy-MM-dd")" />
+                <input type="date" class="form-control" name="published" id="published" value="@Model.article.Published.ToString("yyyy-MM-dd")" />
             </div>
         </div>
-
         <div class="form-group">
-
             <label class="control-label col-md-2" for="articleBody">Content</label>
             <div class="col-md-10">
                 <textarea class="form-control" name="articleBody" id="articleBody" rows="10">@Model.article.ArticleBody</textarea>
             </div>
         </div>
-
         <div class="form-group">
             <label class="control-label col-md-2" for="featured">Featured</label>
             <div class="col-md-10">
@@ -89,7 +71,6 @@
                 </select>
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <button type="submit" class="btn btn-primary">Update</button>
@@ -97,11 +78,9 @@
         </div>
     </div>
 </form>
-
 <div>
     <a href="/Article/List">Back to List</a>
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

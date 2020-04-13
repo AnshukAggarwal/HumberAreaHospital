@@ -1,15 +1,10 @@
 ﻿@model HumberAreaHospitalProject.Models.Volunteer
-
 @{
     ViewBag.Title = "Apply_today";
 }
-
 <h2>Apply Today</h2>
-
 <p>Recruitment and onboarding of new volunteers is temporarily on hold until further notice. Feel free to complete and send an application. We will keep it on file.</p>
-
 <p>Our active Volunteer Team of more than 520 contribute over 65,000 hours per year.  On any given day, there are 60 or more volunteers carrying out various assignments throughout the hospital.</p>
-
 
 <div>
     <div>Our volunteers are:</div>
@@ -20,19 +15,12 @@
     </ul>
 </div>
 
-
 <p>We recognize the needs of volunteers as having meaningful opportunities for personal growth, having a positive and supportive environment, being acknowledged and appreciated and knowing that they support quality patient care at Sault Area Hospital.</p>
-
-
 
 <h3>The Volunteer Role</h3>
 <p>A ‘volunteer’ at Sault Area Hospital is defined as an individual who willingly donates their time and energy to the hospital to provide services or support patients, visitors or staff in an approved program of Volunteer Resources. A volunteer does not receive compensation from SAH.</p>
-
 <p>Please Fill the Form Below</p>
 <form method="POST" action="/Volunteer/Create">
-
-
-    @Html.AntiForgeryToken()
 
     @*//string query = "INSERT into Volunteers (VolunteerFname, VolunteerLname, Address, Email, HomePhone, WorkPhone, Skills, Day, Time, Department, Notes)" +
         //                         " values (@fname, @lname, @address, @email, @homephone, @workphone, @skills, @day, @time, @department, @notes)";
@@ -49,8 +37,6 @@
         //parameters[9] = new SqlParameter("@department", department);
         //parameters[10] = new SqlParameter("@notes", notes);*@
     <div class="form-horizontal">
-
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             <label class="control-label col-md-2" for="volunteerFname">First Name</label>
             <div class="col-md-10">
@@ -96,7 +82,6 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="day">Which Day are you Free?</label>
             <div class="col-md-10">
-
                 <div>
                     <input type="checkbox" id="monday" name="day" value="monday" />
                     <label for="monday">Monday</label>
@@ -125,7 +110,6 @@
                     <input type="checkbox" id="sunday" name="day" value="sunday" />
                     <label for="sunday">Sunday</label>
                 </div>
-
             </div>
         </div>
         <div class="form-group">
@@ -137,7 +121,6 @@
                     <option value="evening_18-22">Evening 6:00pm - 10:00pm</option>
                 </select>
             </div>
-
         </div>
         <div class="form-group">
             <label class="control-label col-md-2" for="preference">Preference</label>
@@ -175,7 +158,6 @@
         </div>
     </div>
 </form>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
