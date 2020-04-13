@@ -31,8 +31,10 @@ namespace HumberAreaHospitalProject.Data
         {
             return new HospitalContext();
         }
+        //Anshuk Start
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Speciality> Specialities { get; set; }
+        //Anshuk End
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Application> Applications { get; set; }
 
@@ -40,8 +42,13 @@ namespace HumberAreaHospitalProject.Data
         public DbSet<Article> Articles { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Volunteer> Volunteers { get; set; }
+        //Anshuk
         public DbSet<Question> Questions { get; set; }
         public DbSet<Survey> Surveys { get; set; }
 
+        //Krishna Patel
+        public DbSet<HomeRemedies> HomeRemedies { get; set; }
+        public DbSet<RemedySource> RemedySource { get; set; }
+        public DbSet<SocialServiceClubs> SocialServiceClubs { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace HumberAreaHospitalProject.Models
         [Key]
         public int ResponseID { get; set; }
         public string ResponseText { get; set; }
+        public string UserName { get; set; }
 
         //Now I need to reference the question id
         public int QuestionID { get; set; }

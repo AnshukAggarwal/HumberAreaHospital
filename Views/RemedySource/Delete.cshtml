@@ -1,0 +1,28 @@
+﻿@model HumberAreaHospitalProject.Models.RemedySource
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Are you sure you want to delelte this remedy source?</h2>
+
+        <a href="/RemedySource/List">No</a>
+        <div>Website:@Model.RemedySource_name</div>
+        <div class="form-control">
+            <form method="post" action="/RemedySource/Delete/@Model.RemedySource_id">
+                <input class="btn btn-danger" type="submit" value="Delete" />
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿@model HumberAreaHospitalProject.Models.ViewModels.UpdateHomeRemedy
+
+@{
+    ViewBag.Title = "Update Home Remedy";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update Home Remedy</title>
+</head>
+<body>
+    <h2>Edit Details for @Model.HomeRemedies.HomeRemedies_title</h2>
+    <button class="btn btn-secondary">
+        <a href="/HomeRemedies/List">Back to List</a>
+    </button>
+    <div>
+        <form method="post" action="/HomeRemedies/Update/@Model.HomeRemedies.HomeRemedies_id">
+            <div class="form-group">
+                <label for="HomeRemedies_title">Title:</label>
+                <input class="form-control" type="text" name="HomeRemedies_title" id="HomeRemedies_title" value="@Model.HomeRemedies.HomeRemedies_title" />
+            </div>
+            <div class="form-group">
+                <label for="HomeRemedies_desc">Description:</label>
+                <textarea class="form-control" rows="5" name="HomeRemedies_desc" id="HomeRemedies_desc">@Model.HomeRemedies.HomeRemedies_desc</textarea>
+            </div>
+            <div class="form-group">
+                <label for="RemedySource_id">Remedy Source:</label>
+                <select id="RemedySource_id" name="RemedySource_id" class="form-control">
+
+                    @{
+                        foreach (var remedySource in Model.RemedySources)
+                        {
+                            var selected = "";
+                            if (Model.HomeRemedies.RemedySource_id == remedySource.RemedySource_id)
+                            {
+                                selected = "selected";
+                            }
+                            <option value="@remedySource.RemedySource_id" @selected>@remedySource.RemedySource_name</option>
+                        }
+                    }
+
+                </select>
+            </div>
+
+            <div class="controls">
+                <input class="btn btn-secondary" type="submit" value="Update" />
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

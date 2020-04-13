@@ -11,6 +11,8 @@ using HumberAreaHospitalProject.Data;
 using HumberAreaHospitalProject.Models;
 using System.Diagnostics;
 using System.IO;
+using Microsoft.AspNet.Identity;
+using ApplicationUser = HumberAreaHospitalProject.Data.ApplicationUser;
 
 namespace HumberAreaHospitalProject.Controllers
 {
@@ -19,6 +21,7 @@ namespace HumberAreaHospitalProject.Controllers
         //create db context
         private HospitalContext db = new HospitalContext();
         // GET: Speciality
+        [Authorize]
         public ActionResult List()
         {
             Debug.WriteLine("Trying to list all the records");
@@ -27,9 +30,15 @@ namespace HumberAreaHospitalProject.Controllers
             return View(specialities);
 
         }
-
+        [Authorize]
         public ActionResult New()
         {
+            
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+            Debug.WriteLine("The current userid is " + currentUserId);
+            var a = User.Identity.GetUserName();
+            Debug.WriteLine("The current userid is " + a);
             //This method only needs the add page, Nothing from the db
             return View();
         }
@@ -43,6 +52,7 @@ namespace HumberAreaHospitalProject.Controllers
             db.Database.ExecuteSqlCommand(query, parameter);
             return RedirectToAction("List");
         }
+        [Authorize]
         public ActionResult Update(int id)
         {
             /*this method will show the base info of the selected record*/
@@ -66,6 +76,7 @@ namespace HumberAreaHospitalProject.Controllers
             return RedirectToAction("List");
 
         }
+        [Authorize]
         public ActionResult View(int id)
         {
             string query = "Select * from specialities where specialityid=@id";
@@ -75,7 +86,7 @@ namespace HumberAreaHospitalProject.Controllers
             return View(selectedspeciality);
 
         }
-
+        [Authorize]
         public ActionResult Delete(int id)
         {
             string query = "Select * from specialities where specialityid=@id";

@@ -19,7 +19,7 @@ namespace HumberAreaHospitalProject.Controllers
         //create db context
         private HospitalContext db = new HospitalContext();
         // GET: Question
-
+        [Authorize]
         public ActionResult List()
         {
             Debug.WriteLine("Trying to list all the records");
@@ -28,6 +28,7 @@ namespace HumberAreaHospitalProject.Controllers
             return View(questions);
 
         }
+        [Authorize]
         public ActionResult New()
         {
             return View();
@@ -42,6 +43,7 @@ namespace HumberAreaHospitalProject.Controllers
             db.Database.ExecuteSqlCommand(query, parameter);
             return RedirectToAction("List");
         }
+        [Authorize]
         public ActionResult Update(int id)
         {
             /*this method will show the base info of the selected record*/
@@ -65,6 +67,7 @@ namespace HumberAreaHospitalProject.Controllers
             return RedirectToAction("List");
 
         }
+        [Authorize]
         public ActionResult View(int id)
         {
             string query = "Select * from questions where questionid=@id";
@@ -74,6 +77,7 @@ namespace HumberAreaHospitalProject.Controllers
             return View(selectedquestion);
 
         }
+        [Authorize]
         public ActionResult Delete(int id)
         {
             string query = "Select * from questions where questionid=@id";

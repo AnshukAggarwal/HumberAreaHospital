@@ -1,0 +1,61 @@
+﻿@model List<HumberAreaHospitalProject.Models.HomeRemedies>
+@{
+    ViewBag.Title = "List of Home Remedies";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <h2>List of Home Remedies</h2>
+    <button class="btn btn-secondary"><a href="/HomeRemedies/New">Add New Remedy</a></button>
+
+    <form action="/HomeRemedies/List" class="form-inline" method="GET">
+        <input type="text" name="remedysearchkey" class="form-control" id="remedysearchkey" />
+        <input type="submit" value="Search" class="btn btn-info" />
+    </form>
+    <div class="col-lg-12">
+        @{
+            foreach (var remedy in Model)
+            {
+                <div class="col-md-4">
+                    <h3><a href="/HomeRemedies/View/@remedy.HomeRemedies_id">@remedy.HomeRemedies_title</a></h3>
+                    <p>@remedy.HomeRemedies_desc</p>
+                    <input type="hidden" value="@remedy.RemedySource_id" />
+                    <p>Source: @remedy.RemedySource.RemedySource_name</p>
+                    <p>URL: <a href="@remedy.RemedySource.RemedySource_url">@remedy.RemedySource.RemedySource_url</a></p>
+
+                    <p>
+                        <a href="/HomeRemedies/Update/@remedy.HomeRemedies_id" class="btn btn-default" type="button">Update</a>
+                        <a href="/HomeRemedies/Delete/@remedy.HomeRemedies_id" class="btn btn-default" type="button">Delete</a>
+                    </p>
+                </div>
+
+            }
+
+        }
+
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="paginate pagination">
+            @{
+                <li class="page-item">
+                    <a class="page-link" href="/HomeRemedies/List?pagenum=@((int)ViewData["pagenum"]-1)&remedysearchkey=@ViewData["remedysearchkey"]">Prev</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link">
+                        @ViewData["pagesummary"]
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="/HomeRemedies/List?pagenum=@((int)ViewData["pagenum"]+1)&remedysearchkey=@ViewData["remedysearchkey"]">Next</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</body>
+</html>
