@@ -449,11 +449,9 @@ C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\obj\Debug\HumberAr
 C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.pdb
 C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.addhr.resources
 C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.addsocialserviceclubs.resources
-<<<<<<< HEAD
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.csprojAssemblyReference.cache
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.addhr.resources
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.addsocialserviceclubs.resources
-=======
 C:\Users\Zer\Source\Repos\HumberAreaHospital\bin\HumberAreaHospitalProject.dll.config
 C:\Users\Zer\Source\Repos\HumberAreaHospital\bin\HumberAreaHospitalProject.dll
 C:\Users\Zer\Source\Repos\HumberAreaHospital\bin\HumberAreaHospitalProject.pdb
@@ -686,4 +684,6 @@ C:\xampp\htdocs\Hospital-project_firstrepo\New folder\HumberAreaHospital\obj\Deb
 C:\xampp\htdocs\Hospital-project_firstrepo\New folder\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.csproj.CopyComplete
 C:\xampp\htdocs\Hospital-project_firstrepo\New folder\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.dll
 C:\xampp\htdocs\Hospital-project_firstrepo\New folder\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.pdb
->>>>>>> c4c5d340a73740f19adc60e5a0adfa2115c4f09e
+C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.addhr.resources
+C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.addsocialserviceclubs.resources
+C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.Appointment_Staff.resources
