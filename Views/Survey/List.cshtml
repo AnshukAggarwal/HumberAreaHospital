@@ -14,7 +14,7 @@
 <body>
 
     <div>
-        <form method="get" action="/Survey/List">
+        <form method="post" action="/Survey/List">
             <select name="id">
                 @{
                     foreach (var question in Model.questions)
@@ -30,7 +30,13 @@
 
     </div>
     <div>
-        Here the responses will go
+        @{
+            foreach (var answer in Model.answers)
+            {
+                <div>@answer.ResponseText</div>
+            }
+
+        }
     </div>
 </body>
 </html>

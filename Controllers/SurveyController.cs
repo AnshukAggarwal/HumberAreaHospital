@@ -44,26 +44,30 @@ namespace HumberAreaHospitalProject.Controllers
         {
             return View();
         }
+        public ActionResult List()
+        {
+            ListSurvey question = new ListSurvey();
+            question.questions = db.Questions.ToList();
+            question.answers = db.Surveys.ToList();
+            return View(question);
+            //return View();
+        }
+       [HttpPost]
         public ActionResult List(string id)
         {
-            if (id == "" || id == null)
-            {
-                Debug.WriteLine("Trying to list all the records");
-                string query = "Select * from questions";
-                List<Question> questions = db.Questions.SqlQuery(query).ToList();
-                var ListSurvey = new ListSurvey();
-                ListSurvey.questions = questions;
-                return View(questions);
-            }
-            else
-            {
-                string query = "Select * from surveys where questionid=@id";
-                SqlParameter parameter = new SqlParameter("@id", id);
-                List<Survey> answers = db.Surveys.SqlQuery(query, parameter).ToList();
-                var ListSurvey = new ListSurvey();
-                ListSurvey.surveys = answers;
-                return View(answers);
-            }
+            string basequery = "Select * from questions";
+            List<Question> questions = db.Questions.SqlQuery(basequery).ToList();
+
+            string query = "Select * from surveys where questionid=@id";
+            SqlParameter parameter = new SqlParameter("@id", id);
+            List<Survey> answers = db.Surveys.SqlQuery(query, parameter).ToList();
+            var ListSurvey = new ListSurvey();
+            ListSurvey.answers = answers;
+            ListSurvey.questions = questions;
+
+            return View(ListSurvey);
+            
+            
 
         }
         //[HttpPost]

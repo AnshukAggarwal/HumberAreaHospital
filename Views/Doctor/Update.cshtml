@@ -11,27 +11,27 @@
     <title></title>
 </head>
 <body>
-    <div>
-        <h2>Update @Model.doctor.Title @Model.doctor.DoctorFname @Model.doctor.DoctorLname</h2>
-        <a href="/Doctor/List">Back to List</a>
+    <h2>Update @Model.doctor.Title @Model.doctor.DoctorFname @Model.doctor.DoctorLname</h2>
+    <div class="navbar">
+        <a class="navlink" href="/Doctor/List">Back to List</a>
     </div>
     <section>
         <form method="post" action="/Doctor/Update/@Model.doctor.DoctorID">
-            <div>
-                <label for="Title">Title</label>
-                <input type="text" id="Title" name="Title" value="@Model.doctor.Title" />
+            <div class="form-group">
+                <label class="col-sm-2 col-form-label" for="Title">Title</label>
+                <input type="text" class="form-control" id="Title" name="Title" value="@Model.doctor.Title" />
             </div>
-            <div>
-                <label for="DoctorFname">First Name</label>
-                <input type="text" id="DoctorFname" name="DoctorFname" value="@Model.doctor.DoctorFname" />
+            <div class="form-group">
+                <label class="col-sm-2 col-form-label" for="DoctorFname">First Name</label>
+                <input type="text" class="form-control" id="DoctorFname" name="DoctorFname" value="@Model.doctor.DoctorFname" />
             </div>
-            <div>
-                <label for="DoctorLname">Last Name</label>
-                <input type="text" id="DoctorLname" name="DoctorLname" value="@Model.doctor.DoctorLname" />
+            <div class="form-group">
+                <label class="col-sm-2 col-form-label" for="DoctorLname">Last Name</label>
+                <input type="text" class="form-control" id="DoctorLname" name="DoctorLname" value="@Model.doctor.DoctorLname" />
             </div>
-            <div>
-                <label for="SpecialityID">Speciality</label>
-                <select id="SpecialityID" name="SpecialityID">
+            <div class="form-group">
+                <label class="col-sm-2 col-form-label" for="SpecialityID">Speciality</label>
+                <select id="SpecialityID" class="form-control" name="SpecialityID">
                     <option value="@Model.doctor.SpecialityID">@Model.doctor.Specialities.Name</option>
                     @{
                         foreach (var speciality in Model.specialities)
@@ -42,8 +42,8 @@
 
                 </select>
             </div>
-            <div>
-                <input type="submit" value="Update" />
+            <div class="inpfield">
+                <input type="submit" class="btn btn-primary" value="Update" />
             </div>
         </form>
     </section>

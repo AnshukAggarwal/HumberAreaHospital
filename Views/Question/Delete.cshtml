@@ -14,11 +14,11 @@
     <div>
         <h2>Are you sure you want to delelte the record of @Model.QuestionText?.</h2>
         <h2>If not please go back to the list</h2>
-        <a href="/Question/List">Back to List</a>
+        <a class="nav-link" href="/Question/List">Back to List</a>
         <div class="info">Text: @Model.QuestionText</div>
         <div class="controls">
             <form method="post" action="/Question/Delete/@Model.QuestionID">
-                <input type="submit" value="Delete" />
+                <input type="submit" class="btn btn-danger" value="Delete" />
             </form>
         </div>
 
