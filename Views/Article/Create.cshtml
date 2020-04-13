@@ -1,30 +1,19 @@
 ﻿@model  List<HumberAreaHospitalProject.Models.Author>
-
 @{
     ViewBag.Title = "Create";
 }
-
 <h2>Create Article</h2>
 
-
 <form method="POST" action="">
-
     @Html.AntiForgeryToken()
-
     <div class="form-horizontal">
-        <hr />
-        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
         <div class="form-group">
             <label class="control-label col-md-2" for="articleTitle">Title</label>
             <div class="col-md-10">
                 <input type="text" class="form-control" name="articleTitle" id="articleTitle" />
-                @*@Html.EditorFor(model => model.ArticleTitle, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ArticleTitle, "", new { @class = "text-danger" })*@
             </div>
         </div>
-
         <div class="form-group">
-
             <label class="control-label col-md-2" for="authorId">Author</label>
             <div class="col-md-10">
                 <select class="form-control" name="authorId" id="authorId">
@@ -40,36 +29,29 @@
                 </select>
                 <span>Not In the List? Add <a href="/Author/Create">here</a></span>
             </div>
-            
+
         </div>
-
         <div class="form-group">
-
-            <label class="control-label col-md-2" for="date">Date</label>
+            <label class="control-label col-md-2" for="published">Published</label>
             <div class="col-md-10">
-                <input type="date" class="form-control" name="date" id="date" />
+                <input type="date" class="form-control" name="published" id="published" />
             </div>
         </div>
-
         <div class="form-group">
-
             <label class="control-label col-md-2" for="articleBody">Content</label>
             <div class="col-md-10">
                 <textarea class="form-control" name="articleBody" id="articleBody" rows="10"></textarea>
             </div>
         </div>
-
         <div class="form-group">
             <label class="control-label col-md-2" for="featured">Featured</label>
             <div class="col-md-10">
                 <select class="form-control" name="featured" id="featured">
-
                     <option value="NO">NO</option>
                     <option value="YES">YES</option>
                 </select>
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <button type="submit" class="btn btn-primary">+ Add New Article</button>
@@ -77,11 +59,9 @@
         </div>
     </div>
 </form>
-
 <div>
     <a href="/Article/List">Back to List</a>
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

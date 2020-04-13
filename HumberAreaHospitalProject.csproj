@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -176,6 +177,7 @@
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RemedySourceController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\VolunteerController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
@@ -225,9 +227,14 @@
     <Compile Include="Migrations\202004121933002_add-socialserviceclubs.Designer.cs">
       <DependentUpon>202004121933002_add-socialserviceclubs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004131924055_Appointment_Staff.cs" />
+    <Compile Include="Migrations\202004131924055_Appointment_Staff.Designer.cs">
+      <DependentUpon>202004131924055_Appointment_Staff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Application.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Doctor.cs" />
@@ -239,8 +246,11 @@
     <Compile Include="Models\SocialServiceClubs.cs" />
     <Compile Include="Models\Speciality.cs" />
     <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Staff.cs" />
     <Compile Include="Models\Survey.cs" />
+    <Compile Include="Models\ViewModels\AppointmentViewModel.cs" />
     <Compile Include="Models\ViewModels\ListSurvey.cs" />
+    <Compile Include="Models\ViewModels\StaffSpecialty.cs" />
     <Compile Include="Models\ViewModels\UpdateArticle.cs" />
     <Compile Include="Models\ViewModels\UpdateDoctor.cs" />
     <Compile Include="Models\ViewModels\UpdateHomeRemedy.cs" />
@@ -254,6 +264,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\list_style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -374,6 +385,14 @@
     <Content Include="Views\SocialServiceClubs\Update.cshtml" />
     <Content Include="Views\SocialServiceClubs\User_list.cshtml" />
     <Content Include="Views\SocialServiceClubs\User_view.cshtml" />
+    <Content Include="Views\Staff\Create.cshtml" />
+    <Content Include="Views\Staff\Delete.cshtml" />
+    <Content Include="Views\Staff\List.cshtml" />
+    <Content Include="Views\Staff\Update.cshtml" />
+    <Content Include="Views\Appointment\Create.cshtml" />
+    <Content Include="Views\Appointment\Delete.cshtml" />
+    <Content Include="Views\Appointment\list.cshtml" />
+    <Content Include="Views\Appointment\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -418,6 +437,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004121933002_add-socialserviceclubs.resx">
       <DependentUpon>202004121933002_add-socialserviceclubs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004131924055_Appointment_Staff.resx">
+      <DependentUpon>202004131924055_Appointment_Staff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

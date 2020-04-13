@@ -1,0 +1,56 @@
+﻿@model List<HumberAreaHospitalProject.Models.Staff>
+@{
+    ViewBag.Title = "List";
+}<div class="row" style="margin:15px;">
+    <div class="col-lg-offset-9">
+        <form action="/Staff/List" method="GET">
+            <div class="input-group">
+                <input class="form-control" type="text" name="staffSearchKey" id="staffSearchKey" />
+                <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Search" /></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<h1 style="text-align:center;">Staff Directory</h1>
+
+@foreach (var staff in Model)
+{
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-10">
+                    <h4>@staff.staffFname @staff.staffLname </h4>
+                </div>
+                <div class="col-md-1">
+                    <h4>@staff.Speciality.Name</h4>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            <p><strong>Phone Ext:</strong> @staff.staffExt</p><p><strong> Email:</strong> @staff.staffEmail</p>
+
+            @if ((bool)TempData["isLogged"] == true)
+            {
+                <div> <a style="padding-right:5px;" href="/Staff/Update/@staff.staffId">Edit</a><a href="/Staff/Delete/@staff.staffId">Delete</a></div>
+
+            }
+
+        </div>
+    </div>
+}
+@if ((bool)TempData["isLogged"] == true)
+{
+    <div>
+        <a class="btn btn-default" style="margin-bottom:15px;" href="/Staff/Create">Create Staff</a>
+    </div>
+}
+<div class="paginate">
+    @{
+        <a class="btn btn-primary" href="/Staff/List?pagenum=@((int)ViewData["pagenum"]-1)&staffSearchKey=@ViewData["staffSearchKey"]">Prev</a>
+        @ViewData["pagesummary"]
+        <a class="btn btn-primary" href="/Staff/List?pagenum=@((int)ViewData["pagenum"]+1)&staffSearchKey=@ViewData["staffSearchKey"]">Next</a>
+    }
+</div>

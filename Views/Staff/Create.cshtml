@@ -1,0 +1,38 @@
+﻿@model HumberAreaHospitalProject.Models.ViewModels.StaffSpecialty
+@{
+    ViewBag.Title = "Create";
+}
+
+<form method="POST" action="/Staff/Create">
+    <h1>Staff</h1>
+    <div>
+        <label>First name:</label>
+        <input class="form-control" type="text" name="firstName" />
+    </div>
+    <div>
+        <label>Last name:</label>
+        <input class="form-control" type="text" name="lastName" />
+    </div>
+    <div>
+        <label>Phone:</label>
+        <input class="form-control" type="text" name="ext" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input class="form-control" type="email" name="email" />
+    </div>
+
+    <div>
+        <select type="text" name="specialtyID">
+            @{
+                foreach (var specialty in @Model.Specialities)
+                {
+                    <option value="@specialty.SpecialityID">@specialty.Name</option>
+                }
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" name="submit" value="Create" class="btn" />
+    </div>
+</form>

@@ -1,17 +1,22 @@
 ﻿@model IEnumerable<HumberAreaHospitalProject.Models.Volunteer>
-
 @{
     ViewBag.Title = "List";
 }
-<h2>List of Authors</h2>
-<a href="/Volunteer/Create">Add Volunteer</a>
+<link href="~/Content/list_style.css" rel="stylesheet" type="text/css" />
+<h2>List of Volunteers</h2>
+<a href="/Volunteer/Create" class="btn btn-primary">Add Volunteer</a>
+<form action="/Volunteer/List" method="GET" id="search_form">
+    <input type="text" name="searchkey" id="searchkey" class="form-control"  placeholder="Search here ..."/>
+    <button type="submit" class="btn btn-info">Search</button>
+</form>
+
 <div class="table">
     <div class="row head">
-        <div class="col-sm-2">First Name</div>
         <div class="col-sm-2">Last Name</div>
+        <div class="col-sm-2">First Name</div>
         <div class="col-sm-2">Days</div>
         <div class="col-sm-2">Time</div>
-        <div class="col-md-2">Department</div>
+        <div class="col-sm-2">Preference</div>
         <div class="col-sm-2">Action</div>
     </div>
     @{
@@ -21,11 +26,11 @@
         {
 
             <div class="row">
-                <div class="col-sm-2"><a href="/Volunteer/View/@volunteer.VolunteerID">@volunteer.VolunteerFname </a></div>
-                <div class="col-sm-2">@volunteer.VolunteerLname </div>
+                <div class="col-sm-2"><a href="/Volunteer/View/@volunteer.VolunteerID">@volunteer.VolunteerLname </a></div>
+                <div class="col-sm-2">@volunteer.VolunteerFname </div>
                 <div class="col-sm-2 break-text">@volunteer.Day</div>
                 <div class="col-sm-2">@volunteer.Time</div>
-                <div class="col-sm-2">@volunteer.Department</div>
+                <div class="col-sm-2">@volunteer.Preference</div>
                 <div class="col-sm-2">
                     <span><a href="/Volunteer/View/@volunteer.VolunteerID">View</a></span> |
                     <span><a href="/Volunteer/Update/@volunteer.VolunteerID">Update</a></span> |
@@ -35,4 +40,28 @@
         }
     }
 </div>
+<div class="pull-right text-center">
+    <div>
+        @ViewData["pagesummary"]
+    </div>
+    <ul class="pagination">
 
+
+        <!--       Link is disabled if the pagenum is less than 1, mean page is 1-->
+        <li class="@if ((int)ViewData["pagenum"] <= 1 || ViewData["pagenum"] == null) { ViewData["pagenum"] = 1; @("disabled");  } ">
+            <a href="?pagenum=1&searchkey=@ViewData["searchkey"]">&lt;&lt;</a>
+        </li>
+        <!--       Link is disabled if the pagenum is less than 1, mean page is 1-->
+        <li class="@if ((int)ViewData["pagenum"] <= 1) { @("disabled");} ">
+            <a href="?pagenum=@if ((int)ViewData["pagenum"] <= 1) { @(1); } else {@((int)ViewData["pagenum"]-1); }&searchkey=@ViewData["searchkey"]">&lt;</a>
+        </li>
+        <!--        Link is disabled if its on the last page -->
+        <li class="@if ((int)ViewData["pagenum"] == (int)ViewData["maxpage"]){@("disabled");} ">
+            <a href="?pagenum=@if ((int)ViewData["pagenum"] == (int)ViewData["maxpage"]) { @((int)ViewData["maxpage"]); } else {@((int)ViewData["pagenum"]+1); }&searchkey=@ViewData["searchkey"]" ">&gt;</a>
+        </li>
+        <!--        Link is disabled if its on the last page -->
+        <li class="@if ((int)ViewData["pagenum"] == (int)ViewData["maxpage"]) { @("disabled"); } ">
+            <a href="?pagenum=@((int)ViewData["maxpage"])&searchkey=@ViewData["searchkey"]">&gt;&gt;</a>
+        </li>
+    </ul>
+</div>

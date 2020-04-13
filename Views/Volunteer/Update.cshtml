@@ -1,31 +1,10 @@
 ﻿@model HumberAreaHospitalProject.Models.Volunteer
-
 @{
     ViewBag.Title = "Update";
 }
-
 <h2>Update</h2>
 
-
 <form method="POST" action="/Volunteer/Update/@Model.VolunteerID">
-
-
-    @Html.AntiForgeryToken()
-
-    @*//string query = "INSERT into Volunteers (VolunteerFname, VolunteerLname, Address, Email, HomePhone, WorkPhone, Skills, Day, Time, Department, Notes)" +
-        //                         " values (@fname, @lname, @address, @email, @homephone, @workphone, @skills, @day, @time, @department, @notes)";
-        //SqlParameter[] parameters = new SqlParameter[11];
-        //parameters[0] = new SqlParameter("@fname", volunteerFname);
-        //parameters[1] = new SqlParameter("@lname", volunteerLname);
-        //parameters[2] = new SqlParameter("@address", address);
-        //parameters[3] = new SqlParameter("@email", email);
-        //parameters[4] = new SqlParameter("@homephone", homePhone);
-        //parameters[5] = new SqlParameter("@workphone", workPhone);
-        //parameters[6] = new SqlParameter("@skills", skills);
-        //parameters[7] = new SqlParameter("@day", day);
-        //parameters[8] = new SqlParameter("@time", time);
-        //parameters[9] = new SqlParameter("@department", department);
-        //parameters[10] = new SqlParameter("@notes", notes);*@
     <div class="form-horizontal">
         <h4>Volunteer</h4>
         <hr />
@@ -111,7 +90,6 @@
 
 
                 }
-
             </div>
         </div>
         <div class="form-group">
@@ -138,10 +116,8 @@
 
                         }
                     }
-
                 </select>
             </div>
-
         </div>
         <div class="form-group">
             <label class="control-label col-md-2" for="preference">Preference</label>
@@ -187,13 +163,9 @@
     </div>
 </form>
 
-
-
 <div>
     <a href="/Volunteer/List"> Back to List</a>
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-

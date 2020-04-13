@@ -1,0 +1,41 @@
+﻿@model HumberAreaHospitalProject.Models.ViewModels.AppointmentViewModel
+@{
+    ViewBag.Title = "Update";
+}
+
+<form method="POST" action="/Appointment/Update/@Model.appointment.appointmentId">
+    <h1>Appointment</h1>
+    <div>
+        <label>First name:</label>
+        <input class="form-control" type="text" name="firstName" value="@Model.appointment.appointmentFname"/>
+    </div>
+    <div>
+        <label>Last name:</label>
+        <input class="form-control" type="text" name="lastName" value="@Model.appointment.appointmentLname"/>
+    </div>
+    <div>
+        <label>Phone:</label>
+        <input class="form-control" type="text" name="phoneNum" value="@Model.appointment.appointmentPhone" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input class="form-control" type="email" name="email" value="@Model.appointment.appointmentEmail"/>
+    </div>
+    <div>
+        <label>Date:</label>
+        <input class="form-control" type="datetime" name="dateTime" value="@Model.appointment.appointmentDate"/>
+    </div>
+    <div>
+        <select type="text" name="doctorID">
+            @{
+                foreach (var doctor in @Model.doctors)
+                {
+                    <option value="@doctor.DoctorID">@doctor.DoctorFname @doctor.DoctorLname</option>
+                }
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" name="submit" value="Update" class="btn" />
+    </div>
+</form>
