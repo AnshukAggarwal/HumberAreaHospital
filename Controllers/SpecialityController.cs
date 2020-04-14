@@ -24,6 +24,7 @@ namespace HumberAreaHospitalProject.Controllers
         [Authorize]
         public ActionResult List()
         {
+            //Method to list all specialities
             Debug.WriteLine("Trying to list all the records");
             string query = "Select * from specialities";
             List<Speciality> specialities = db.Specialities.SqlQuery(query).ToList();
@@ -33,7 +34,7 @@ namespace HumberAreaHospitalProject.Controllers
         [Authorize]
         public ActionResult New()
         {
-            
+            //Method to add a new speciality
             string currentUserId = User.Identity.GetUserId();
             ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
             Debug.WriteLine("The current userid is " + currentUserId);
@@ -79,6 +80,7 @@ namespace HumberAreaHospitalProject.Controllers
         [Authorize]
         public ActionResult View(int id)
         {
+            //View a particluar record
             string query = "Select * from specialities where specialityid=@id";
             SqlParameter parameter = new SqlParameter("@id", id);
             Speciality selectedspeciality = db.Specialities.SqlQuery(query, parameter).FirstOrDefault();
@@ -89,6 +91,7 @@ namespace HumberAreaHospitalProject.Controllers
         [Authorize]
         public ActionResult Delete(int id)
         {
+            //base info for a particular record
             string query = "Select * from specialities where specialityid=@id";
             SqlParameter parameter = new SqlParameter("@id", id);
             Speciality selectedspeciality = db.Specialities.SqlQuery(query, parameter).FirstOrDefault();
@@ -98,6 +101,7 @@ namespace HumberAreaHospitalProject.Controllers
         [HttpPost]
         public ActionResult Delete(int? id)
         {
+            //Method to delete a record
             string query = "Delete from specialities where specialityid=@id";
             SqlParameter parameter = new SqlParameter("@id", id);
             db.Database.ExecuteSqlCommand(query, parameter);

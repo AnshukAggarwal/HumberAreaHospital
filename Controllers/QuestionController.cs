@@ -21,7 +21,7 @@ namespace HumberAreaHospitalProject.Controllers
         // GET: Question
         [Authorize]
         public ActionResult List()
-        {
+        {   //This method lists all the questions
             Debug.WriteLine("Trying to list all the records");
             string query = "Select * from questions";
             List<Question> questions= db.Questions.SqlQuery(query).ToList();
@@ -31,6 +31,7 @@ namespace HumberAreaHospitalProject.Controllers
         [Authorize]
         public ActionResult New()
         {
+            //Method to add a new questions
             return View();
         }
         [HttpPost]
@@ -58,6 +59,7 @@ namespace HumberAreaHospitalProject.Controllers
         [HttpPost]
         public ActionResult Update(int id,string QuestionText)
         {
+            //Method to update a record
             Debug.WriteLine("I am trying to update record with id" + id);
             string query = "Update questions set QuestionText=@QuestionText where questionid=@id";
             SqlParameter[] parameters = new SqlParameter[2];

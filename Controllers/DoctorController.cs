@@ -24,24 +24,8 @@ namespace HumberAreaHospitalProject.Controllers
         // GET: Doctor
         [Authorize]
         public ActionResult List(string searchBy, string search, int? page)
-        {
-            //if (searchkey == "" || searchkey == null)
-            //{
-            //    string query = "Select * from doctors";
-            //    List<Doctor> doctors = db.Doctors.SqlQuery(query).ToList();
-            //    return View(doctors);
-            //}
-            //else
-            //{
-            //    Debug.WriteLine("The searchkey is" + searchkey);
-            //    List<Doctor> Doctors = db.Doctors
-            //        .Where(Doctor =>
-            //            Doctor.DoctorFname.Contains(searchkey) ||
-            //            Doctor.DoctorLname.Contains(searchkey)
-            //        )
-            //        .ToList();
-            //    return View(Doctors);
-            //}
+        {//This method is used to list all the doctors and has the search and pagination functionality
+            
             if (searchBy == "First Name")
             {
                 return View(db.Doctors.Where(x => x.DoctorFname.Contains(search) || search == null).ToList().ToPagedList(page ?? 1, 3));
@@ -82,6 +66,7 @@ namespace HumberAreaHospitalProject.Controllers
         [Authorize]
         public ActionResult View(int id)
         {
+            //This method will use a viewmodel. It needs a particular doctor and list of similar doctors.
             Debug.WriteLine("I am trying to view record of doctor having id:" + id);
             string query = "Select * from doctors where DoctorID=@id";
             SqlParameter parameter = new SqlParameter("@id", id);
