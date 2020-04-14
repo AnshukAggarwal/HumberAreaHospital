@@ -1,26 +1,36 @@
-﻿@model HumberAreaHospitalProject.Models.FAQ
+﻿
+@model HumberAreaHospitalProject.Models.Job
 @{
     ViewBag.Title = "Show";
 }
 
-<h2>FAQ DETAILS </h2>
+<h2>@Model.JobTitle </h2>
+<a href="/Application/New/?JobID=@Model.JobID">APPLY TO JOB</a>
 <div class="navbar">
-    <a class="navlink" href="/FAQ/List">Back to List</a>
+    <a class="navlink" href="/Job/List">Back to List</a>
 </div>
 <div>
     <div class="col2">
         <dl class="row">
-            <dt class="col-sm-3">QUESTION</dt>
-            <dd class="col-sm-9">@Model.FAQQuestion</dd>
+            <dt class="col-sm-3">Job Category</dt>
+            <dd class="col-sm-9">@Model.JobCategory</dd>
         </dl>
         <dl class="row">
-            <dt class="col-sm-3">ANSWER</dt>
-            <dd class="col-sm-9">@Model.FAQAnswer</dd>
+            <dt class="col-sm-3">Job Type</dt>
+            <dd class="col-sm-9">@Model.JobType</dd>
         </dl>
         <dl class="row">
-            <dt class="col-sm-3">CATEGORY</dt>
-            <dd class="col-sm-9">@Model.FAQCategory</dd>
+            <dt class="col-sm-3">Post Date</dt>
+            <dd class="col-sm-9">@Model.PostDate.ToString("dd/MM/yyyy")</dd>
         </dl>
     </div>
 
 </div>
+<dl class="row">
+    <dt class="col-sm-3">Description:</dt>
+    <dd class="col-sm-9 text-justify">@Model.Description</dd>
+</dl>
+<dl class="row">
+    <dt class="col-sm-3">Requirements:</dt>
+    <dd class="col-sm-9 text-justify">@Model.Requirements</dd>
+</dl>

@@ -53,10 +53,10 @@ namespace HumberAreaHospitalProject.Controllers
         }
         //Add new Application
         [HttpPost]
-        public ActionResult New(string ApplicantFirstName, string ApplicantLastName, string ApplicantEmail, string ApplicantPhone, string ApplicantAddress, string ApplicantCity,string ApplicantProvince,string ApplicantZipCode)
+        public ActionResult New(int JobID, string ApplicantFirstName, string ApplicantLastName, string ApplicantEmail, string ApplicantPhone, string ApplicantAddress, string ApplicantCity,string ApplicantProvince,string ApplicantZipCode)
         {
             string ApplicationDate = DateTime.Now.ToString("dd/MM/yyyy");
-            string query = "insert into Applications (ApplicantFirstName, ApplicantLastName, ApplicantEmail, ApplicantPhone, ApplicantAddress, ApplicantCity, ApplicantProvince, ApplicantZipCode, ApplicantionDate) values (@JobTitle, @JobCategory, @JobType, @Description, @Requirements, @ApplicationDate)";//Sql query to add new application
+            string query = "insert into Applications (ApplicantFirstName, ApplicantLastName, ApplicantEmail, ApplicantPhone, ApplicantAddress, ApplicantCity, ApplicantProvince, ApplicantZipCode, ApplicantionDate,JobID) values (@JobTitle, @JobCategory, @JobType, @Description, @Requirements, @ApplicationDate,@JobID)";//Sql query to add new application
             SqlParameter[] sqlparams = new SqlParameter[9];
             sqlparams[0] = new SqlParameter("ApplicantFirstName", ApplicantFirstName);
             sqlparams[1] = new SqlParameter("@ApplicantLastName", ApplicantLastName);
@@ -67,6 +67,7 @@ namespace HumberAreaHospitalProject.Controllers
             sqlparams[6] = new SqlParameter("@ApplicantProvince", ApplicantProvince);
             sqlparams[7] = new SqlParameter("@ApplicantZipCode", ApplicantZipCode);
             sqlparams[8] = new SqlParameter("@ApplicationDate", ApplicationDate);
+            sqlparams[8] = new SqlParameter("@JobID", JobID);
             db.Database.ExecuteSqlCommand(query, sqlparams);
             return RedirectToAction("List");
         }
