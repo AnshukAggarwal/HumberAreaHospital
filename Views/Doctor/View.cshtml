@@ -11,19 +11,17 @@
     <title></title>
 </head>
 <body>
-    <div>
-        <h2>Details for @Model.doctor.Title @Model.doctor.DoctorFname @Model.doctor.DoctorLname</h2>
-        <a href="/Doctor/List">Back to List</a>
+    <h2>Details for @Model.doctor.Title @Model.doctor.DoctorFname @Model.doctor.DoctorLname</h2>
+    <div class="navbar">
+        <a class="navlink" href="/Doctor/List">Back to List</a>
+        <a class="navlink" href="/Doctor/Update/@Model.doctor.DoctorID">Update</a>
+        <a class="navlink" href="/Doctor/Delete/@Model.doctor.DoctorID">Delete</a>
     </div>
     <section>
         <div>Title: @Model.doctor.Title</div>
         <div>First Name: @Model.doctor.DoctorFname</div>
         <div>Last Name: @Model.doctor.DoctorLname</div>
         <div>Speciality: @Model.doctor.Specialities.Name</div>
-    </section>
-    <section>
-        <a href="/Doctor/Update/@Model.doctor.DoctorID">Update</a>
-        <a href="/Doctor/Delete/@Model.doctor.DoctorID">Delete</a>
     </section>
     <section>
         <h2>@Model.similardoctors.Count other Doctors to consider</h2>

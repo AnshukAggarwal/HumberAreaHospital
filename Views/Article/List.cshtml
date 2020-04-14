@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HumberAreaHospitalProject.Models.Article>
+@{
+    ViewBag.Title = "List";
+}
+<link href="~/Content/list_style.css" rel="stylesheet" type="text/css" />
+<div>
+    <h2>List of Articles</h2>
+    <a href="/Article/Create" class="btn btn-primary">Add Article</a>
+    <form action="/Article/List" method="GET" id="search_form">
+        <input type="text" name="searchkey" id="searchkey" class="form-control" placeholder="Search here ..."/>
+        <button type="submit" class="btn btn-info">Search</button>
+    </form>
+    <div class="table">
+        <div class="row head">
+            <div class="col-md-2">Title</div>
+            <div class="col-md-2">Published</div>
+            <div class="col-md-2">Author</div>
+            <div class="col-md-2">Action</div>
+        </div>
+        @{
+
+            foreach (var article in Model)
+            {
+                <div class="row">
+                    <div class="col-md-2"><a href="/Article/View/@article.ArticleID">@article.ArticleTitle </a></div>
+                    <div class="col-md-2">@article.Published.ToString("yyyy-MMM-dd") </div>
+                    <div class="col-md-2">@article.Authors.AuthorFname @article.Authors.AuthorLname</div>
+                    <div class="col-md-2">
+                        <span><a href="/Article/View/@article.ArticleID">View</a></span> |
+                        <span><a href="/Article/Update/@article.ArticleID">Update</a></span> |
+                        <span><a href="/Article/Delete/@article.ArticleID">Delete</a></span>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+<div class="pull-right text-center">
+    <div>
+        @ViewData["pagesummary"]
+    </div>
+    <ul class="pagination">
+        <!--       Link is disabled if the pagenum is less than 1, mean page is 1-->
+        <li class="@if ((int)ViewData["pagenum"] <= 1 || ViewData["pagenum"] == null) { ViewData["pagenum"] = 1; @("disabled");  } ">
+            <a href="?pagenum=1&searchkey=@ViewData["searchkey"]">&lt;&lt;</a>
+        </li>
+        <!--       Link is disabled if the pagenum is less than 1, mean page is 1-->
+        <li class="@if ((int)ViewData["pagenum"] <= 1) { @("disabled");} ">
+            <a href="?pagenum=@if ((int)ViewData["pagenum"] <= 1) { @(1); } else {@((int)ViewData["pagenum"]-1); }&searchkey=@ViewData["searchkey"]">&lt;</a>
+        </li>
+        <!--        Link is disabled if its on the last page -->
+        <li class="@if ((int)ViewData["pagenum"] == (int)ViewData["maxpage"]){@("disabled");} ">
+            <a href="?pagenum=@if ((int)ViewData["pagenum"] == (int)ViewData["maxpage"]) { @((int)ViewData["maxpage"]); } else {@((int)ViewData["pagenum"]+1); }&searchkey=@ViewData["searchkey"]" ">&gt;</a>
+        </li>
+        <!--        Link is disabled if its on the last page -->
+        <li class="@if ((int)ViewData["pagenum"] == (int)ViewData["maxpage"]) { @("disabled"); } ">
+            <a href="?pagenum=@((int)ViewData["maxpage"])&searchkey=@ViewData["searchkey"]">&gt;&gt;</a>
+        </li>
+    </ul>
+</div>

@@ -17,6 +17,9 @@ namespace HumberAreaHospitalProject.Models
          [Key]
          public int QuestionID { get; set; }
          public string QuestionText { get; set; }
+
+        //now the "Many" in one questions to many responses.
+        public ICollection<Survey> Answers { get; set; }
     }
     
 }

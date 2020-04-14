@@ -1,0 +1,20 @@
+﻿@model IEnumerable<HumberAreaHospitalProject.Models.Article>
+@{
+
+
+    ViewBag.Title = "NewsPage";
+}
+
+<h2>Newspaper Columns</h2>
+
+
+<ul>
+    @foreach (var article in Model)
+    {
+        <li>
+            <div>
+                <a href="/Article/View/@article.ArticleID">@article.ArticleTitle </a>
+            </div>
+        </li>
+    }
+</ul>

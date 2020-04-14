@@ -14,25 +14,25 @@
     <div>
         <section>
             <h2>Add a Doctor</h2>
-            <a href="/Doctor/List">Back to List</a>
+            <a href="/Doctor/List" class="nalink">Back to List</a>
         </section>
         <main>
             <form method="post" action="/Doctor/New">
-                <div>
-                    <label for="doctortitle">Title</label>
-                    <input type="text" id="doctortitle" name="doctortitle" />
+                <div class="form-group">
+                    <label for="doctortitle" class="col-sm-2 col-form-label">Title</label>
+                    <input type="text" id="doctortitle" class="form-control" name="doctortitle" />
                 </div>
-                <div>
-                    <label for="doctorfname">First Name</label>
-                    <input type="text" id="doctorfname" name="doctorfname" />
+                <div class="form-group">
+                    <label for="doctorfname" class="col-sm-2 col-form-label">First Name</label>
+                    <input type="text" id="doctorfname" class="form-control" name="doctorfname" />
                 </div>
-                <div>
-                    <label for="doctorlname">Last Name</label>
-                    <input type="text" id="doctorlname" name="doctorlname" />
+                <div class="form-group">
+                    <label for="doctorlname" class="col-sm-2 col-form-label">Last Name</label>
+                    <input type="text" id="doctorlname" class="form-control" name="doctorlname" />
                 </div>
-                <div>
-                    <label for="speciality">Speciality</label>
-                    <select id="speciality" name="speciality">
+                <div class="form-group">
+                    <label for="speciality" class="col-sm-2 col-form-label">Speciality</label>
+                    <select id="speciality" name="speciality" class="form-control">
                         @{
 
                             foreach (var speciality in Model)
@@ -42,7 +42,9 @@
                         }
                     </select>
                 </div>
-                <input type="submit" value="Add" />
+                <div class="inpfield">
+                    <input type="submit" class="btn btn-primary" value="Add Doctor" />
+                </div>
             </form>
         </main>
 

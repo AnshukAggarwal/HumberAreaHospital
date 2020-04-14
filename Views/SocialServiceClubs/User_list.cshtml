@@ -1,0 +1,55 @@
+﻿@model List<HumberAreaHospitalProject.Models.SocialServiceClubs>
+@{
+    ViewBag.Title = "User_list";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <h2>List of Social Service Club</h2>
+
+    <form action="/SocialServiceClubs/User_list" class="form-inline" method="GET">
+        <input type="text" name="sscsearchkey" class="form-control" id="sscsearchkey" />
+        <input type="submit" value="Search" class="btn btn-info" />
+    </form>
+    <div class="col-lg-12">
+        @{
+            foreach (var ssc in Model)
+            {
+                <div class="col-md-4">
+                    <h3><a href="/SocialServiceClubs/User_view/@ssc.SocialServiceClubs_id">@ssc.SocialServiceClubs_title</a></h3>
+                    <p>@ssc.SocialServiceClubs_details</p>
+                    <p>Address: @ssc.SocialServiceClubs_address</p>
+                    <p>Map:<a href="@ssc.SocialServiceClubs_map">@ssc.SocialServiceClubs_map</a></p>
+                    <p>Website: <a href="@ssc.SocialServiceClubs_website">@ssc.SocialServiceClubs_website</a></p>
+
+                </div>
+
+            }
+
+        }
+
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="paginate pagination">
+            @{
+                <li class="page-item">
+                    <a href="/SocialServiceClubs/List?pagenum=@((int)ViewData["pagenum"]-1)&sscsearchkey=@ViewData["sscsearchkey"]">Prev</a>
+                </li>
+                <li class="page-item">
+                    @ViewData["pagesummary"]
+                </li>
+                <li class="page-item">
+                    <a href="/SocialServiceClubs/List?pagenum=@((int)ViewData["pagenum"]+1)&sscsearchkey=@ViewData["sscsearchkey"]">Next</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</body>
+</html>
+

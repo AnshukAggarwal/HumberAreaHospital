@@ -1,0 +1,163 @@
+﻿@model HumberAreaHospitalProject.Models.Volunteer
+@{
+    ViewBag.Title = "Apply_today";
+}
+<h2>Apply Today</h2>
+<p>Recruitment and onboarding of new volunteers is temporarily on hold until further notice. Feel free to complete and send an application. We will keep it on file.</p>
+<p>Our active Volunteer Team of more than 520 contribute over 65,000 hours per year.  On any given day, there are 60 or more volunteers carrying out various assignments throughout the hospital.</p>
+
+<div>
+    <div>Our volunteers are:</div>
+    <ul>
+        <li>An integral part of our health care team by enhancing services to our patients, visitors, staff and physicians</li>
+        <li>Ambassadors for Sault Area Hospital</li>
+        <li>Demonstrators of Sault Area Hospital’s iCcare values</li>
+    </ul>
+</div>
+
+<p>We recognize the needs of volunteers as having meaningful opportunities for personal growth, having a positive and supportive environment, being acknowledged and appreciated and knowing that they support quality patient care at Sault Area Hospital.</p>
+
+<h3>The Volunteer Role</h3>
+<p>A ‘volunteer’ at Sault Area Hospital is defined as an individual who willingly donates their time and energy to the hospital to provide services or support patients, visitors or staff in an approved program of Volunteer Resources. A volunteer does not receive compensation from SAH.</p>
+<p>Please Fill the Form Below</p>
+<form method="POST" action="/Volunteer/Create">
+
+    @*//string query = "INSERT into Volunteers (VolunteerFname, VolunteerLname, Address, Email, HomePhone, WorkPhone, Skills, Day, Time, Department, Notes)" +
+        //                         " values (@fname, @lname, @address, @email, @homephone, @workphone, @skills, @day, @time, @department, @notes)";
+        //SqlParameter[] parameters = new SqlParameter[11];
+        //parameters[0] = new SqlParameter("@fname", volunteerFname);
+        //parameters[1] = new SqlParameter("@lname", volunteerLname);
+        //parameters[2] = new SqlParameter("@address", address);
+        //parameters[3] = new SqlParameter("@email", email);
+        //parameters[4] = new SqlParameter("@homephone", homePhone);
+        //parameters[5] = new SqlParameter("@workphone", workPhone);
+        //parameters[6] = new SqlParameter("@skills", skills);
+        //parameters[7] = new SqlParameter("@day", day);
+        //parameters[8] = new SqlParameter("@time", time);
+        //parameters[9] = new SqlParameter("@department", department);
+        //parameters[10] = new SqlParameter("@notes", notes);*@
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2" for="volunteerFname">First Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="volunteerFname" id="volunteerFname" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="volunteerLname">Last Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="volunteerLname" id="volunteerLname" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="address">Address</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="address" id="address" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="email">Email</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="email" id="email" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="homePhone">Home Phone</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="homePhone" id="homePhone" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="workPhone">Work Phone</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="workPhone" id="workPhone" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="skills">Skills</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="skills" id="skills" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="day">Which Day are you Free?</label>
+            <div class="col-md-10">
+                <div>
+                    <input type="checkbox" id="monday" name="day" value="monday" />
+                    <label for="monday">Monday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="tuesday" name="day" value="tuesday" />
+                    <label for="tuesday">Tuesday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="wednesday" name="day" value="wednesday" />
+                    <label for="wednesday">Wednesday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="thursday" name="day" value="thursday" />
+                    <label for="thursday">Thursday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="friday" name="day" value="friday" />
+                    <label for="friday">Friday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="saturday" name="day" value="saturday" />
+                    <label for="saturday">Saturday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="sunday" name="day" value="sunday" />
+                    <label for="sunday">Sunday</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="time">Time</label>
+            <div class="col-md-10">
+                <select name="time" class="form-control" id="time">
+                    <option value="morning_8-12">Morning 8:00am - 12:00pm</option>
+                    <option value="afternoon_13-17">Afternoon 1:00pm - 5:00pm</option>
+                    <option value="evening_18-22">Evening 6:00pm - 10:00pm</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="preference">Preference</label>
+            <div class="col-md-10">
+                <select name="preference" class="form-control" id="preference">
+                    @{
+                        //string[] timeList = {"morning_8-12" => "Morning 8:00am - 12:00pm", "afternoon_13-17", "evening_18-22" };
+                        var preferenceList = new Dictionary<string, string>();
+                        preferenceList.Add("childCare", "Child Care");
+                        preferenceList.Add("inpatient", "Inpatient Volunteer");
+                        preferenceList.Add("outpatient", "Outpatient Volunteer");
+                        preferenceList.Add("fundraising", "Fundraising Volunteer");
+                        preferenceList.Add("patient_family", "Patient and Family Advisor");
+                        preferenceList.Add("resources", "Volunteer Resources");
+
+                        foreach (var prep in preferenceList)
+                        {
+                            <option value="@prep.Key">@prep.Value</option>
+
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="notes">Notes</label>
+            <div class="col-md-10">
+                <textarea class="form-control" name="notes" id="notes" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-primary">Apply</button>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

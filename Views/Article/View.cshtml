@@ -1,0 +1,20 @@
+﻿@model HumberAreaHospitalProject.Models.Article
+@{
+    ViewBag.Title = "View";
+}
+<h2>View Article</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Title</dt>
+        <dd>@Model.ArticleTitle</dd>
+        <dt>Author</dt>
+        <dd>@Model.Authors.AuthorFname @Model.Authors.AuthorLname</dd>
+        <dt>Published</dt>
+        <dd>@Model.Published.ToString("yyyy-MMM-dd")</dd>
+        <dt>Content</dt>
+        <dd>@Model.ArticleBody</dd>
+        <dt>Featured</dt>
+        <dd>@Model.Featured</dd>
+    </dl>
+</div>
+<a href="/Article/List">Back to List</a> 

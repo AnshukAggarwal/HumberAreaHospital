@@ -1,0 +1,49 @@
+﻿@model HumberAreaHospitalProject.Models.SocialServiceClubs
+@{
+    ViewBag.Title = "View";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Details for @Model.SocialServiceClubs_title</h2>
+        <button class="btn btn-secondary">
+            <a href="/SocialServiceClubs/List">Back to List</a>
+        </button>
+
+        <div>
+            <label>Title:</label>
+            <div>@Model.SocialServiceClubs_title</div>
+        </div>
+        <div>
+            <label>Details:</label>
+            <div>@Model.SocialServiceClubs_details</div>
+        </div>
+        <div>
+            <label>Location:</label>
+            <div>@Model.SocialServiceClubs_address</div>
+        </div>
+        <div>
+            <label>Map:</label>
+            <div>@Model.SocialServiceClubs_map</div>
+        </div>
+        <div>
+            <label>Website:</label>
+            <div>@Model.SocialServiceClubs_website</div>
+        </div>
+
+        <div class="controls">
+            <a href="/SocialServiceClubs/Update/@Model.SocialServiceClubs_id" class="control-button btn btn-default">Update</a>
+            <a href="/SocialServiceClubs/Delete/@Model.SocialServiceClubs_id" class="control-button btn btn-default">Delete</a>
+        </div>
+
+    </div>
+</body>
+</html>

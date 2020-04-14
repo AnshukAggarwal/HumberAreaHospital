@@ -1,0 +1,136 @@
+﻿@model HumberAreaHospitalProject.Models.Volunteer
+@{
+    ViewBag.Title = "Create";
+}
+<h2>Create Volunteer</h2>
+
+<form method="POST" action="/Volunteer/Create">
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2" for="volunteerFname">First Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="volunteerFname" id="volunteerFname" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="volunteerLname">Last Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="volunteerLname" id="volunteerLname" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="address">Address</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="address" id="address" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="email">Email</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="email" id="email" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="homePhone">Home Phone</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="homePhone" id="homePhone" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="workPhone">Work Phone</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="workPhone" id="workPhone" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="skills">Skills</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="skills" id="skills" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="day">Which Day are you Free?</label>
+            <div class="col-md-10">
+                <div>
+                    <input type="checkbox" id="monday" name="day" value="monday" />
+                    <label for="monday">Monday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="tuesday" name="day" value="tuesday" />
+                    <label for="tuesday">Tuesday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="wednesday" name="day" value="wednesday" />
+                    <label for="wednesday">Wednesday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="thursday" name="day" value="thursday" />
+                    <label for="thursday">Thursday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="friday" name="day" value="friday" />
+                    <label for="friday">Friday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="saturday" name="day" value="saturday" />
+                    <label for="saturday">Saturday</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="sunday" name="day" value="sunday" />
+                    <label for="sunday">Sunday</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="time">Time</label>
+            <div class="col-md-10">
+                <select name="time" class="form-control" id="time">
+                    <option value="morning_8-12">Morning 8:00am - 12:00pm</option>
+                    <option value="afternoon_13-17">Afternoon 1:00pm - 5:00pm</option>
+                    <option value="evening_18-22">Evening 6:00pm - 10:00pm</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="preference">Preference</label>
+            <div class="col-md-10">
+                <select name="preference" class="form-control" id="preference">
+                    @{
+                        //string[] timeList = {"morning_8-12" => "Morning 8:00am - 12:00pm", "afternoon_13-17", "evening_18-22" };
+                        var preferenceList = new Dictionary<string, string>();
+                        preferenceList.Add("childCare", "Child Care");
+                        preferenceList.Add("inpatient", "Inpatient Volunteer");
+                        preferenceList.Add("outpatient", "Outpatient Volunteer");
+                        preferenceList.Add("fundraising", "Fundraising Volunteer");
+                        preferenceList.Add("patient_family", "Patient and Family Advisor");
+                        preferenceList.Add("resources", "Volunteer Resources");
+
+                        foreach (var prep in preferenceList)
+                        {
+                            <option value="@prep.Key">@prep.Value</option>
+
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="notes">Notes</label>
+            <div class="col-md-10">
+                <textarea class="form-control" name="notes" id="notes" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-primary">+ Add New Volunteer</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a href="/Volunteer/List">Back to List</a>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

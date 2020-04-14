@@ -12,6 +12,7 @@ using HumberAreaHospitalProject.Models;
 using HumberAreaHospitalProject.Models.ViewModels;
 using System.Diagnostics;
 using System.IO;
+using Microsoft.AspNet.Identity;
 
 namespace HumberAreaHospitalProject.Controllers
 {
@@ -20,12 +21,29 @@ namespace HumberAreaHospitalProject.Controllers
         //create db context
         private HospitalContext db = new HospitalContext();
         // GET: Doctor
-        public ActionResult List()
+        [Authorize]
+        public ActionResult List(string searchkey)
         {
-            string query = "Select * from doctors";
-            List<Doctor> doctors = db.Doctors.SqlQuery(query).ToList();
-            return View(doctors);
+            if (searchkey == "" || searchkey == null)
+            {
+                string query = "Select * from doctors";
+                List<Doctor> doctors = db.Doctors.SqlQuery(query).ToList();
+                return View(doctors);
+            }
+            else
+            {
+                Debug.WriteLine("The searchkey is" + searchkey);
+                List<Doctor> Doctors = db.Doctors
+                    .Where(Doctor =>
+                        Doctor.DoctorFname.Contains(searchkey) ||
+                        Doctor.DoctorLname.Contains(searchkey)
+                    )
+                    .ToList();
+                return View(Doctors);
+            }
+            
         }
+        [Authorize]
         public ActionResult New()
         {
             //This method needs the list of specialities
@@ -49,6 +67,7 @@ namespace HumberAreaHospitalProject.Controllers
             return RedirectToAction("List");
 
         }
+        [Authorize]
         public ActionResult View(int id)
         {
             Debug.WriteLine("I am trying to view record of doctor having id:" + id);
@@ -69,6 +88,7 @@ namespace HumberAreaHospitalProject.Controllers
             return View(ViewDoctor);
             /*Select * from doctors where doctorid!=1 and Doctors.SpecialityID=1*/
         }
+        [Authorize]
         public ActionResult Update(int id)
         {
             /*this method is used to show the base info of an individual doctor and also gives the user to select a speciality.
@@ -100,6 +120,7 @@ namespace HumberAreaHospitalProject.Controllers
             return RedirectToAction("List");
 
         }
+        [Authorize]
         public ActionResult Delete(int id)
         {   //To show base info of a doctor
             Debug.WriteLine("I am trying to view record of doctor having id:" + id);

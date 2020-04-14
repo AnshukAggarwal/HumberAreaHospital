@@ -1,0 +1,86 @@
+﻿@model HumberAreaHospitalProject.Models.ViewModels.UpdateArticle
+@{
+    ViewBag.Title = "Update";
+}
+<h2>Update Article</h2>
+<form method="POST" action="">
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2" for="articleTitle">Title</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="articleTitle" id="articleTitle" value="@Model.article.ArticleTitle" />          
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="authorId">Author</label>
+            <div class="col-md-10">
+                <select class="form-control" name="authorId" id="authorId">
+                    @{
+                        //A rendering loop for presenting a list of species
+                        //The pet should be one of these species
+                        foreach (var author in Model.authors)
+                        {
+                            if (Model.article.AuthorID == author.AuthorID)
+                            {
+                                <option value="@author.AuthorID" selected>@author.AuthorFname @author.AuthorLname</option>
+
+                            }
+                            else
+                            {
+                                <option value="@author.AuthorID">@author.AuthorFname @author.AuthorLname</option>
+
+                            }
+
+                        }
+                    }
+                </select>
+                <span>Not In the List? Add <a href="/Author/Create">here</a></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="published">Published</label>
+            <div class="col-md-10">
+                <input type="date" class="form-control" name="published" id="published" value="@Model.article.Published.ToString("yyyy-MM-dd")" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="articleBody">Content</label>
+            <div class="col-md-10">
+                <textarea class="form-control" name="articleBody" id="articleBody" rows="10">@Model.article.ArticleBody</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="featured">Featured</label>
+            <div class="col-md-10">
+                <select class="form-control" name="featured" id="featured">
+                    @{
+                        string[] selectValue = { "YES", "NO" };
+                        foreach (var vals in selectValue)
+                        {
+                            if (Model.article.Featured == vals)
+                            {
+                                <option value="@vals" selected>@vals</option>
+                            }
+                            else
+                            {
+                                <option value="@vals">@vals</option>
+                            }
+                        }
+
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <a href="/Article/List">Back to List</a>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    box-sizing:border-box;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,66 +23,64 @@ select,
 textarea {
     max-width: 280px;
 }
-.item-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.item-container{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
 }
 
-.item {
-    display: flex;
-    justify-content: space-between;
-    flex-basis: 30%;
-    padding: 20px;
-    background-color: darkgray;
-    margin-top: 20px;
-}
+.item{
+    display:flex;
+    justify-content:space-between;
+    flex-basis:30%;
+    padding:20px;
+    background-color:darkgray;
+    margin-top:20px;
 
-.info, .controls {
-    margin-top: 20px;
 }
-
-.control-button {
-    margin-right: 30px;
+.info,.controls{
+    margin-top:20px;
 }
-
+.control-button{
+    margin-right:30px;
+}
 .doctor-list {
     flex-basis: 30%;
     padding: 20px;
     background-color: darkgray;
     margin-top: 20px;
 }
-
-    .doctor-list div {
-        padding: 10px;
-    }
-
-.text-danger.text-uppercase {
-    font-weight: bold;
-    font-size: 1.25em;
+.doctor-list div{
+    padding:10px;
 }
 
-.table > div {
-    padding: .75rem;
-    vertical-align: top;
-    border-top: 1px solid #dee2e6
+.aside {
+    padding: 40px;
+    height: 80%;
+    width: 240px;
+    position: fixed;
+    left: -240px;
+    background-color: lightsteelblue;
+    z-index: 1;
 }
-
-    .table > div:first-of-type {
-        vertical-align: bottom;
-        border-bottom: 2px solid #dee2e6
-    }
-
-.row.head {
-    font-weight: bold;
+/*
+        z-index: 1;
+*/
+#search_form {
+    margin: 0.5em 0;
 }
-
-.table > div:hover {
-    color: #212529;
-    background-color: rgba(0,0,0,.075);
+#searchkey{
+    display: inline;
+    width: auto;
 }
-
-.break-text {
-    word-wrap: break-word;
+.row.head{
+    font-size:1.2em;    
+    font-weight:bold;
+}
+.row{
+    border-bottom: 1px solid rgb(157, 153, 153);
+}
+.row:nth-child(n+2):hover{
+    background-color: rgb(202, 202, 202);
 }

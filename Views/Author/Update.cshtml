@@ -1,0 +1,48 @@
+﻿@model HumberAreaHospitalProject.Models.Author
+@{
+    ViewBag.Title = "Update";
+}
+<h2>Update Author</h2>
+
+<form method="POST" action="/Author/Update/@Model.AuthorID">
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2" for="authorFname">First Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="authorFname" id="authorFname" value="@Model.AuthorFname" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="authorLname">Last Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="authorLname" id="authorLname" value="@Model.AuthorLname" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="email">Email</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="email" id="email" value="@Model.Email" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="phone">Phone</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="phone" id="phone" value="@Model.Phone" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <a href="/Author/List">Back to List</a>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

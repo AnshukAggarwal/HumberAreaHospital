@@ -1,0 +1,37 @@
+﻿@model HumberAreaHospitalProject.Models.RemedySource
+@{
+    ViewBag.Title = "View";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Details for @Model.RemedySource_name</h2>
+        <button class="btn btn-secondary">
+            <a href="/RemedySource/List">Back to List</a>
+        </button>
+        <div class="mr-auto">
+            <div>
+                <label for="url">URL:</label>
+                <a href="@Model.RemedySource_url">
+                    <textarea type="url" name="url" class="form-control" rows="2" cols="30">@Model.RemedySource_url</textarea>
+                </a>
+            </div>
+        </div>
+        <div class="controls">
+
+            <a href="/RemedySource/Update/@Model.RemedySource_id" class="control-button btn btn-default">Update</a>
+
+
+            <a href="/RemedySource/Delete/@Model.RemedySource_id" class="control-button btn btn-default">Delete</a>
+
+
+        </div>
+</body>
+</html>

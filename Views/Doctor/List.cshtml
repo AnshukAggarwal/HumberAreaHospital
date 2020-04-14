@@ -13,7 +13,11 @@
 <body>
     <div>
         <h2>List of Doctors</h2>
-        <a href="/Doctor/New">Add Doctor</a>
+        <a href="/Doctor/New" class="btn btn-primary" style="float:right">Add Doctor</a>
+        <form method="post" action="/Doctor/List">
+            <input type="text" name="searchkey" id="searchkey" />
+            <input type="submit" value="Search" />
+        </form>
         <div class="item-container">
             @{
 

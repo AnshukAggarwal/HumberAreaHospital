@@ -11,15 +11,17 @@
 </head>
 <body>
     <h2>Add a Speciality</h2>
-    <a href="/Speciality/List">Back to List</a>
+    <div class="navbar">
+        <a class="navlink" href="/Speciality/List">Back to List</a>
+    </div>
     <div>
         <form method="POST" action="/Speciality/New">
-            <div>
-                <label for="SpecialityName">Name:</label>
-                <input type="text" name="SpecialityName" id="SpecialityName" />
+            <div class="form-group">
+                <label for="SpecialityName" class="col-sm-2 col-form-label">Name:</label>
+                <input type="text" class="form-control" name="SpecialityName" id="SpecialityName" />
             </div>
-            <div>
-                <input type="submit" value="Add" />
+            <div class="inpfield">
+                <input type="submit" class="btn btn-primary" value="Add" />
             </div>
         </form>
 

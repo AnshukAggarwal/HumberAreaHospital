@@ -29,9 +29,30 @@
         </form>
 
     </div>
-    <div>
-        Here the responses will go
-    </div>
+    <table style="width:50%">
+        <thead>
+            <tr>
+                <th>Answer</th>
+            </tr>
+            <tr>
+                <th>User</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var answer in Model.answers)
+                {
+                    <tr>
+                        <td>@answer.ResponseText</td>
+                    </tr>
+                    <tr>
+                        <td>@answer.UserName</td>
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
 </body>
 </html>
 

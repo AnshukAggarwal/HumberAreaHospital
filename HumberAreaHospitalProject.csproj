@@ -169,13 +169,17 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\FAQCategoryController.cs" />
     <Compile Include="Controllers\FAQController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeRemediesController.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RemedySourceController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\VolunteerController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
@@ -205,6 +209,10 @@
     <Compile Include="Migrations\202004100857493_added_author_article_volunteer.Designer.cs">
       <DependentUpon>202004100857493_added_author_article_volunteer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004111049216_update_voluntee.cs" />
+    <Compile Include="Migrations\202004111049216_update_voluntee.Designer.cs">
+      <DependentUpon>202004111049216_update_voluntee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202004111157220_Updated_Application.cs" />
     <Compile Include="Migrations\202004111157220_Updated_Application.Designer.cs">
       <DependentUpon>202004111157220_Updated_Application.cs</DependentUpon>
@@ -229,25 +237,45 @@
     <Compile Include="Migrations\202004132325229_updated_FAQ_Removed.Designer.cs">
       <DependentUpon>202004132325229_updated_FAQ_Removed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004121837253_add-hr.cs" />
+    <Compile Include="Migrations\202004121837253_add-hr.Designer.cs">
+      <DependentUpon>202004121837253_add-hr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004121933002_add-socialserviceclubs.cs" />
+    <Compile Include="Migrations\202004121933002_add-socialserviceclubs.Designer.cs">
+      <DependentUpon>202004121933002_add-socialserviceclubs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004131924055_Appointment_Staff.cs" />
+    <Compile Include="Migrations\202004131924055_Appointment_Staff.Designer.cs">
+      <DependentUpon>202004131924055_Appointment_Staff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Application.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\FAQ.cs" />
     <Compile Include="Models\FAQCategory.cs" />
+    <Compile Include="Models\HomeRemedies.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RemedySource.cs" />
+    <Compile Include="Models\SocialServiceClubs.cs" />
     <Compile Include="Models\Speciality.cs" />
     <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Staff.cs" />
     <Compile Include="Models\Survey.cs" />
+    <Compile Include="Models\ViewModels\AppointmentViewModel.cs" />
     <Compile Include="Models\ViewModels\ListSurvey.cs" />
     <Compile Include="Models\ViewModels\ShowJob.cs" />
     <Compile Include="Models\ViewModels\UpdateArticle.cs" />
     <Compile Include="Models\ViewModels\UpdateDoctor.cs" />
     <Compile Include="Models\ViewModels\UpdateFAQController.cs" />
+    <Compile Include="Models\ViewModels\StaffSpecialty.cs" />
+    <Compile Include="Models\ViewModels\UpdateHomeRemedy.cs" />
     <Compile Include="Models\ViewModels\ViewDoctor.cs" />
     <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -258,6 +286,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\list_style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -336,6 +365,23 @@
     <Content Include="Views\Survey\Form.cshtml" />
     <Content Include="Views\Survey\Thanks.cshtml" />
     <Content Include="Views\Survey\List.cshtml" />
+    <Content Include="Views\Article\List.cshtml" />
+    <Content Include="Views\Article\View.cshtml" />
+    <Content Include="Views\Article\Create.cshtml" />
+    <Content Include="Views\Article\Update.cshtml" />
+    <Content Include="Views\Article\Delete.cshtml" />
+    <Content Include="Views\Author\List.cshtml" />
+    <Content Include="Views\Author\View.cshtml" />
+    <Content Include="Views\Author\Create.cshtml" />
+    <Content Include="Views\Author\Update.cshtml" />
+    <Content Include="Views\Author\Delete.cshtml" />
+    <Content Include="Views\Volunteer\List.cshtml" />
+    <Content Include="Views\Volunteer\View.cshtml" />
+    <Content Include="Views\Volunteer\Create.cshtml" />
+    <Content Include="Views\Volunteer\Update.cshtml" />
+    <Content Include="Views\Volunteer\Delete.cshtml" />
+    <Content Include="Views\Volunteer\Apply_today.cshtml" />
+    <Content Include="Views\Article\NewsPage.cshtml" />
     <Content Include="Views\Job\List.cshtml" />
     <Content Include="Views\Job\New.cshtml" />
     <Content Include="Views\Job\Show.cshtml" />
@@ -356,11 +402,37 @@
     <Content Include="Views\FAQ\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\HomeRemedies\Delete.cshtml" />
+    <Content Include="Views\HomeRemedies\List.cshtml" />
+    <Content Include="Views\HomeRemedies\New.cshtml" />
+    <Content Include="Views\HomeRemedies\Update.cshtml" />
+    <Content Include="Views\HomeRemedies\User_list.cshtml" />
+    <Content Include="Views\HomeRemedies\User_view.cshtml" />
+    <Content Include="Views\HomeRemedies\View.cshtml" />
+    <Content Include="Views\RemedySource\Delete.cshtml" />
+    <Content Include="Views\RemedySource\List.cshtml" />
+    <Content Include="Views\RemedySource\View.cshtml" />
+    <Content Include="Views\RemedySource\New.cshtml" />
+    <Content Include="Views\RemedySource\Update.cshtml" />
+    <Content Include="Views\SocialServiceClubs\View.cshtml" />
+    <Content Include="Views\SocialServiceClubs\Delete.cshtml" />
+    <Content Include="Views\SocialServiceClubs\List.cshtml" />
+    <Content Include="Views\SocialServiceClubs\New.cshtml" />
+    <Content Include="Views\SocialServiceClubs\Update.cshtml" />
+    <Content Include="Views\SocialServiceClubs\User_list.cshtml" />
+    <Content Include="Views\SocialServiceClubs\User_view.cshtml" />
+    <Content Include="Views\Staff\Create.cshtml" />
+    <Content Include="Views\Staff\Delete.cshtml" />
+    <Content Include="Views\Staff\List.cshtml" />
+    <Content Include="Views\Staff\Update.cshtml" />
+    <Content Include="Views\Appointment\Create.cshtml" />
+    <Content Include="Views\Appointment\Delete.cshtml" />
+    <Content Include="Views\Appointment\list.cshtml" />
+    <Content Include="Views\Appointment\Update.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Article\" />
-    <Folder Include="Views\Author\" />
     <Folder Include="Views\UpdateFAQ\" />
-    <Folder Include="Views\Volunteer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -391,6 +463,9 @@
     <EmbeddedResource Include="Migrations\202004100857493_added_author_article_volunteer.resx">
       <DependentUpon>202004100857493_added_author_article_volunteer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004111049216_update_voluntee.resx">
+      <DependentUpon>202004111049216_update_voluntee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004111157220_Updated_Application.resx">
       <DependentUpon>202004111157220_Updated_Application.cs</DependentUpon>
     </EmbeddedResource>
@@ -405,6 +480,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004132325229_updated_FAQ_Removed.resx">
       <DependentUpon>202004132325229_updated_FAQ_Removed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004121837253_add-hr.resx">
+      <DependentUpon>202004121837253_add-hr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004121933002_add-socialserviceclubs.resx">
+      <DependentUpon>202004121933002_add-socialserviceclubs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004131924055_Appointment_Staff.resx">
+      <DependentUpon>202004131924055_Appointment_Staff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

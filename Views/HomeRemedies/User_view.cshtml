@@ -1,0 +1,34 @@
+﻿@model HumberAreaHospitalProject.Models.HomeRemedies
+
+@{
+    ViewBag.Title = "User_view";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List Home Remedies</title>
+</head>
+<body>
+    <div>
+        <h2>Details for @Model.HomeRemedies_title</h2>
+        <button class="btn btn-secondary">
+            <a href="/HomeRemedies/User_list">Back to List</a>
+        </button>
+        <div class="form-group">
+            <div class="form-group">
+                <label>Title:</label>
+                <div>@Model.HomeRemedies_title</div>
+            </div>
+            <div class="form-group">
+                <label>Description:</label>
+                <div>@Model.HomeRemedies_desc</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
