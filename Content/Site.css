@@ -59,7 +59,7 @@ textarea {
     padding: 40px;
     height: 80%;
     width: 240px;
-    position: relative;
+    position: fixed;
     left:0;
     background-color: lightsteelblue;
     /*z-index: 1;*/
@@ -70,17 +70,22 @@ textarea {
 #search_form {
     margin: 0.5em 0;
 }
+
 #searchkey{
     display: inline;
     width: auto;
 }
+
 .row.head{
     font-size:1.2em;    
     font-weight:bold;
 }
+
 .table .row{
     border-bottom: 1px solid rgb(157, 153, 153);
 }
+
 .table .row:nth-child(n+2):hover{
     background-color: rgb(202, 202, 202);
 }
+

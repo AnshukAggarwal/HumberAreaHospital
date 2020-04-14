@@ -1,0 +1,26 @@
+﻿@model HumberAreaHospitalProject.Models.FAQ
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>FAQ DETAILS </h2>
+<div class="navbar">
+    <a class="navlink" href="/FAQ/List">Back to List</a>
+</div>
+<div>
+    <div class="col2">
+        <dl class="row">
+            <dt class="col-sm-3">QUESTION</dt>
+            <dd class="col-sm-9">@Model.FAQQuestion</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-3">ANSWER</dt>
+            <dd class="col-sm-9">@Model.FAQAnswer</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-3">CATEGORY</dt>
+            <dd class="col-sm-9">@Model.FAQCategory</dd>
+        </dl>
+    </div>
+
+</div>

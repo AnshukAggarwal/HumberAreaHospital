@@ -18,16 +18,18 @@
             @{
                 foreach (var question in Model)
                 { <div>
-                        <div>@question.QuestionText</div>
+                        <div class="form-group">@question.QuestionText</div>
                         
-                        <div><input type="text" name="ResponseText"/></div>
+                        <div class="form-group">
+                            <textarea rows="2" cols="90"name="ResponseText"></textarea>
+                        </div>
                         <input type="hidden" name="Count" id="Count" value="@question.QuestionID" />
                     </div>
                 }
 
             }
             
-            <input type="submit" value="submit" />
+            <input type="submit" class="btn btn-primary" value="submit" />
         </form>
 
     </div>

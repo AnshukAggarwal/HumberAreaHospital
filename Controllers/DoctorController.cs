@@ -13,6 +13,7 @@ using HumberAreaHospitalProject.Models.ViewModels;
 using System.Diagnostics;
 using System.IO;
 using Microsoft.AspNet.Identity;
+using PagedList;
 
 namespace HumberAreaHospitalProject.Controllers
 {
@@ -22,26 +23,37 @@ namespace HumberAreaHospitalProject.Controllers
         private HospitalContext db = new HospitalContext();
         // GET: Doctor
         [Authorize]
-        public ActionResult List(string searchkey)
+        public ActionResult List(string searchBy, string search, int? page)
         {
-            if (searchkey == "" || searchkey == null)
+            //if (searchkey == "" || searchkey == null)
+            //{
+            //    string query = "Select * from doctors";
+            //    List<Doctor> doctors = db.Doctors.SqlQuery(query).ToList();
+            //    return View(doctors);
+            //}
+            //else
+            //{
+            //    Debug.WriteLine("The searchkey is" + searchkey);
+            //    List<Doctor> Doctors = db.Doctors
+            //        .Where(Doctor =>
+            //            Doctor.DoctorFname.Contains(searchkey) ||
+            //            Doctor.DoctorLname.Contains(searchkey)
+            //        )
+            //        .ToList();
+            //    return View(Doctors);
+            //}
+            if (searchBy == "First Name")
             {
-                string query = "Select * from doctors";
-                List<Doctor> doctors = db.Doctors.SqlQuery(query).ToList();
-                return View(doctors);
+                return View(db.Doctors.Where(x => x.DoctorFname.Contains(search) || search == null).ToList().ToPagedList(page ?? 1, 3));
+            }
+            else if(searchBy=="Last Name")
+            {
+                return View(db.Doctors.Where(x => x.DoctorLname.Contains(search) || search == null).ToList().ToPagedList(page ?? 1, 3));
             }
             else
             {
-                Debug.WriteLine("The searchkey is" + searchkey);
-                List<Doctor> Doctors = db.Doctors
-                    .Where(Doctor =>
-                        Doctor.DoctorFname.Contains(searchkey) ||
-                        Doctor.DoctorLname.Contains(searchkey)
-                    )
-                    .ToList();
-                return View(Doctors);
+                return View(db.Doctors.Where(x => x.Specialities.Name.Contains(search) || search == null).ToList().ToPagedList(page ?? 1, 3));
             }
-            
         }
         [Authorize]
         public ActionResult New()
