@@ -453,7 +453,6 @@ C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\obj\Debug\HumberAr
 C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.pdb
 C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.addhr.resources
 C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.addsocialserviceclubs.resources
-C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.csprojAssemblyReference.cache
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.addhr.resources
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.addsocialserviceclubs.resources
 C:\Users\Zer\Source\Repos\HumberAreaHospital\bin\HumberAreaHospitalProject.dll.config
@@ -721,3 +720,7 @@ C:\xampp\htdocs\Hospital-project_firstrepo\final2-13-4-2020\HumberAreaHospital\o
 C:\xampp\htdocs\Hospital-project_firstrepo\final2-13-4-2020\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.Appointment_Staff.resources
 C:\xampp\htdocs\Hospital-project_firstrepo\final2-13-4-2020\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.csproj.GenerateResource.cache
 C:\xampp\htdocs\Hospital-project_firstrepo\final2-13-4-2020\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.csproj.CoreCompileInputs.cache
+C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\PagedList.dll
+C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\PagedList.Mvc.dll
+C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\PagedList.xml
+C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\PagedList.Mvc.xml

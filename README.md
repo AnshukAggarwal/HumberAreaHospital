@@ -43,7 +43,7 @@ ViewModel: UpdateHomeRemedy.cs
 ### 1(a).Table connected with HomeRemedies ----- RemedySource
   - [x] CRUD 
   - [x] Pagination and Search Functionality 
-  - [x] Admin View 
+  - [x] User View 
   - [x] CSS Responsive Design
 Controller:  RemedySource.cs
 Views:  Delete.cshtml, List.cshtml, New.cshtml, Update.cshtml, View.cshtml
@@ -59,4 +59,41 @@ Model:  RemedySource.cs
 Controller:  SocialServiceClubsController.cs
 Views:  Delete.cshtml, List.cshtml, New.cshtml, Update.cshtml, User_list.cshtml, User_view.cshtml, View.cshtml
 Models:  SocialServiceClubs.cs
+
+## Anshuk Aggarwal - N01399681
+### 1. Find a Doctor
+  - [x] CRUD 
+  - [x] Pagination and Search Functionality
+  - [x] User View 
+  - [x] CSS Responsive Design
+Controller:  DoctorController.cs
+Views:  Delete.cshtml, List.cshtml, New.cshtml, Update.cshtml,View.cshtml
+Model:  Doctor.cs
+ViewModel: ViewDoctor.cs, UpdateDoctor.cs
+
+### 1(a).Table connected with Find a Doctor ----- Speciality
+  - [x] CRUD
+  - [x] User View 
+  - [x] CSS Responsive Design
+Controller:  SpecialityController.cs
+Views:  Delete.cshtml, List.cshtml, New.cshtml, Update.cshtml, View.cshtml
+Model:  Speciality.cs
+
+### 2. Survey Question
+  - [x] CRUD 
+  - [x] User View 
+  - [x] Admin View 
+  - [x] CSS Responsive Design
+Controller:  QuestionController.cs
+Views:  Delete.cshtml, List.cshtml, New.cshtml, Update.cshtml,View.cshtml
+Models:  Question.cs
+
+### 2(a).Table connected Question ----- Surveys
+  - [x] CRUD
+  - [x] User View 
+  - [x] CSS Responsive Design
+Controller:  SurveyController.cs
+Views:  Form.cshtml, List.cshtml, Thanks.cshtml
+Model:  Survey.cs
+
 
