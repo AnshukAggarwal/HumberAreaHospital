@@ -13,7 +13,8 @@
   - [x] User View 
   - [x] CSS Responsive Design 
   - [x] WireFrames and ERD
-## Cynthia Lipinski - N01176789
+## Cynthia Lipinski - N01176789   
+ - [x] Design Layout & CSS
 ### 3. Appointment Feature
   - [x] CRUD 
   - [x] Pagination and Search Functionality
