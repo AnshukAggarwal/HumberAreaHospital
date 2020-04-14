@@ -19,7 +19,7 @@
   - [x] Pagination and Search Functionality
   - [ ] User View 
   - [x] Admin View
-  - [ ] CSS Responsive Design     
+  - [x] CSS Responsive Design     
   Files: AppointmentController.cs , Views: Appointment/Create.cshtml, Appointment/Delete.cshtml. Appointment/List.cshtml, Appointment/Update.cshtml, Model: Appointment.cs, Viewmodel: AppointmentViewModel.cs
 ### 2. Staff Directory Feature
   - [x] CRUD 
