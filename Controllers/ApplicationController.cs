@@ -24,7 +24,7 @@ namespace HumberAreaHospitalProject.Controllers
                 sqlparams.Add(new SqlParameter("@searchkey", "%" + appsearchkey + "%"));
             }
             List<Application> Applications = db.Applications.SqlQuery(query, sqlparams.ToArray()).ToList();
-            //Pagination for jobs 
+            //Pagination for Applications
             int perpage = 5;
             int petcount = Applications.Count();
             int maxpage = (int)Math.Ceiling((decimal)petcount / perpage) - 1;
@@ -77,6 +77,59 @@ namespace HumberAreaHospitalProject.Controllers
         {
             return View();
 
+        }
+
+        //Display individual Application Details
+        public ActionResult Show(int? id)
+        {
+            string query = "select * from Applications where ApplicationID = @ApplicationID"; //sql query to slect all from Applications table based on ApplicationID
+            var parameter = new SqlParameter("@ApplicationID", id);
+            Application application = db.Applications.SqlQuery(query, parameter).FirstOrDefault();
+            return View(application);
+
+        }
+
+        //Update
+        public ActionResult Update(int id)
+        {
+            //need information about a particular Bike
+            Application selectedapplication = db.Applications.SqlQuery("select * from Applications where ApplicationID = @id", new SqlParameter("@id", id)).FirstOrDefault();
+            //string query = "select * from Jobs";
+            return View(selectedapplication);
+        }
+        //[HttpPost] Update
+        [HttpPost]
+        public ActionResult Update(int id, string ApplicantFirstName, string ApplicantLastName, string ApplicantEmail, string ApplicantPhone, string ApplicantAddress ,string ApplicantCity, string ApplicantProvince,string ApplicantZipCode)
+        {   
+            //query to update Application
+            string query = "update Applications set ApplicantFirstName =@ApplicantFirstName, ApplicantLastName=@ApplicantLastName, ApplicantEmail=@ApplicantEmail, ApplicantPhone=@ApplicantPhone, ApplicantAddress=@ApplicantAddress,ApplicantCity=@ApplicantCity,ApplicantProvince=@ApplicantProvince,ApplicantZipCode=@ApplicantZipCode where ApplicationID=@id";
+            //key pair values to hold new values 
+            SqlParameter[] sqlparams = new SqlParameter[9];
+            sqlparams[0] = new SqlParameter("@ApplicantFirstName", ApplicantFirstName);
+            sqlparams[1] = new SqlParameter("@ApplicantLastName", ApplicantLastName);
+            sqlparams[2] = new SqlParameter("@ApplicantEmail", ApplicantEmail);
+            sqlparams[3] = new SqlParameter("@ApplicantPhone", ApplicantPhone);
+            sqlparams[4] = new SqlParameter("@ApplicantAddress", ApplicantAddress);
+            sqlparams[5] = new SqlParameter("@ApplicantCity", ApplicantCity);
+            sqlparams[6] = new SqlParameter("@ApplicantProvince", ApplicantProvince);
+            sqlparams[7] = new SqlParameter("@ApplicantZipCode", ApplicantZipCode);
+            sqlparams[8] = new SqlParameter("@id", id);
+            //Exceuting the sql query with new values
+            db.Database.ExecuteSqlCommand(query, sqlparams);
+            //Return to list view of Jobd
+            return RedirectToAction("List");
+        }
+        //delete
+        public ActionResult Delete(int id)
+        {   //Query to delete particualr make from the table based on the make id
+            string query = "delete from Applications where ApplicationID=@id";
+            SqlParameter[] parameter = new SqlParameter[1];
+            //storing the id of the make to be deleted 
+            parameter[0] = new SqlParameter("@id", id);
+            //Excecuting the query
+            db.Database.ExecuteSqlCommand(query, parameter);
+            // returning to lsit view of the make after deleting 
+            return RedirectToAction("List");
         }
     }
 }

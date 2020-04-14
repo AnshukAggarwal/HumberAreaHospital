@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HumberAreaHospitalProject</RootNamespace>
     <AssemblyName>HumberAreaHospitalProject</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -178,6 +178,8 @@
     <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
+    <Compile Include="Controllers\FAQCategoryController.cs" />
+    <Compile Include="Controllers\FAQController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeRemediesController.cs" />
     <Compile Include="Controllers\JobController.cs" />
@@ -225,6 +227,22 @@
     <Compile Include="Migrations\202004112112292_updated_application.Designer.cs">
       <DependentUpon>202004112112292_updated_application.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004131936327_Added_FAQ_Category.cs" />
+    <Compile Include="Migrations\202004131936327_Added_FAQ_Category.Designer.cs">
+      <DependentUpon>202004131936327_Added_FAQ_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004132019092_Added_FAQ.cs" />
+    <Compile Include="Migrations\202004132019092_Added_FAQ.Designer.cs">
+      <DependentUpon>202004132019092_Added_FAQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004132314067_updated_FAQ.cs" />
+    <Compile Include="Migrations\202004132314067_updated_FAQ.Designer.cs">
+      <DependentUpon>202004132314067_updated_FAQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004132325229_updated_FAQ_Removed.cs" />
+    <Compile Include="Migrations\202004132325229_updated_FAQ_Removed.Designer.cs">
+      <DependentUpon>202004132325229_updated_FAQ_Removed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202004121837253_add-hr.cs" />
     <Compile Include="Migrations\202004121837253_add-hr.Designer.cs">
       <DependentUpon>202004121837253_add-hr.cs</DependentUpon>
@@ -244,6 +262,8 @@
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\FAQ.cs" />
+    <Compile Include="Models\FAQCategory.cs" />
     <Compile Include="Models\HomeRemedies.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Job.cs" />
@@ -256,9 +276,11 @@
     <Compile Include="Models\Survey.cs" />
     <Compile Include="Models\ViewModels\AppointmentViewModel.cs" />
     <Compile Include="Models\ViewModels\ListSurvey.cs" />
-    <Compile Include="Models\ViewModels\StaffSpecialty.cs" />
+    <Compile Include="Models\ViewModels\ShowJob.cs" />
     <Compile Include="Models\ViewModels\UpdateArticle.cs" />
     <Compile Include="Models\ViewModels\UpdateDoctor.cs" />
+    <Compile Include="Models\ViewModels\UpdateFAQController.cs" />
+    <Compile Include="Models\ViewModels\StaffSpecialty.cs" />
     <Compile Include="Models\ViewModels\UpdateHomeRemedy.cs" />
     <Compile Include="Models\ViewModels\ViewDoctor.cs" />
     <Compile Include="Models\Volunteer.cs" />
@@ -373,6 +395,20 @@
     <Content Include="Views\Job\Update.cshtml" />
     <Content Include="Views\Application\List.cshtml" />
     <Content Include="Views\Application\New.cshtml" />
+    <Content Include="Views\Job\User_Show.cshtml" />
+    <Content Include="Views\Job\User_Perspective_List.cshtml" />
+    <Content Include="Views\Application\Update.cshtml" />
+    <Content Include="Views\Application\Show.cshtml" />
+    <Content Include="Views\FAQCategory\List.cshtml" />
+    <Content Include="Views\FAQCategory\Show.cshtml" />
+    <Content Include="Views\FAQCategory\Update.cshtml" />
+    <Content Include="Views\FAQCategory\New.cshtml" />
+    <Content Include="Views\FAQ\New.cshtml" />
+    <Content Include="Views\FAQ\List.cshtml" />
+    <Content Include="Views\FAQ\Update.cshtml" />
+    <Content Include="Views\FAQ\Show.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Views\HomeRemedies\Delete.cshtml" />
     <Content Include="Views\HomeRemedies\List.cshtml" />
     <Content Include="Views\HomeRemedies\New.cshtml" />
@@ -403,6 +439,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\UpdateFAQ\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -438,6 +475,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004111157220_Updated_Application.resx">
       <DependentUpon>202004111157220_Updated_Application.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004131936327_Added_FAQ_Category.resx">
+      <DependentUpon>202004131936327_Added_FAQ_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004132019092_Added_FAQ.resx">
+      <DependentUpon>202004132019092_Added_FAQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004132314067_updated_FAQ.resx">
+      <DependentUpon>202004132314067_updated_FAQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004132325229_updated_FAQ_Removed.resx">
+      <DependentUpon>202004132325229_updated_FAQ_Removed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004121837253_add-hr.resx">
       <DependentUpon>202004121837253_add-hr.cs</DependentUpon>

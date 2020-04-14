@@ -332,6 +332,10 @@ F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalPr
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.dll
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.pdb
 F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.csprojAssemblyReference.cache
+F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.Added_FAQ_Category.resources
+F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.Added_FAQ.resources
+F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.updated_FAQ.resources
+F:\HUMBER\SEM2\Mobiledevelopment\Hospital project\obj\Debug\HumberAreaHospitalProject.Migrations.updated_FAQ_Removed.resources
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.update_voluntee.resources
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.Updated_Application.resources
 C:\xampp\htdocs\Hospital-project_firstrepo\HumberAreaHospital\bin\HumberAreaHospitalProject.dll.config
@@ -688,7 +692,3 @@ C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHo
 C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.addsocialserviceclubs.resources
 C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.Appointment_Staff.resources
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.Appointment_Staff.resources
-C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\PagedList.dll
-C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\PagedList.Mvc.dll
-C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\PagedList.xml
-C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\PagedList.Mvc.xml

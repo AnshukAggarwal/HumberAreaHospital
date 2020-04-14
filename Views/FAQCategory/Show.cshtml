@@ -1,0 +1,12 @@
+﻿
+@model HumberAreaHospitalProject.Models.FAQCategory
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2> Details</h2>
+<a href="/FAQCategory/List" class="btn btn-primary">Back to list</a>
+<a href="/FAQCategory/Update/@Model.FAQCategoryID" class="btn btn-primary" style="float:right">Update</a>
+
+<div>Name : @Model.FAQCategoryName</div>

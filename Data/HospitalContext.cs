@@ -34,7 +34,12 @@ namespace HumberAreaHospitalProject.Data
         //Anshuk Start
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Speciality> Specialities { get; set; }
-        //Anshuk End
+
+
+    
+
+     
+       //Madhu
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Application> Applications { get; set; }
 
@@ -45,6 +50,11 @@ namespace HumberAreaHospitalProject.Data
         //Anshuk
         public DbSet<Question> Questions { get; set; }
         public DbSet<Survey> Surveys { get; set; }
+
+        //madhu
+        public DbSet<FAQCategory> FAQCategories { get; set; }
+        public DbSet<FAQ> FAQs { get; set; }
+
 
         //Krishna Patel
         public DbSet<HomeRemedies> HomeRemedies { get; set; }

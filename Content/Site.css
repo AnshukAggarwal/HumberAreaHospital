@@ -60,6 +60,7 @@ textarea {
     height: 80%;
     width: 240px;
     position: fixed;
+    left: -240px;
     background-color: lightsteelblue;
     z-index: 1;
 }
@@ -73,6 +74,4 @@ textarea {
     display: inline;
     width: auto;
 }
-.table{
-    margin-top:100px;
-}
+

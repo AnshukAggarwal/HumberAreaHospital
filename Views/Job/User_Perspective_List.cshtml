@@ -1,0 +1,42 @@
+﻿@model List<HumberAreaHospitalProject.Models.Job>
+@{
+    ViewBag.Title = "User_Perspective_List";
+}
+
+    <h2>Welcome! Humber Area Hospital Careers</h2>
+
+<form action="/Job/List" method="GET">
+    
+    <input type="text" name="jobsearchkey" id="jobsearchkey" />
+    <input type="submit" value="Search" />
+</form>
+
+<table id="mytable" class="table table-bordred table-striped">
+    <thead>
+        <th>JOB TITLE</th>
+        <th>JOB CATEGORY</th>
+        <th>JOB TYPE</th>
+        <th>POSTED ON</th>
+    </thead>
+    <tbody>
+        @{
+            foreach (var job in Model)
+            {
+                <tr>
+                    <td><span><a href="/Job/User_Show/@job.JobID">@job.JobTitle</a></span></td>
+                    <td><span>@job.JobCategory</span></td>
+                    <td><span>@job.JobType</span></td>
+                    <td><span>@job.PostDate.ToString("dd/MM/yyyy")</span></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<div class="text-center">
+    @{
+        <a href="/Job/User_Perspective_List?pagenum=@((int)ViewData["pagenum"]-1)&jobsearchkey=@ViewData["jobsearchkey"]">Prev</a>
+        @ViewData["pagesummary"]
+        <a href="/Job/User_Perspective_List?pagenum=@((int)ViewData["pagenum"]+1)&jobsearchkey=@ViewData["jobsearchkey"]">Next</a>
+    }
+</div>
+

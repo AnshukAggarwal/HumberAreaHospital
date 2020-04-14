@@ -1,0 +1,51 @@
+﻿@model HumberAreaHospitalProject.Models.Application
+@{
+    ViewBag.Title = "Show";
+}
+
+    <h2>@Model.ApplicantFirstName  @Model.ApplicantLastName  Details</h2>
+
+    <div class="navbar">
+        <a class="navlink" href="/Application/List">Back to List</a>
+        <a class="navlink" href="/Application/Update/@Model.Job.JobID">Update</a>
+        <a class="navlink" href="/Application/DeleteConfirm/@Model.Job.JobID">Delete</a>
+    </div>
+<div>
+    <div class="col2">
+        <dl class="row">
+            <dt class="col-sm-3">First Name</dt>
+            <dd class="col-sm-9">@Model.ApplicantFirstName</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-3">Last Name</dt>
+            <dd class="col-sm-9">@Model.ApplicantLastName</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9">@Model.ApplicantEmail</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-3">Phone</dt>
+            <dd class="col-sm-9">@Model.ApplicantPhone</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-3">Address</dt>
+            <dd class="col-sm-9">@Model.ApplicantAddress</dd>
+            <dt class="col-sm-3"></dt>
+            <dd class="col-sm-9">@Model.ApplicantCity</dd>
+            <dt class="col-sm-3"></dt>
+            <dd class="col-sm-9">@Model.ApplicantProvince</dd>
+            <dt class="col-sm-3"></dt>
+            <dd class="col-sm-9">@Model.ApplicantZipCode</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-3">Application Date</dt>
+            <dd class="col-sm-9">@Model.ApplicantEmail</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-3">Resume</dt>
+            <dd class="col-sm-9"></dd>
+        </dl>
+    </div>
+
+</div>

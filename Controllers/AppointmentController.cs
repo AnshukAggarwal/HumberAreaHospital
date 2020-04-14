@@ -25,6 +25,7 @@ namespace HumberAreaHospitalProject.Controllers
         //search method from Christine Bittle
         public ActionResult List(string appointmentSearchKey, int pagenum = 0)
         {
+            //checking if the users logged in
             if((System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
             { 
             List<Appointment> appointments = db.Appointments.Where(a => (appointmentSearchKey != null) ? a.appointmentLname.Contains(appointmentSearchKey) : true).ToList();
@@ -47,9 +48,10 @@ namespace HumberAreaHospitalProject.Controllers
                     .Take(perpage)
                     .ToList();
                 }
-                
+             
             return View(appointments);
             } else
+            //if not sends to login page   
             {
                 return RedirectToAction("Login","Account");
             }
@@ -61,7 +63,7 @@ namespace HumberAreaHospitalProject.Controllers
             {
                 AppointmentViewModel appointmentViewModel = new AppointmentViewModel();
                 appointmentViewModel.doctors = db.Doctors.ToList();
-
+                //using a view model to also show doctors
                 return View(appointmentViewModel);
             }
             else
@@ -69,7 +71,7 @@ namespace HumberAreaHospitalProject.Controllers
                 return RedirectToAction("index");
             }
         }
-
+        //sends added appointment
         [HttpPost]
         public ActionResult Create(string firstName, string lastName, string phoneNum, string email, DateTime dateTime, int doctorID)
         {
@@ -91,7 +93,7 @@ namespace HumberAreaHospitalProject.Controllers
         //selects appointment to update
         public ActionResult Update(int id)
         {
-            //check if logged in
+            //checks if logged in
             if((System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 string query = "select * from appointments where appointmentID = @id";
@@ -100,7 +102,7 @@ namespace HumberAreaHospitalProject.Controllers
                 AppointmentViewModel appointmentViewModel = new AppointmentViewModel();
                 appointmentViewModel.appointment = appointment;
                 appointmentViewModel.doctors = db.Doctors.ToList();
-
+                //using a view model to also show doctors
                 return View(appointmentViewModel);
             }
             else
@@ -110,7 +112,7 @@ namespace HumberAreaHospitalProject.Controllers
            
         }
 
-        //loads update
+        //sends update
         [HttpPost]
         public ActionResult Update(int id, string firstName, string lastName, string phoneNum, string email, DateTime dateTime, int doctorID)
         {
@@ -145,7 +147,7 @@ namespace HumberAreaHospitalProject.Controllers
             }
         }
 
-        //deletes
+        //deletes an appointment
         [HttpPost]
         public ActionResult DeleteApp(int id)
         {
