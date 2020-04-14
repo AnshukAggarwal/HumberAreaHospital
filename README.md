@@ -3,14 +3,15 @@
 ### 1.News Page Feature
   - [x] CRUD 
   - [x] Pagination and Search Functionality
-  - [ ] User View 
+  - [x] User View
   - [x] CSS Responsive Design 
+  - [x] WireFrames and ERD, Using 2 Tables, One Author to many Articles
 ### 2. Volunteer Feature
   - [x] CRUD 
   - [x] Pagination and Search Functionality
   - [x] User View 
   - [x] CSS Responsive Design 
-
+  - [x] WireFrames and ERD
 ## Cynthia Lipinski - N01176789
 ### 3. Appointment Feature
   - [x] CRUD 
