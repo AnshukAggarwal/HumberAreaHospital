@@ -22,7 +22,7 @@ namespace HumberAreaHospitalProject.Data
         }
     }
 
-    public class HospitalContext: IdentityDbContext<ApplicationUser>
+    public class HospitalContext : IdentityDbContext<ApplicationUser>
     {
         public HospitalContext() : base("name=HospitalContext")
         {
@@ -36,10 +36,10 @@ namespace HumberAreaHospitalProject.Data
         public DbSet<Speciality> Specialities { get; set; }
 
 
-    
 
-     
-       //Madhu
+
+
+        //Madhu
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Application> Applications { get; set; }
 

@@ -59,7 +59,7 @@ namespace HumberAreaHospitalProject.Controllers
         {
             ListSurvey question = new ListSurvey();
             question.questions = db.Questions.ToList();
-            question.surveys = db.Surveys.ToList();
+            question.answers = db.Surveys.ToList();
             return View(question);
             //return View();
         }
@@ -73,7 +73,7 @@ namespace HumberAreaHospitalProject.Controllers
             SqlParameter parameter = new SqlParameter("@id", id);
             List<Survey> answers = db.Surveys.SqlQuery(query, parameter).ToList();
             var ListSurvey = new ListSurvey();
-            ListSurvey.surveys = answers;
+            ListSurvey.answers = answers;
             ListSurvey.questions = questions;
 
             return View(ListSurvey);

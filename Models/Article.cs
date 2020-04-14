@@ -13,7 +13,7 @@ namespace HumberAreaHospitalProject.Models
         public int ArticleID { get; set; }
         public string ArticleTitle { get; set; }
         public string ArticleBody { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Published { get; set; }
         //Featured is YES or NO
         public string Featured { get; set; }
 
