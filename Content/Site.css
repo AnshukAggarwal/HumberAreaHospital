@@ -60,6 +60,7 @@ textarea {
     height: 80%;
     width: 240px;
     position: fixed;
+    left: -240px;
     background-color: lightsteelblue;
     z-index: 1;
 }
@@ -73,4 +74,13 @@ textarea {
     display: inline;
     width: auto;
 }
-
+.row.head{
+    font-size:1.2em;    
+    font-weight:bold;
+}
+.row{
+    border-bottom: 1px solid rgb(157, 153, 153);
+}
+.row:nth-child(n+2):hover{
+    background-color: rgb(202, 202, 202);
+}

@@ -19,6 +19,13 @@ namespace HumberAreaHospitalProject.Controllers
 
         //Accessible only for user that is login
         //[Authorize]
+        public ActionResult NewsPage()
+        {
+            string query = "SELECT * from Articles";
+            List<Article> articles = db.Articles.SqlQuery(query).ToList();
+            return View(articles);
+
+        }
         public ActionResult List(string searchkey, int pagenum = 1)
         {
             //Christine Bittle In-Class Example
