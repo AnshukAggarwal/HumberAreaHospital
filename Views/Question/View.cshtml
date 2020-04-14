@@ -13,13 +13,13 @@
 <body>
     <div>
         <h2>Details for @Model.QuestionText</h2>
-        <a href="/Question/List">Back to List</a>
+        <div>
+            <a href="/Question/List" class="btn btn-primary">Back to List</a>
+            <a href="/Question/Update/@Model.QuestionID" class="btn btn-primary">Update</a>
+            <a href="/Question/Delete/@Model.QuestionID" class="btn btn-danger">Delete</a>
+        </div>
         <div class="info">
             <div>Text: @Model.QuestionText</div>
-        </div>
-        <div class="controls">
-            <a href="/Question/Update/@Model.QuestionID" class="control-button">Update</a>
-            <a href="/Question/Delete/@Model.QuestionID" class="control-button">Delete</a>
         </div>
 
     </div>

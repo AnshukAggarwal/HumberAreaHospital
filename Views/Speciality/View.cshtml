@@ -13,16 +13,16 @@
 <body>
     <div>
         <h2>Details for @Model.Name</h2>
-        <a href="/Speciality/List">Back to List</a>
-        <div class="info">
-            <div>Name: @Model.Name</div>
+        <div class="navbar">
+            <a href="/Speciality/List" class="btn btn-primary">Back to List</a>
+            <a href="/Speciality/Update/@Model.SpecialityID" class="btn btn-primary">Update</a>
+            <a href="/Speciality/Delete/@Model.SpecialityID" class="btn btn-danger">Delete</a>
         </div>
-        <div class="controls">
-            <a href="/Speciality/Update/@Model.SpecialityID" class="control-button">Update</a>
-            <a href="/Speciality/Delete/@Model.SpecialityID" class="control-button">Delete</a>
-        </div>
+            <div class="info">
+                <div>Name: @Model.Name</div>
+            </div>
 
-    </div>
+        </div>
 </body>
 </html>
 
