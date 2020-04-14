@@ -687,3 +687,4 @@ C:\xampp\htdocs\Hospital-project_firstrepo\New folder\HumberAreaHospital\obj\Deb
 C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.addhr.resources
 C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.addsocialserviceclubs.resources
 C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.Appointment_Staff.resources
+C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.Appointment_Staff.resources

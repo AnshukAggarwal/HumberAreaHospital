@@ -25,6 +25,7 @@ namespace HumberAreaHospitalProject.Controllers
         //search method from Christine Bittle
         public ActionResult List(string staffSearchKey, int pagenum = 0)
         {
+            //sending data to the view instead of using viewmodel
             TempData["isLogged"] = ((System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated);
             List<Staff> staff = db.Staffs.Where(a => (staffSearchKey != null) ? a.staffLname.Contains(staffSearchKey) : true).ToList();
             int perpage = 5;
@@ -64,7 +65,7 @@ namespace HumberAreaHospitalProject.Controllers
                 return RedirectToAction("index");
             }
         }
-
+        //sending added staff
         [HttpPost]
         public ActionResult Create(string firstName, string lastName, string email, string ext, int specialtyID)
         {
@@ -103,7 +104,7 @@ namespace HumberAreaHospitalProject.Controllers
             }
         }
 
-        //loads update
+        //sends update
         [HttpPost]
         public ActionResult Update(int id, string firstName, string lastName, string email, string ext, int specialtyID)
         {
@@ -136,7 +137,7 @@ namespace HumberAreaHospitalProject.Controllers
             }
         }
 
-        //deletes
+        //deletes staff
         [HttpPost]
         public ActionResult DeleteStaff(int id)
         {
