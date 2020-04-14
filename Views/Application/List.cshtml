@@ -5,17 +5,19 @@
 
 <h2>List of Job Applications</h2>
 <form action="/Application/List" method="GET">
-    <input type="text" name="Applicantsearchkey" id="appsearchkey" />
-    <input type="submit" value="Search" />
+    <input type="text" name="Applicantsearchkey" id="appsearchkey" /><!--text box to search-->
+    <input type="submit" value="Search" /><!--button to  search-->
 </form>
-<table id="mytable" class="table table-bordred table-striped">
+<table id="mytable" class="table table-bordred table-striped"><!--table to display list of applications-->
     <thead>
-    <th> Name</th>
-    <th>Email</th>
-    <th>phone</th>
-    <th>Applied On</th>
-    <th>Edit </th>
-    <th>Delete </th>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>phone</th>
+            <th>Applied On</th>
+            <th>Edit </th>
+            <th>Delete </th>
+        </tr>
     </thead>
     <tbody>
         @{
@@ -25,8 +27,11 @@
                     <td><span><a href="/Application/Show/@Applications.ApplicationID">@Applications.ApplicantFirstName</a></span></td>
                     <td><span>@Applications.ApplicantEmail</span></td>
                     <td><span>@Applications.ApplicantPhone</span></td>
+                    <!--converting date time to string and sisplaying only date part-->
                     <td><span>@Applications.ApplicationDate.ToString("dd/MM/yyyy")</span></td>
+                    <!--text box to update-->
                     <td> <span><a href="/Application/Update/@Applications.ApplicationID"><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>   </a></span></td>
+                    <!--text box to Delete-->
                     <td><span><a href="/Application/Delete/@Applications.ApplicationID"><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>   </a></span></td>
                 </tr>
             }
@@ -35,8 +40,8 @@
 </table>
 <div class="text-center">
     @{
-        <a href="/Application/List?pagenum=@((int)ViewData["pagenum"]-1)&jobsearchkey=@ViewData["jobsearchkey"]">Prev</a>
+        <a href="/Application/List?pagenum=@((int)ViewData["pagenum"]-1)&jobsearchkey=@ViewData["jobsearchkey"]">Prev</a><!--pagination link to previous page-->
         @ViewData["pagesummary"]
-        <a href="/Application/List?pagenum=@((int)ViewData["pagenum"]+1)&jobsearchkey=@ViewData["jobsearchkey"]">Next</a>
+        <a href="/Application/List?pagenum=@((int)ViewData["pagenum"]+1)&jobsearchkey=@ViewData["jobsearchkey"]">Next</a><!--pagination link to next page-->
     }
 </div>

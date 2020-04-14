@@ -18,7 +18,6 @@ namespace HumberAreaHospitalProject.Controllers
         // GET: Job Admin perspective where admin gets to see the edit update and delete buttons
         public ActionResult List(String jobsearchkey, int pagenum=0)
         {
-
             string query = "select * from Jobs";//SQL  query to select everything from Jobs table
             List<SqlParameter> sqlparams = new List<SqlParameter>();
             if (jobsearchkey!= "") //Checkign if the search key is empty or null
@@ -53,17 +52,15 @@ namespace HumberAreaHospitalProject.Controllers
                 jobs = db.Jobs.SqlQuery(pagedquery, newparams.ToArray()).ToList();
             }
             //End of Pagination
-
-
             return View(jobs);
-            
         }
 
         //Add new job to the table
         [HttpPost]
         public ActionResult New(string JobTitle, string JobCategory, string JobType, string Description, string Requirements)
         {
-            string PostDate = DateTime.Now.ToString("dd/MM/yyyy");//converting date time to just date as a string and storing it into PostDate
+            DateTime now = DateTime.Now;
+            DateTime PostDate = now;
             string query = "insert into Jobs (JobTitle, JobCategory, JobType, Description, Requirements, PostDate) values (@JobTitle, @JobCategory, @JobType, @Description, @Requirements, @PostDate)";
             SqlParameter[] sqlparams = new SqlParameter[6];
             sqlparams[0] = new SqlParameter("@JobTitle", JobTitle);
@@ -80,7 +77,6 @@ namespace HumberAreaHospitalProject.Controllers
             return View();
 
         }
-
         //Display individual job details 
         public ActionResult Show(int? id)
         {
@@ -94,12 +90,11 @@ namespace HumberAreaHospitalProject.Controllers
             ViewModel.Applications = applications;
 
             return View(ViewModel);
-
         }
         //Update
         public ActionResult Update(int id)
         {
-            //need information about a particular Bike
+            //need information about a particular job
             Job selectedjob = db.Jobs.SqlQuery("select * from Jobs where JobID = @id", new SqlParameter("@id", id)).FirstOrDefault();
             //string query = "select * from Jobs";
             return View(selectedjob);
@@ -108,7 +103,6 @@ namespace HumberAreaHospitalProject.Controllers
         [HttpPost]
         public ActionResult Update(int id, string JobTitle, string JobCategory, string JobType, string Description, string Requirements)
         {   //query to update jobs
-            string PostDate = DateTime.Now.ToString("dd/MM/yyyy");
             string query = "update Jobs set JobTitle =@JobTitle, JobCategory=@JobCategory, JobType=@JobType, Description=@Description, Requirements=@Requirements where JobID=@id";
             //key pair values to hold new values 
             SqlParameter[] sqlparams = new SqlParameter[6];
@@ -125,22 +119,19 @@ namespace HumberAreaHospitalProject.Controllers
         }
         //Deletion of job 
         public ActionResult Delete(int id)
-        {   //Query to delete particualr Bikes from the table based on the BikeID
+        {   //Query to delete particualr job from the table based on the jobID
             string query = "delete from Jobs where JobID=@id";
             SqlParameter[] parameter = new SqlParameter[1];
-            //storing the id of the Bike to be deleted 
+            //storing the id of the job to be deleted 
             parameter[0] = new SqlParameter("@id", id);
             //Excecuting the query
             db.Database.ExecuteSqlCommand(query, parameter);
-            // returning to lsit view of the Bikes after deleting 
+            // returning to lsit view of the jobs after deleting 
             return RedirectToAction("List");
         }
-
-
         // GET: Job and display in users persepective where all the buttons will be removed so the user is restriceted to only see aand apply for the job
         public ActionResult User_Perspective_List(String jobsearchkey, int pagenum = 0)
         {
-
             string query = "select * from Jobs";//SQL  query to select everything from Jobs table
             List<SqlParameter> sqlparams = new List<SqlParameter>();
             if (jobsearchkey != "") //Checkign if the search key is empty or null
@@ -175,13 +166,9 @@ namespace HumberAreaHospitalProject.Controllers
                 jobs = db.Jobs.SqlQuery(pagedquery, newparams.ToArray()).ToList();
             }
             //End of Pagination
-
-
             return View(jobs);
         }
-       
         //Function to Display individual  user perspective of  job details
-  
         public ActionResult User_Show(int id)
         {
             string query = "select * from Jobs where JobID = @JobID"; //sql query to slect all fromJobs table based on JobID

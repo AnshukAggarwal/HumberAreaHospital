@@ -38,7 +38,6 @@ namespace HumberAreaHospitalProject.Controllers
             {
                 ViewData["pagesummary"] = (pagenum + 1) + " of " + (maxpage + 1);
                 List<SqlParameter> newparams = new List<SqlParameter>();
-
                 if (appsearchkey != "")
                 {
                     newparams.Add(new SqlParameter("@searchkey", "%" + appsearchkey + "%"));
@@ -50,8 +49,6 @@ namespace HumberAreaHospitalProject.Controllers
                 Applications = db.Applications.SqlQuery(pagedquery, newparams.ToArray()).ToList();
             }
             //End of Pagination
-
-
             return View(Applications);
         }
         //Add new Application
@@ -59,7 +56,7 @@ namespace HumberAreaHospitalProject.Controllers
         public ActionResult New(string ApplicantFirstName, string ApplicantLastName, string ApplicantEmail, string ApplicantPhone, string ApplicantAddress, string ApplicantCity,string ApplicantProvince,string ApplicantZipCode)
         {
             string ApplicationDate = DateTime.Now.ToString("dd/MM/yyyy");
-            string query = "insert into Applications (ApplicantFirstName, ApplicantLastName, ApplicantEmail, ApplicantPhone, ApplicantAddress, ApplicantCity, ApplicantProvince, ApplicantZipCode, ApplicantionDate) values (@JobTitle, @JobCategory, @JobType, @Description, @Requirements, @ApplicationDate)";
+            string query = "insert into Applications (ApplicantFirstName, ApplicantLastName, ApplicantEmail, ApplicantPhone, ApplicantAddress, ApplicantCity, ApplicantProvince, ApplicantZipCode, ApplicantionDate) values (@JobTitle, @JobCategory, @JobType, @Description, @Requirements, @ApplicationDate)";//Sql query to add new application
             SqlParameter[] sqlparams = new SqlParameter[9];
             sqlparams[0] = new SqlParameter("ApplicantFirstName", ApplicantFirstName);
             sqlparams[1] = new SqlParameter("@ApplicantLastName", ApplicantLastName);
@@ -92,9 +89,9 @@ namespace HumberAreaHospitalProject.Controllers
         //Update
         public ActionResult Update(int id)
         {
-            //need information about a particular Bike
+            //need information about a particular Application
             Application selectedapplication = db.Applications.SqlQuery("select * from Applications where ApplicationID = @id", new SqlParameter("@id", id)).FirstOrDefault();
-            //string query = "select * from Jobs";
+         
             return View(selectedapplication);
         }
         //[HttpPost] Update
@@ -116,7 +113,7 @@ namespace HumberAreaHospitalProject.Controllers
             sqlparams[8] = new SqlParameter("@id", id);
             //Exceuting the sql query with new values
             db.Database.ExecuteSqlCommand(query, sqlparams);
-            //Return to list view of Jobd
+            //Return to list view of Applications
             return RedirectToAction("List");
         }
         //delete

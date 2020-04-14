@@ -4,9 +4,9 @@
     ViewBag.Title = "List";
 }
 
-<h2>List of Makes</h2>
+<h2>List of Categories</h2>
 <div>
-    <a href="/FAQCategory/New" class="btn btn-primary" style="float:right">Add Category</a> <!--button to  add new Make-->
+    <a href="/FAQCategory/New" class="btn btn-primary" style="float:right">Add Category</a> <!--button to  add new Category-->
 </div>
 <table id="mytable" class="table table-bordred table-striped">
     <thead>
@@ -20,11 +20,10 @@
             foreach (var FAQCategory in Model)
             {
                 <tr>
-
-                    <td><span><a href="/FAQCategory/Show/@FAQCategory.FAQCategoryID">@FAQCategory.FAQCategoryName</a></span></td>
-
+                    <td><span><a href="/FAQCategory/Show/@FAQCategory.FAQCategoryID">@FAQCategory.FAQCategoryName</a></span></td><!-- link to individual category display page-->
+                    <!--Button To Edit Category-->
                     <td> <span><a href="/FAQCategory/Update/@FAQCategory.FAQCategoryID"><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>   </a></span></td>
-                    <!--Button To Delete Make-->
+                    <!--Button To Delete Category-->
                     <td><span><a href="/FAQCategory/Delete/@FAQCategory.FAQCategoryID"><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p>   </a></span></td>
                 </tr>
             }

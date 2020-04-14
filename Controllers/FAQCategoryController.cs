@@ -26,10 +26,8 @@ namespace HumberAreaHospitalProject.Controllers
         //Add Category
         public ActionResult New()
         {
-
-            List<FAQCategory> Make = db.FAQCategories.SqlQuery("select * from FAQCategories").ToList();
-
-            return View(Make);
+          
+            return View();
         }
         // [HttpPost] Add
         [HttpPost]
@@ -51,7 +49,7 @@ namespace HumberAreaHospitalProject.Controllers
         }
         [HttpPost]
         public ActionResult Update(int id, String FAQCategoryName)
-        {   //query to update the particualar Make based on the id
+        {   //query to update the particualar category based on the id
             string query = "update FAQCategories set FAQCategoryName=@Name where FAQCategoryID=@id";
             //key pair values to store Make details
             SqlParameter[] parameter = new SqlParameter[2];
@@ -59,7 +57,7 @@ namespace HumberAreaHospitalProject.Controllers
             parameter[1] = new SqlParameter("@id", id);
             //excecuting the query to update
             db.Database.ExecuteSqlCommand(query, parameter);
-            //retunring to list view of the Makes after adding
+            //retunring to list view of the categories after adding
             return RedirectToAction("List");
         }
 
@@ -72,19 +70,20 @@ namespace HumberAreaHospitalProject.Controllers
             {
                 return HttpNotFound();
             }
+            //returning individual Category
             return View(category);
         }
 
         //delete
         public ActionResult Delete(int id)
-        {   //Query to delete particualr make from the table based on the make id
+        {   //Query to delete particualr category from the table based on the category id
             string query = "delete from FAQCategories where FAQCategoryID=@id";
             SqlParameter[] parameter = new SqlParameter[1];
-            //storing the id of the make to be deleted 
+            //storing the id of the category to be deleted 
             parameter[0] = new SqlParameter("@id", id);
             //Excecuting the query
             db.Database.ExecuteSqlCommand(query, parameter);
-            // returning to lsit view of the make after deleting 
+            // returning to lsit view of the categories after deleting 
             return RedirectToAction("List");
         }
     }

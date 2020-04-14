@@ -11,7 +11,7 @@ namespace HumberAreaHospitalProject.Models
 
        [Key]
        public int FAQCategoryID { get; set; }
-       public string FAQCategoryName { get; set; }
+       public string FAQCategoryName { get; set; } //Name of the category
 
     }
 }

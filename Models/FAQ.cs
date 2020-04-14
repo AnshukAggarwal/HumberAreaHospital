@@ -8,6 +8,15 @@ using System.Web;
 namespace HumberAreaHospitalProject.Models
 {
     public class FAQ
+
+        /*
+         * FAQ Model Describes
+         * FAQID            - Identity  of FAQ
+         * FAQCategoryID    - Identity of FAQCategory in the FAQCAtegories Table also, A foreign Key
+         * FAQQuestion      - The Actual question 
+         * FAQAnswer        - The Actual answer for the question
+         * 
+        */
     {
         [Key]
         public int FAQID { get; set; }
