@@ -1,0 +1,29 @@
+﻿@model HumberAreaHospitalProject.Models.ViewModels.UpdateFAQController
+@{
+    ViewBag.Title = "Show";
+}
+
+<div class="navbar">
+    <a class="navlink" href="/FAQ/List">Back to List</a>
+    <a class="navlink" href="/FAQ/Update/@Model.FAQ.FAQID">Update</a>
+</div>
+<div>
+    <div class="col2">
+        <dl class="row">
+            <dt class="col-sm-3">Question</dt>
+            <dd class="col-sm-9">@Model.FAQ.FAQQuestion</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-3">ANSWER</dt>
+            <dd class="col-sm-9">@Model.FAQ.FAQAnswer</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-3"> CATEGORY</dt>
+            <dd class="col-sm-9">@Model.FAQ.FAQCategory.FAQCategoryName</dd>
+        </dl>
+    </div>
+
+</div>
+
+
+

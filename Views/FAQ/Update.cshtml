@@ -1,0 +1,44 @@
+﻿@model HumberAreaHospitalProject.Models.ViewModels.UpdateFAQController
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add a New Pet</h2>
+<div class="navbar">
+    <a class="navlink" href="/FAQ/List">Back to List</a>
+</div>
+<form method="POST" action="/FAQ/New">
+    <!-- TODO: format this nicely -->
+    <div class="inpfield"><span>FAQ QUESTION:</span><input id="question" type="text" name="FAQQuestion" value="@Model.FAQ.FAQQuestion" /></div>
+    <div class="inpfield">
+        <span>Category:</span>
+        <select id="categoryID" type="text" name="FAQCategoryID">
+            @{
+                //A rendering loop for presenting a list of species
+                //The pet should be one of these species
+                foreach (var FAQCategory in Model.FAQCategory)
+                {
+                    var selected = "";
+                    if (Model.FAQ.FAQCategoryID == FAQCategory.FAQCategoryID)
+                    {
+                        selected = "selected";
+                    }
+                    <option value="@FAQCategory.FAQCategoryID" @selected> @FAQCategory.FAQCategoryName</option>
+
+                }
+            }
+        </select>
+    </div>
+    <div class="inpfield"><span>FAQ ANSWER:</span><input id="answer" type="text" name="FAQAnswer"  value="@Model.FAQ.FAQAnswer"/></div>
+    <div class="inpfield">
+        <input type="submit" value="UPDATE">
+    </div>
+</form>
+
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+

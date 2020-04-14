@@ -1,0 +1,16 @@
+﻿
+@model List<HumberAreaHospitalProject.Models.FAQCategory>
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add New Category</h2>
+<form method="post" action="/FAQCategory/New">
+    <div class="form-group">
+        <label class="col-sm-2 col-form-lable">Category Name</label>
+        <input type="text" class="form-control" name="FAQCategoryName" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="ADD CATEGORY" />
+    </div>
+</form>

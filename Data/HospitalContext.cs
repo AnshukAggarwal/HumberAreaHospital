@@ -33,6 +33,8 @@ namespace HumberAreaHospitalProject.Data
         }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Speciality> Specialities { get; set; }
+
+        //madhu
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Application> Applications { get; set; }
 
@@ -42,6 +44,10 @@ namespace HumberAreaHospitalProject.Data
         public DbSet<Volunteer> Volunteers { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Survey> Responses { get; set; }
+
+        //madhu
+        public DbSet<FAQCategory> FAQCategories { get; set; }
+        public DbSet<FAQ> FAQs { get; set; }
 
     }
 }
