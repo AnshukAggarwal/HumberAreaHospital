@@ -1,5 +1,6 @@
 # HumberAreaHospital
 ## MarL Dohn Mazo - N01387542
+  - [x] Fix Merge/Conflict Errors
 ### 1.News Page Feature
   - [x] CRUD 
   - [x] Pagination and Search Functionality
