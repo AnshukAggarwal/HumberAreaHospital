@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HumberAreaHospitalProject</RootNamespace>
     <AssemblyName>HumberAreaHospitalProject</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -295,6 +295,30 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\list_style.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="ERD_WireFrames_Document\Anshuk_Aggarwal_WireFrames_ERD\Doctors_CRUD1.jpeg" />
+    <Content Include="ERD_WireFrames_Document\Anshuk_Aggarwal_WireFrames_ERD\Doctors_CRUD3.jpeg" />
+    <Content Include="ERD_WireFrames_Document\Anshuk_Aggarwal_WireFrames_ERD\Doctor_CRUD2.jpeg" />
+    <Content Include="ERD_WireFrames_Document\Anshuk_Aggarwal_WireFrames_ERD\ERDs.jpeg" />
+    <Content Include="ERD_WireFrames_Document\Anshuk_Aggarwal_WireFrames_ERD\Questions_CRUD2.jpeg" />
+    <Content Include="ERD_WireFrames_Document\Anshuk_Aggarwal_WireFrames_ERD\Question_Crud1.jpeg" />
+    <Content Include="ERD_WireFrames_Document\Anshuk_Aggarwal_WireFrames_ERD\Specialities_CRUD1.jpeg" />
+    <Content Include="ERD_WireFrames_Document\Anshuk_Aggarwal_WireFrames_ERD\Specialities_CRUD2.jpeg" />
+    <Content Include="ERD_WireFrames_Document\Anshuk_Aggarwal_WireFrames_ERD\Survey_Form.jpeg" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\HR-dlt-admin.png" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\HR-list-admin.png" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\HR-list-user.png" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\HR-new-admin.png" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\HR-updt-admin.png" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\HR-view-admin.png" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\HR-view-user.png" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\RS-list-admin.png" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\SSC-admin-user.png" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\SSC-dlt-admin.png" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\SSC-list-admin.png" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\SSC-list-user.png" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\SSC-view-admin.png" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\SSC-view-user.png" />
+    <Content Include="ERD_WireFrames_Document\MadhusudhanReddyKambham\ERD-FAQ.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -310,6 +334,10 @@
     <Content Include=".vs\HumberAreaHospitalProject\v16\Server\sqlite3\storage.ide" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ERD_WireFrames_Document\CynthiaLipinski\Wireframes_ERD_CynthiaLipinski.pdf" />
+    <Content Include="ERD_WireFrames_Document\HomeRemedies_SocialServiceClubs_Features\ERD-HomeRemedies-SSClubs.pdf" />
+    <Content Include="ERD_WireFrames_Document\Volunteer_Article_Feature\ERD_Model.pdf" />
+    <Content Include="ERD_WireFrames_Document\Volunteer_Article_Feature\Wireframes.pf.pdf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
