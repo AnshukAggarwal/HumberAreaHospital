@@ -98,4 +98,21 @@ Controller:  SurveyController.cs
 Views:  Form.cshtml, List.cshtml, Thanks.cshtml
 Model:  Survey.cs
 
-
+## Madhusudhan Reddy Kambham - N01363180
+### 1.Hospital Career Services
+  - [x] CRUD 
+  - [x] Pagination and Search Functionality
+  - [x] User View
+  - [x] Admin View
+  - [x] Responsive Design 
+  - [x] WireFrames and ERD, Using 2 Tables, One job to many Applications
+  
+  
+ ### 2. Hospital FAQs
+  - [x] CRUD 
+  - [x] Pagination 
+  - [x] User View 
+  - [x] Responsive Design 
+  - [x] WireFrames and ERD , using two tables, One FAQCategory to Many FAQs
+  
+  
