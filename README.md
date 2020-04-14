@@ -13,13 +13,14 @@
   - [x] User View 
   - [x] CSS Responsive Design 
   - [x] WireFrames and ERD
-## Cynthia Lipinski - N01176789
+## Cynthia Lipinski - N01176789   
+ - [x] Design Layout & CSS
 ### 3. Appointment Feature
   - [x] CRUD 
   - [x] Pagination and Search Functionality
   - [ ] User View 
   - [x] Admin View
-  - [ ] CSS Responsive Design     
+  - [x] CSS Responsive Design     
   Files: AppointmentController.cs , Views: Appointment/Create.cshtml, Appointment/Delete.cshtml. Appointment/List.cshtml, Appointment/Update.cshtml, Model: Appointment.cs, Viewmodel: AppointmentViewModel.cs
 ### 2. Staff Directory Feature
   - [x] CRUD 
