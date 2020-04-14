@@ -688,3 +688,7 @@ C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHo
 C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.addsocialserviceclubs.resources
 C:\Users\User\Desktop\WebDev2\Hospital\HumberAreaHospital\obj\Debug\HumberAreaHospitalProject.Migrations.Appointment_Staff.resources
 C:\Users\aggar\source\repos\HumberAreaHospitalProject\obj\Debug\HumberAreaHospitalProject.Migrations.Appointment_Staff.resources
+C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\PagedList.dll
+C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\PagedList.Mvc.dll
+C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\PagedList.xml
+C:\Users\aggar\source\repos\HumberAreaHospitalProject\bin\PagedList.Mvc.xml

@@ -1,4 +1,6 @@
-﻿@model List<HumberAreaHospitalProject.Models.Doctor>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<HumberAreaHospitalProject.Models.Doctor>
 @{
     ViewBag.Title = "List";
 }
@@ -14,10 +16,18 @@
     <div>
         <h2>List of Doctors</h2>
         <a href="/Doctor/New" class="btn btn-primary" style="float:right">Add Doctor</a>
-        <form method="post" action="/Doctor/List">
-            <input type="text" name="searchkey" id="searchkey" />
-            <input type="submit" value="Search" />
-        </form>
+        @using (Html.BeginForm("List", "Doctor", FormMethod.Get))
+        {
+            <strong>Search By:</strong>
+            <div>
+                @Html.RadioButton("searchBy", "First Name",true)<text>First Name</text>
+                @Html.RadioButton("searchBy", "Last Name")<text>Last Name</text>
+                @Html.RadioButton("searchBy", "Speciality")<text>Speciality</text>
+                <div>
+                    @Html.TextBox("search")<input type="submit" class="btn btn-primary" value="Search" />
+                </div>
+            </div>
+        }
         <div class="item-container">
             @{
 
@@ -32,7 +42,8 @@
                 }
             }
         </div>
-
+        @Html.PagedListPager(Model, page => Url.Action("List", new { page, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] }),
+    new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })
     </div>
 </body>
 </html>

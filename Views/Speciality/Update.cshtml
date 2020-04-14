@@ -12,7 +12,7 @@
 </head>
 <body>
     <h2>Edit Details for @Model.Name</h2>
-    <a href="/Speciality/List">Back to List</a>
+    <a href="/Speciality/List" class="btn btn-primary">Back to List</a>
     <div>
         <form method="post" action="/Speciality/Update/@Model.SpecialityID">
             <div class="info">
@@ -20,7 +20,7 @@
                 <input type="text" name="SpecialityName" id="SpecialityName" value="@Model.Name" />
             </div>
             <div class="controls">
-                <input type="submit" value="Update" />
+                <input type="submit" class="btn btn-primary" value="Update" />
             </div>
         </form>
 

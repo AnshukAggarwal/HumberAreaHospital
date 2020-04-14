@@ -14,11 +14,11 @@
     <div>
         <h2>Are you sure you want to delelte the record of @Model.Name?.</h2>
         <h2>If not please go back to the list</h2>
-        <a href="/Speciality/List">Back to List</a>
+        <a href="/Speciality/List" class="btn btn-primary">Back to List</a>
         <div class="info">Name:@Model.Name</div>
         <div class="controls">
             <form method="post" action="/Speciality/Delete/@Model.SpecialityID">
-                <input type="submit" value="Delete" />
+                <input type="submit" class="btn btn-danger" value="Delete" />
             </form>
         </div>
 
