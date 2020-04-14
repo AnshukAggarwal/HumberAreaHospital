@@ -12,8 +12,7 @@
         <label class="col-sm-2 col-form-lable">Category</label>
         <select id="categoryID" class="form-control" type="text" name="FAQCategoryID">
             @{
-                //A rendering loop for presenting a list of species
-                //The pet should be one of these species
+
                 foreach (var FAQCategory in Model)
                 {
                     <option value="@FAQCategory.FAQCategoryID">@FAQCategory.FAQCategoryName</option>
