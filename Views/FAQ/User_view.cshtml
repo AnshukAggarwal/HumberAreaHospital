@@ -1,0 +1,37 @@
+﻿
+@model List<HumberAreaHospitalProject.Models.FAQ>
+@{
+    ViewBag.Title = "User_view";
+}
+
+
+    <h2> Find Answers for your questions</h2>
+    <div class="container">
+        @{
+            foreach (var FAQ in Model)
+            {  
+                // accordion is used to display question and answer  
+
+                <div class="" id="accordion">
+                            <div class="card ">
+                                <div class="card-header">
+                                    <!--placed question here .   by default question will be collapsed  only on toggle the answer wil be displayed-->
+                                    <h4 class="card-header">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">@FAQ.FAQQuestion</a>
+                                    </h4>
+                                </div>
+                                <!--placed annswer here -->
+                                <div id="collapseOne" class="panel-collapse collapse in">
+                                    <div class="card-block">
+                                        @FAQ.FAQAnswer
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+            }
+
+
+        }
+
+    </div>

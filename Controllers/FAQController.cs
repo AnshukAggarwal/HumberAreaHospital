@@ -117,5 +117,14 @@ namespace HumberAreaHospitalProject.Controllers
             // returning to lsit view of the FAQs after deleting 
             return RedirectToAction("List");
         }
+
+        //user_view of FAQ
+        public ActionResult User_view()
+        {
+
+            List<FAQ> FAQs = db.FAQs.SqlQuery("Select * from FAQs").ToList();
+            return View(FAQs);
+
+        }
     }
 }

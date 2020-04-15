@@ -436,6 +436,7 @@
     <Content Include="Views\FAQ\List.cshtml" />
     <Content Include="Views\FAQ\Update.cshtml" />
     <Content Include="Views\FAQ\Show.cshtml" />
+    <Content Include="Views\FAQ\User_view.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\HomeRemedies\Delete.cshtml" />
