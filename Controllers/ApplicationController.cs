@@ -24,6 +24,7 @@ namespace HumberAreaHospitalProject.Controllers
                 sqlparams.Add(new SqlParameter("@searchkey", "%" + appsearchkey + "%"));
             }
             List<Application> Applications = db.Applications.SqlQuery(query, sqlparams.ToArray()).ToList();
+            //pagination code reffered from christine's  petgrooming project
             //Pagination for Applications
             int perpage = 5;
             int petcount = Applications.Count();

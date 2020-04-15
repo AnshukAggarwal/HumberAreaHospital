@@ -21,6 +21,7 @@ namespace HumberAreaHospitalProject.Controllers
             string query = "select * from FAQs";//SQL  query to select everything from FAQs table
             List<SqlParameter> sqlparams = new List<SqlParameter>();
             List<FAQ> FAQs = db.FAQs.SqlQuery(query, sqlparams.ToArray()).ToList();
+            //pagination code reffered from christine's  petgrooming project
             //Pagination for FAQs
             int perpage = 3;
             int petcount = FAQs.Count();
