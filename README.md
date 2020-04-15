@@ -112,6 +112,7 @@ Model:  Survey.cs
   - [x] CRUD 
   - [x] Pagination 
   - [x] User View 
+  - [x] Admin View 
   - [x] Responsive Design 
   - [x] WireFrames and ERD , using two tables, One FAQCategory to Many FAQs
   
